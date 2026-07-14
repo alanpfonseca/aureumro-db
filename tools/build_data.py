@@ -13,6 +13,9 @@ Saidas (em web/public/data/):
 O manifesto de icones (build/icon_manifest.json) diz quais itens tem icone e a proveniencia.
 Se ele ainda nao existe (fetch_icons nao rodou), assume "sem icone" e segue -- o build nao
 depende dos downloads terem terminado.
+
+ATENCAO: este script regenera web/public/data/ do zero -- rode tools/build_hats.py depois,
+ele aplica as descricoes custom dos chapeus e gera o hat-quests.json.
 """
 
 import json

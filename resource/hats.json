@@ -1,0 +1,379 @@
+{
+  "comment": "Transcrição curada de resource/Hats.pdf. effect = texto que SUBSTITUI a descrição do item (linhas separadas por ' / '); effect null = PDF só tinha nota interna, descrição não é tocada. notes = anotações internas de bug/TODO do PDF (vão só para o relatório). ptName = nome PT para itens criados (sem correspondência na database).",
+  "hats": [
+    {
+      "pdfName": "Aerial",
+      "slot": 0,
+      "effect": "5% de Auto-cast Relâmpago(20) nv 2 ao realizar dano físico / A cada 3 refinos aumenta o nível do Relâmpago(20) em 1 nível",
+      "notes": []
+    },
+    {
+      "pdfName": "Alice Doll",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +2% Dano em Demi-Humanos e +1 STR",
+      "notes": []
+    },
+    {
+      "pdfName": "Angel Blessing",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +5% dano com propriedade Sagrado",
+      "notes": []
+    },
+    {
+      "pdfName": "Angel Spirit",
+      "slot": 0,
+      "effect": "Taxa crítica +4",
+      "notes": []
+    },
+    {
+      "pdfName": "Angel wing Ears",
+      "slot": 0,
+      "effect": "Ataque +8",
+      "notes": []
+    },
+    {
+      "pdfName": "Angel Wing",
+      "slot": 0,
+      "effect": "A cada 3 refinos = 4% dano em Demônios / 2% velocidade de ataque",
+      "notes": []
+    },
+    {
+      "pdfName": "Anubis Helm",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Defesa a Terremoto +2% / Efeito de cura aplicada e de itens +5%",
+      "notes": []
+    },
+    {
+      "pdfName": "Apple of archer",
+      "slot": 0,
+      "effect": "A cada 3 refinos = DES +1",
+      "notes": []
+    },
+    {
+      "pdfName": "Baby Dragon Hat",
+      "slot": 1,
+      "effect": "Ataque Duplo nv 5 e DES +1 / A cada 3 refinos = Ataque Duplo +1 nível e +1 DES",
+      "notes": []
+    },
+    {
+      "pdfName": "Beanie",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +5% resistência a Congelar e +2% resistência a Água",
+      "notes": []
+    },
+    {
+      "pdfName": "Beer Hat",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +1 nível em Aumentar Recuperação de HP(4) e SP(9)",
+      "notes": []
+    },
+    {
+      "pdfName": "Binoculars",
+      "slot": 0,
+      "effect": "DES +2",
+      "notes": []
+    },
+    {
+      "pdfName": "Bird Nest",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +2 AGI",
+      "notes": []
+    },
+    {
+      "pdfName": "Black Frame Glasses",
+      "slot": 0,
+      "effect": "Ataque mágico +8",
+      "notes": []
+    },
+    {
+      "pdfName": "Black Musang Hat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = Cast variável -3%",
+      "notes": []
+    },
+    {
+      "pdfName": "Blazing Sun",
+      "slot": 0,
+      "effect": null,
+      "notes": ["CORRIGIR DESCRIÇÂO"]
+    },
+    {
+      "pdfName": "Blue Arara Hat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +1% ASPD",
+      "notes": []
+    },
+    {
+      "pdfName": "Blue Night Cap",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Ataque mágico +1% / Dano final +1%",
+      "notes": []
+    },
+    {
+      "pdfName": "Bone Helm",
+      "slot": 0,
+      "effect": null,
+      "notes": ["POR PARA TODAS AS CLASSES"]
+    },
+    {
+      "pdfName": "Bone Helm",
+      "slot": 1,
+      "effect": null,
+      "notes": ["POR PARA TODAs AS CLASSES"]
+    },
+    {
+      "pdfName": "Cat Ear Beret",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +1% ATK",
+      "notes": ["Nao está aumentando o ATK no alt a"]
+    },
+    {
+      "pdfName": "Chapeu capitao",
+      "slot": null,
+      "effect": "A cada 3 refinos = Ataque a distância +3%",
+      "notes": []
+    },
+    {
+      "pdfName": "Coronet",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +1% SP máximo / +25 SP",
+      "notes": []
+    },
+    {
+      "pdfName": "Corsair",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +3% HP máximo / +100 HP",
+      "notes": []
+    },
+    {
+      "pdfName": "Crown",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +2 INT / +10 Ataque mágico",
+      "notes": []
+    },
+    {
+      "pdfName": "Cyclop's Eye",
+      "slot": 0,
+      "effect": "+30 SP",
+      "notes": []
+    },
+    {
+      "pdfName": "Dark Blinder",
+      "slot": 0,
+      "effect": "4% de chance de infligir Cegueira no oponente ao causar danos físicos e mágicos",
+      "notes": ["Nao inflinge cegueira"]
+    },
+    {
+      "pdfName": "Deviling Hat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +2% EXP",
+      "notes": ["no +7 =2% exp"]
+    },
+    {
+      "pdfName": "Dokebi Horn",
+      "slot": 1,
+      "effect": "A cada 3 refinos = Aumenta a chance em 2%",
+      "notes": ["não está saindo o auto cast da mamonita"]
+    },
+    {
+      "pdfName": "Ears of Ifrit",
+      "slot": 0,
+      "effect": "INT +2 / 4% dano com propriedade Fogo / -6% defesa a Água",
+      "notes": []
+    },
+    {
+      "pdfName": "Evil Wings Ears",
+      "slot": 0,
+      "effect": "Ataque +8",
+      "notes": []
+    },
+    {
+      "pdfName": "Evil Wings",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Aumenta o dano em monstros Anjo +3% / Velocidade de ataque +1%",
+      "notes": []
+    },
+    {
+      "pdfName": "Eye of dark",
+      "slot": 0,
+      "ptName": "Olhos da Escuridão",
+      "effect": "Dano em inimigos Cegos +4%",
+      "notes": []
+    },
+    {
+      "pdfName": "galapago Cap",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Aumento de cura com sucos +10%",
+      "notes": ["Aumentar para 25% por nivel"]
+    },
+    {
+      "pdfName": "Gangster Scarf",
+      "slot": 0,
+      "effect": "ATK +15",
+      "notes": []
+    },
+    {
+      "pdfName": "Geographer hat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = aumenta a chance do auto-cast em 1%",
+      "notes": ["é para aumentar TODOS os auto cast do char em 1%"]
+    },
+    {
+      "pdfName": "Ghost Bandana",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +5% dano com propriedade Fantasma",
+      "notes": ["não está dando o bonus"]
+    },
+    {
+      "pdfName": "Goibne's Helm",
+      "slot": 0,
+      "effect": "A cada 3 refinos = VIT +2",
+      "notes": []
+    },
+    {
+      "pdfName": "Grand Circlet",
+      "slot": 0,
+      "effect": "A cada 3 refinos = 2% de dano em TODOS OS ORCS (MVP também)",
+      "notes": []
+    },
+    {
+      "pdfName": "Gryphon hat",
+      "slot": 0,
+      "effect": "A cada 3 refinos = 3% de chance de usar Impacto de Tyr(62) nível 1 ou aprendido ao realizar danos físicos",
+      "notes": []
+    },
+    {
+      "pdfName": "Helm Of Abyss",
+      "slot": 1,
+      "effect": "A cada 3 refinos = -2% dano recebido de Boss / +2% dano recebido de jogadores",
+      "notes": []
+    },
+    {
+      "pdfName": "Jewel Crown",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Dano mágico +2%",
+      "notes": []
+    },
+    {
+      "pdfName": "Maestic Goat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = 2% Dano físico",
+      "notes": []
+    },
+    {
+      "pdfName": "Majestic Goat",
+      "slot": 0,
+      "effect": "A cada 3 refinos = 2% Dano físico",
+      "notes": []
+    },
+    {
+      "pdfName": "Mini Propeller",
+      "slot": 0,
+      "effect": "A cada 3 refinos = -2% cast variável e -5% pós-conjuração",
+      "notes": []
+    },
+    {
+      "pdfName": "Ninja Scroll",
+      "slot": 0,
+      "effect": "Dano mágico +4%",
+      "notes": []
+    },
+    {
+      "pdfName": "Nipper Crab Hairpin",
+      "slot": 0,
+      "ptName": "Nipper Crab Hairpin",
+      "effect": "A cada 3 refinos = +1% de chance de auto-cast Cold Bolt(14) nível 5",
+      "notes": []
+    },
+    {
+      "pdfName": "Puppy Love",
+      "slot": null,
+      "effect": "A cada 3 refinos = 2% SP máximo / +20 SP",
+      "notes": []
+    },
+    {
+      "pdfName": "Rainbow Scarf",
+      "slot": null,
+      "effect": "INT +2 / Ataque mágico +15",
+      "notes": []
+    },
+    {
+      "pdfName": "Remover Hat",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Chance de dropar Karvodailnirol(972), Garrafa Vazia(713) e Ditrimindexta(971) +0.5% ao matar monstros Formless",
+      "notes": []
+    },
+    {
+      "pdfName": "Rideword hat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +2% de chance de ativar roubo de HP / +1% roubo de SP / Aumento de SP absorvido +2% e HP +2%",
+      "notes": []
+    },
+    {
+      "pdfName": "Robo Eye",
+      "slot": null,
+      "effect": "Dano físico e mágico +4%",
+      "notes": ["está dando 6% dano magico é para ser 7 (4+3) e o dano fisico nao contabiliza no battlestats"]
+    },
+    {
+      "pdfName": "Sakkat",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Velocidade de ataque +3% / +1 AGI",
+      "notes": []
+    },
+    {
+      "pdfName": "Sloth Hat",
+      "slot": 1,
+      "effect": "A cada 3 refinos = Chance do auto-cast +2%",
+      "notes": ["não está soltando o auto cast da laminas"]
+    },
+    {
+      "pdfName": "Snake Head",
+      "slot": 1,
+      "effect": null,
+      "notes": ["Adicionar esse id como requisito > 5283 <"]
+    },
+    {
+      "pdfName": "spiky Band",
+      "slot": 1,
+      "effect": "A cada 3 refinos = +50 Aura Espinhosa",
+      "notes": []
+    },
+    {
+      "pdfName": "Spiky Band",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +50 Aura Espinhosa",
+      "notes": []
+    },
+    {
+      "pdfName": "Tiara",
+      "slot": 0,
+      "effect": "A cada 3 refinos = Pós-conjuração -5% / Cast variável -1%",
+      "notes": []
+    },
+    {
+      "pdfName": "Tiara",
+      "slot": 1,
+      "effect": "A cada 3 refinos = Pós-conjuração -5% / Cast variável -1%",
+      "notes": []
+    },
+    {
+      "pdfName": "Unicorn Horn",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +15 Soft DEF",
+      "notes": []
+    },
+    {
+      "pdfName": "Western Grace",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +5 Acerto",
+      "notes": []
+    },
+    {
+      "pdfName": "WhikebainEars",
+      "slot": 0,
+      "effect": "A cada 3 refinos = +3% dano crítico / +5 Taxa crítica",
+      "notes": []
+    }
+  ]
+}

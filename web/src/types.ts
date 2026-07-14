@@ -19,6 +19,31 @@ export interface IndexRecord {
   col?: string; // cor do nome
   dr: 0 | 1; // tem fonte de drop conhecida
   pre: 0 | 1; // existe no pre-renewal oficial
+  hq?: 0 | 1; // e ingrediente de alguma quest de chapeu (setado pelo build_hats.py)
+}
+
+// --- Quests de chapeu (hat-quests.json, gerado pelo tools/build_hats.py) ---------
+
+export interface HatQuestIngredient {
+  amount: number;
+  itemId: number | null; // null = nome nao resolvido para um item da database
+  name: string;
+  icon: 0 | 1;
+}
+
+export interface HatQuest {
+  id: string; // slug estavel, usado em #/hat-quests?quest=<id>
+  name: string;
+  hatId: number | null;
+  hatName: string;
+  hatSlots: number;
+  hatIcon: 0 | 1;
+  ingredients: HatQuestIngredient[];
+}
+
+export interface HatQuestsFile {
+  zenyCost: number;
+  quests: HatQuest[];
 }
 
 // Stats oficiais pre-renewal (rAthena). Sao os que valem num servidor pre-re.

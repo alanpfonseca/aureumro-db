@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { IndexRecord, Meta } from "../types";
 import { loadIndex, loadMeta } from "../lib/data";
@@ -11,6 +11,7 @@ import {
   type Filters,
 } from "../lib/search";
 import type MiniSearch from "minisearch";
+import { readableColor } from "../lib/rotext";
 import { ItemIcon } from "../components/ItemIcon";
 import { FiltersPanel } from "../components/FiltersPanel";
 import { Footer } from "../components/Footer";
@@ -89,6 +90,9 @@ export function HomePage() {
           <span className="tagline">
             Database de itens do servidor{meta ? ` — ${meta.total.toLocaleString("pt-BR")} itens` : ""}
           </span>
+          <Link className="nav-link" to="/hat-quests">
+            Quests de Chapéu
+          </Link>
         </div>
         <div className="searchbar">
           <input
@@ -142,7 +146,7 @@ export function HomePage() {
                     >
                       <ItemIcon id={rec.id} hasIcon={rec.ic === 1} name={rec.n} size={32} />
                       <div className="row-main">
-                        <div className="row-name" style={rec.col ? { color: rec.col } : undefined}>
+                        <div className="row-name" style={rec.col ? { color: readableColor(rec.col) } : undefined}>
                           {rec.n}
                           {rec.sl > 0 ? ` [${rec.sl}]` : ""}
                         </div>

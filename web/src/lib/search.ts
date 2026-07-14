@@ -34,6 +34,7 @@ export interface Filters {
   onlyWithIcon: boolean;
   onlyWithDrops: boolean; // só itens que algum monstro dropa
   onlyPreRenewal: boolean; // só itens que existem no pré-renewal
+  onlyHatQuestIngredient: boolean; // só ingredientes de quests de chapéu
 }
 
 export function emptyFilters(): Filters {
@@ -48,6 +49,7 @@ export function emptyFilters(): Filters {
     onlyWithIcon: false,
     onlyWithDrops: false,
     onlyPreRenewal: false,
+    onlyHatQuestIngredient: false,
   };
 }
 
@@ -59,6 +61,7 @@ export function applyFilters(rec: IndexRecord, f: Filters): boolean {
   if (f.onlyWithIcon && rec.ic !== 1) return false;
   if (f.onlyWithDrops && rec.dr !== 1) return false;
   if (f.onlyPreRenewal && rec.pre !== 1) return false;
+  if (f.onlyHatQuestIngredient && rec.hq !== 1) return false;
   if (f.elements.size && (!rec.el || !f.elements.has(rec.el))) return false;
   if (f.minReqLevel != null && (rec.rl ?? 0) < f.minReqLevel) return false;
   if (f.maxReqLevel != null && (rec.rl ?? 0) > f.maxReqLevel) return false;
@@ -75,6 +78,7 @@ export function hasActiveFacets(f: Filters): boolean {
     f.maxReqLevel != null ||
     f.onlyWithIcon ||
     f.onlyWithDrops ||
-    f.onlyPreRenewal
+    f.onlyPreRenewal ||
+    f.onlyHatQuestIngredient
   );
 }

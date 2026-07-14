@@ -1,4 +1,4 @@
-import type { IndexRecord, ItemDetail, Meta } from "../types";
+import type { HatQuestsFile, IndexRecord, ItemDetail, Meta } from "../types";
 
 // import.meta.env.BASE_URL respeita o `base` do vite.config (funciona em subcaminho).
 const BASE = import.meta.env.BASE_URL;
@@ -22,6 +22,18 @@ export function loadMeta(): Promise<Meta> {
     metaPromise = fetch(`${BASE}data/meta.json`).then((r) => r.json());
   }
   return metaPromise;
+}
+
+let hatQuestsPromise: Promise<HatQuestsFile> | null = null;
+
+export function loadHatQuests(): Promise<HatQuestsFile> {
+  if (!hatQuestsPromise) {
+    hatQuestsPromise = fetch(`${BASE}data/hat-quests.json`).then((r) => {
+      if (!r.ok) throw new Error(`hat-quests: ${r.status}`);
+      return r.json();
+    });
+  }
+  return hatQuestsPromise;
 }
 
 let shardSize = 5000;

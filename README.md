@@ -71,9 +71,18 @@ Roda uma vez; regenera os dados que o site consome. Requer `pip install lupa pil
    → `build/rathena.json`
 6. **`build_data.py`** — junta tudo: índice de busca enxuto, shards por bucket de ID, `meta.json`.
    → `web/public/data/`
+7. **`build_hats.py`** — aplica os efeitos custom dos chapéus do servidor
+   (`resource/hats.json`) sobre as descrições, cria os chapéus que não existem na database
+   (IDs sintéticos 90001+) e gera `web/public/data/hat-quests.json` com as quests de chapéu
+   (`resource/hat_quests.json`) de nomes já resolvidos para IDs. Standalone: só precisa dos
+   JSONs do repo. Emite `build/hats_report.md` com as notas internas dos PDFs e os matches
+   ambíguos. → patch em `web/public/data/`
 
-Ordem: `parse_iteminfo` → `fetch_icons` → `fetch_rathena` → `parse_rathena` → `build_data`.
-(`fetch_icons` e `fetch_rathena` são resumíveis e usam cache em `build/`.)
+Ordem: `parse_iteminfo` → `fetch_icons` → `fetch_rathena` → `parse_rathena` → `build_data`
+→ `build_hats`. (`fetch_icons` e `fetch_rathena` são resumíveis e usam cache em `build/`.)
+
+**Atenção:** `build_data.py` regenera `web/public/data/` do zero e desfaz o patch dos chapéus —
+sempre re-rode `build_hats.py` depois dele.
 
 ### Site (`web/`)
 

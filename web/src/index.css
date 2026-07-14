@@ -1,13 +1,16 @@
+/* Esquema de cores calibrado pelo resource/cores.png (referência validada com um
+   usuário daltônico): fundos cinza-quentes mais claros, bordas taupe de alto contraste
+   e texto off-white quente, no lugar do azul-escuro original. */
 :root {
-  --bg: #0f1115;
-  --bg-panel: #171a21;
-  --bg-elev: #1e222b;
-  --border: #2a2f3a;
-  --text: #e4e7ee;
-  --text-dim: #9aa2b1;
-  --accent: #f0b429;
-  --accent-dim: #8a6d1f;
-  --custom: #35c46a;
+  --bg: #1e222a;
+  --bg-panel: #232732;
+  --bg-elev: #272c38;
+  --border: #7c7365;
+  --text: #dad7d2;
+  --text-dim: #b0a99e;
+  --accent: #ffca41;
+  --accent-dim: #a5822a;
+  --custom: #71e490;
   --link: #6ea8fe;
   --danger: #e5484d;
   --radius: 8px;
@@ -156,7 +159,7 @@ select {
 .chip.custom.active {
   background: var(--custom);
   border-color: var(--custom);
-  color: #04200f;
+  color: #0b2413;
 }
 .level-row {
   display: flex;
@@ -260,7 +263,7 @@ select {
   color: var(--text-dim);
 }
 .badge.custom {
-  background: rgba(53, 196, 106, 0.14);
+  background: rgba(113, 228, 144, 0.14);
   border-color: var(--custom);
   color: var(--custom);
 }
@@ -338,12 +341,12 @@ select {
 }
 
 .badge.mvp {
-  background: rgba(240, 180, 41, 0.16);
+  background: rgba(255, 202, 65, 0.16);
   border-color: var(--accent);
   color: var(--accent);
 }
 .badge.mvp-drop {
-  background: rgba(240, 180, 41, 0.08);
+  background: rgba(255, 202, 65, 0.08);
   border-color: var(--accent-dim);
   color: var(--accent);
 }
@@ -468,16 +471,16 @@ select {
   font-variant-numeric: tabular-nums;
 }
 .rate-common {
-  color: #5ecf7d;
+  color: #71e490;
 }
 .rate-uncommon {
-  color: #9ad14e;
+  color: #afe663;
 }
 .rate-rare {
   color: var(--accent);
 }
 .rate-veryrare {
-  color: #ff7a45;
+  color: #ffa53a;
 }
 .maps {
   display: flex;
@@ -545,4 +548,87 @@ select {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* --- Quests de chapeu ---------------------------------------------------------- */
+.nav-link {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-panel);
+  padding: 4px 12px;
+}
+.nav-link:hover {
+  border-color: var(--accent-dim);
+}
+.quest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.quest-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.quest-hat {
+  margin-bottom: 4px;
+}
+.quest-hat-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+.quest-hat-link:hover .quest-hat-name {
+  color: var(--accent);
+  text-decoration: none;
+}
+.quest-hat-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+.quest-cost {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.quest-ings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.quest-ing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: var(--text);
+}
+a.quest-ing:hover {
+  background: var(--bg-elev);
+  text-decoration: none;
+}
+.quest-ing-amount {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 44px;
+  text-align: right;
+}
+.quest-links {
+  margin-top: 16px;
+}
+.quest-links h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
 }

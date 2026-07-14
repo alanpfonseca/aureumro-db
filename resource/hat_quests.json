@@ -1,0 +1,635 @@
+{
+  "comment": "Transcrição curada de resource/Hat-Quests.pdf. hatPdfName/hatSlot referenciam entradas de resource/hats.json (resolvidos para itemId pelo tools/build_hats.py). Ingredientes com itemId explícito vieram com o ID impresso no PDF.",
+  "zenyCost": 1000000,
+  "quests": [
+    {
+      "id": "angel-blessing",
+      "name": "Angel Blessing",
+      "hatPdfName": "Angel Blessing",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 400, "name": "Pluma" },
+        { "amount": 400, "name": "Plumas de Ave" },
+        { "amount": 150, "name": "Garra de Toupeira" },
+        { "amount": 200, "name": "Pó de Traça" },
+        { "amount": 150, "name": "Ponteiro" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "antena",
+      "name": "Antena",
+      "hatPdfName": "Aerial",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 5, "name": "Vento Bruto" },
+        { "amount": 200, "name": "Misterioso Metal em Pano" },
+        { "amount": 50, "name": "Aço" },
+        { "amount": 100, "name": "Ferro" },
+        { "amount": 100, "name": "Minério de Ferro" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "asas-de-anjo",
+      "name": "Asas de Anjo",
+      "hatPdfName": "Angel Wing",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 150, "name": "Pena Macia" },
+        { "amount": 100, "name": "Pena Azul" },
+        { "amount": 200, "name": "Pena de Harpia" },
+        { "amount": 350, "name": "Pena de Grand Peco" },
+        { "amount": 200, "name": "Tora" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "asas-de-demonio",
+      "name": "Asas de Demônio",
+      "hatPdfName": "Evil Wings",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 150, "name": "Asas de Libélula" },
+        { "amount": 150, "name": "Foice de Louva-a-Deus" },
+        { "amount": 300, "name": "Cauda de Escorpião" },
+        { "amount": 1, "name": "Lâmina Perdida nas Trevas" },
+        { "amount": 200, "name": "Jarro de Nuvem" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "asas-malignas",
+      "name": "Asas Malignas",
+      "hatPdfName": "Evil Wings Ears",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 1, "name": "Gelo Místico" },
+        { "amount": 400, "name": "Crisálida" },
+        { "amount": 500, "name": "Guelra" },
+        { "amount": 350, "name": "Máscara Ritualística" },
+        { "amount": 150, "name": "Foice de Louva-a-Deus" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "boneca-de-alice",
+      "name": "Boneca de Alice",
+      "hatPdfName": "Alice Doll",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 50, "name": "Avental de Alice" },
+        { "amount": 15, "name": "Sangue de Animal" },
+        { "amount": 1, "name": "Chapéu Fedorento" },
+        { "amount": 300, "name": "Couro de Animal" },
+        { "amount": 150, "name": "Tecido" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "bone-de-gatinho",
+      "name": "Boné de Gatinho",
+      "hatPdfName": "Cat Ear Beret",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 5, "name": "Faca de Prata da Castidade" },
+        { "amount": 1, "name": "Grinalda" },
+        { "amount": 300, "name": "Espeto Quebrado" },
+        { "amount": 150, "name": "Casca Quebrada" },
+        { "amount": 200, "name": "Shuriken Despedaçado" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "caneca-de-guarana",
+      "name": "Caneca de Guaraná",
+      "hatPdfName": "Beer Hat",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 100, "name": "Erva Vermelha" },
+        { "amount": 100, "name": "Erva Amarela" },
+        { "amount": 50, "name": "Erva Branca" },
+        { "amount": 100, "name": "Erva Azul" },
+        { "amount": 10, "name": "Chaleira Surrada" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-chines",
+      "name": "Chapéu Chinês",
+      "hatPdfName": "Sakkat",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 150, "name": "Tronco" },
+        { "amount": 300, "name": "Pedaço de Bambu" },
+        { "amount": 240, "name": "Cesto de Palha" },
+        { "amount": 200, "name": "Folha de Figo" },
+        { "amount": 200, "name": "Cauda de Peixe" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-arara-azul",
+      "name": "Chapéu de Arara Azul",
+      "hatPdfName": "Blue Arara Hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 300, "name": "Garra de Lobo" },
+        { "amount": 300, "name": "Garra de Lobo do Deserto" },
+        { "amount": 250, "name": "Folha de Figo" },
+        { "amount": 200, "name": "Runa Sangrenta" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-bebe-dragao",
+      "name": "Chapéu de Bebê Dragão",
+      "hatPdfName": "Baby Dragon Hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 1, "name": "Chapéu de Jiboia" },
+        { "amount": 600, "name": "Canino de Dragão" },
+        { "amount": 150, "name": "Pele de Anolian" },
+        { "amount": 100, "name": "Lábios Fossilizados" },
+        { "amount": 75, "name": "Bijuteria Verde" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-corsario",
+      "name": "Chapéu de Corsário",
+      "hatPdfName": "Corsair",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 1, "name": "Chapéu de Corsário", "slot": 0 },
+        { "amount": 10, "name": "Peridoto" },
+        { "amount": 300, "name": "Coração de Sereia" },
+        { "amount": 120, "name": "Nadadeira" },
+        { "amount": 100, "name": "Peça Queimada" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-deviling",
+      "name": "Chapéu de Deviling",
+      "hatPdfName": "Deviling Hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 1, "name": "Chapéu de Poring" },
+        { "amount": 250, "name": "Garleta" },
+        { "amount": 1, "name": "Mão Divina" },
+        { "amount": 250, "name": "Crisálida" },
+        { "amount": 200, "name": "Pequena Asa Maligna" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-jiboia",
+      "name": "Chapéu de Jiboia",
+      "hatPdfName": "Snake Head",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 250, "name": "Canino Venenoso" },
+        { "amount": 250, "name": "Escamas de Cobra" },
+        { "amount": 50, "name": "Escama Brilhante" },
+        { "amount": 150, "name": "Raiz Marrom" },
+        { "amount": 150, "name": "Pata de Inseto" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-remover",
+      "name": "Chapéu de Remover",
+      "hatPdfName": "Remover Hat",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Casco de Tartaruga" },
+        { "amount": 100, "name": "Saia Virginal" },
+        { "amount": 150, "name": "Língua" },
+        { "amount": 100, "name": "Crânio", "itemId": 7005 },
+        { "amount": 150, "name": "Corda Decomposta" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-de-rideword",
+      "name": "Chapéu de Rideword",
+      "hatPdfName": "Rideword hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 200, "name": "Página Deteriorada" },
+        { "amount": 30, "name": "Marca-Página" },
+        { "amount": 10, "name": "Página Sangrenta" },
+        { "amount": 150, "name": "Elástico" },
+        { "amount": 150, "name": "Festival Mask" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-do-bichopreguica",
+      "name": "Chapéu do Bicho-Preguiça",
+      "hatPdfName": "Sloth Hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 300, "name": "Cauda de Rato" },
+        { "amount": 200, "name": "Argola" },
+        { "amount": 150, "name": "Bigodes de Toupeira" },
+        { "amount": 300, "name": "Nove-Caudas" },
+        { "amount": 150, "name": "Grandes Asas de Borboleta" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-galapago",
+      "name": "Chapéu Galápago",
+      "hatPdfName": "galapago Cap",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 450, "name": "Maçã" },
+        { "amount": 450, "name": "Banana" },
+        { "amount": 450, "name": "Uvas" },
+        { "amount": 150, "name": "Laranja" },
+        { "amount": 300, "name": "Concha" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chapeu-negro-de-borobudur",
+      "name": "Chapéu Negro de Borobudur",
+      "hatPdfName": "Black Musang Hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 200, "name": "Areia Estelar de Bruxa" },
+        { "amount": 100, "name": "Fragmento Estelar" },
+        { "amount": 200, "name": "Broto" },
+        { "amount": 200, "name": "Pele Negra de Urso" },
+        { "amount": 200, "name": "Cabelos Morenos" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "chifre-do-dokebi",
+      "name": "Chifre do Dokebi",
+      "hatPdfName": "Dokebi Horn",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 150, "name": "Chifre de Dokebi" },
+        { "amount": 1, "name": "Maça Espada" },
+        { "amount": 1, "name": "Clava" },
+        { "amount": 50, "name": "Geléia Real" },
+        { "amount": 100, "name": "Casca Brilhante" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "coroa",
+      "name": "Coroa",
+      "hatPdfName": "Crown",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 1, "name": "Coroa", "slot": 0 },
+        { "amount": 300, "name": "Folha de Fumacento" },
+        { "amount": 100, "name": "Cacau" },
+        { "amount": 450, "name": "Pêssego Petrificado" },
+        { "amount": 300, "name": "Ova de Sapo" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "coroa-menor",
+      "name": "Coroa Menor",
+      "hatPdfName": "Coronet",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Cabelos Dourados" },
+        { "amount": 60, "name": "Saia Virginal" },
+        { "amount": 300, "name": "Olho de Gato" },
+        { "amount": 150, "name": "Leque Fantasma" },
+        { "amount": 100, "name": "Pelugem Incandescente" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "diadema",
+      "name": "Diadema",
+      "hatPdfName": "Tiara",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 1, "name": "Tiara", "slot": 0 },
+        { "amount": 15, "name": "Rubi" },
+        { "amount": 1, "name": "Granada" },
+        { "amount": 15, "name": "Aquamarina" },
+        { "amount": 15, "name": "Opala" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "elmo-de-anubis",
+      "name": "Elmo de Anubis",
+      "hatPdfName": "Anubis Helm",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Monte de Lama" },
+        { "amount": 200, "name": "Resina" },
+        { "amount": 150, "name": "Máscara Ritualística" },
+        { "amount": 25, "name": "Bijuteria Vermelha" },
+        { "amount": 2, "name": "Ametista" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "elmo-de-goibne",
+      "name": "Elmo de Goibne",
+      "hatPdfName": "Goibne's Helm",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 150, "name": "Dente de Morcego" },
+        { "amount": 120, "name": "Espinho de Porco-Espinho" },
+        { "amount": 200, "name": "Avelã" },
+        { "amount": 170, "name": "Brasão" },
+        { "amount": 50, "name": "Máscara Ninja" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "elmo-de-osso",
+      "name": "Elmo de Osso",
+      "hatPdfName": "Bone Helm",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Pequeno Chifre Maligno" },
+        { "amount": 300, "name": "Pequena Asa Maligna" },
+        { "amount": 300, "name": "Lampião" },
+        { "amount": 100, "name": "Utensílio Rural Quebrado" },
+        { "amount": 200, "name": "Jarro de Saque" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "elmo-de-osso-2",
+      "name": "Elmo de Osso [1]",
+      "hatPdfName": "Bone Helm",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 1, "name": "Capacete de Segurança" },
+        { "amount": 1, "name": "Elmo de Osso", "slot": 0 },
+        { "amount": 20, "name": "Aço" },
+        { "amount": 50, "name": "Ferro" },
+        { "amount": 100, "name": "Minério de Ferro" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "elmo-do-abismo",
+      "name": "Elmo do Abismo",
+      "hatPdfName": "Helm Of Abyss",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 250, "name": "Ferradura" },
+        { "amount": 200, "name": "Coração Incandescente" },
+        { "amount": 150, "name": "Frigideira Velha" },
+        { "amount": 25, "name": "Bigode de Anão Ancião" },
+        { "amount": 400, "name": "Unha Apodrecida" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "espirito-olimpico",
+      "name": "Espírito Olímpico",
+      "hatPdfName": "Angel Spirit",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 240, "name": "Pata de Urso" },
+        { "amount": 750, "name": "Cyfar" },
+        { "amount": 250, "name": "Pele de Minhoca" },
+        { "amount": 200, "name": "Cabelos Perfumados" },
+        { "amount": 300, "name": "Perna de Gafanhoto" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "faixa-de-fantasma",
+      "name": "Faixa de Fantasma",
+      "hatPdfName": "Ghost Bandana",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 150, "name": "Bandagem Estragada" },
+        { "amount": 50, "name": "Espólio" },
+        { "amount": 300, "name": "Trança", "itemId": 901 },
+        { "amount": 150, "name": "Escama Fétida" },
+        { "amount": 300, "name": "Trança Curta", "itemId": 1094 },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "gorro",
+      "name": "Gorro",
+      "hatPdfName": "Beanie",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 30, "name": "Aquamarina" },
+        { "amount": 150, "name": "Escama Aquática" },
+        { "amount": 100, "name": "Armadura de Dullahan" },
+        { "amount": 200, "name": "Chifre de Bode" },
+        { "amount": 100, "name": "Bactérias" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "mascara-colorida",
+      "name": "Máscara Colorida",
+      "hatPdfName": "Rainbow Scarf",
+      "hatSlot": null,
+      "ingredients": [
+        { "amount": 50, "name": "Lábios Fossilizados" },
+        { "amount": 150, "name": "Bala" },
+        { "amount": 105, "name": "Bengala Doce" },
+        { "amount": 15, "name": "Vento Bruto" },
+        { "amount": 700, "name": "Brigan" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "mascara-de-fugitivo",
+      "name": "Máscara de Fugitivo",
+      "hatPdfName": "Gangster Scarf",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Casca Arredondada" },
+        { "amount": 500, "name": "Ponteiro" },
+        { "amount": 400, "name": "Presa de Zenorc" },
+        { "amount": 400, "name": "Antenas Afiadas" },
+        { "amount": 400, "name": "Garra de Harpia" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "ninho-abandonado",
+      "name": "Ninho Abandonado",
+      "hatPdfName": "Bird Nest",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 150, "name": "Jellopy" },
+        { "amount": 150, "name": "Felpa" },
+        { "amount": 100, "name": "Trevo" },
+        { "amount": 100, "name": "Garrafa Vazia" },
+        { "amount": 150, "name": "Pata de Urso" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "olho-do-ciclope",
+      "name": "Olho do Ciclope",
+      "hatPdfName": "Cyclop's Eye",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Esporo de Cogumelo" },
+        { "amount": 6, "name": "Opala" },
+        { "amount": 250, "name": "Broto" },
+        { "amount": 300, "name": "Coração de Sereia" },
+        { "amount": 300, "name": "Pote de Mel" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "olhos-bionicos",
+      "name": "Olhos Biônicos",
+      "hatPdfName": "Robo Eye",
+      "hatSlot": null,
+      "ingredients": [
+        { "amount": 400, "name": "Célula Única", "itemId": 1052 },
+        { "amount": 400, "name": "Tentáculo" },
+        { "amount": 400, "name": "Tinta de Polvo" },
+        { "amount": 400, "name": "Cabelo Horrendo" },
+        { "amount": 400, "name": "Ferradura" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "olhos-da-escuridao",
+      "name": "Olhos da Escuridão",
+      "hatPdfName": "Eye of dark",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 100, "name": "Pedaço de Casca de Ovo" },
+        { "amount": 250, "name": "Pele de Minhoca" },
+        { "amount": 30, "name": "Poeira Estelar" },
+        { "amount": 300, "name": "Cubo de Gelo" },
+        { "amount": 300, "name": "Antenas de Inseto" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "orelhas-de-anjo",
+      "name": "Orelhas de Anjo",
+      "hatPdfName": "Angel wing Ears",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 500, "name": "Pele de Anolian" },
+        { "amount": 300, "name": "Argola" },
+        { "amount": 300, "name": "Brigan" },
+        { "amount": 450, "name": "Pele de Lontra" },
+        { "amount": 400, "name": "Lanterna de Abóbora", "itemId": 7225 },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "orelhas-do-ifrit",
+      "name": "Orelhas do Ifrit",
+      "hatPdfName": "Ears of Ifrit",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Pata Pegajosa" },
+        { "amount": 350, "name": "Mandíbula Horrenda" },
+        { "amount": 350, "name": "Coração de Sereia" },
+        { "amount": 350, "name": "Jubileu" },
+        { "amount": 300, "name": "Dente de Ogro", "itemId": 7002 },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "orelhas-felinas",
+      "name": "Orelhas Felinas",
+      "hatPdfName": "WhikebainEars",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 20, "name": "Boneco de Gato Preto" },
+        { "amount": 80, "name": "Gaiola de Morcegos" },
+        { "amount": 300, "name": "Cyfar" },
+        { "amount": 450, "name": "Cabelo Azul" },
+        { "amount": 250, "name": "Bico de Ave" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "pergaminho-de-ninpou",
+      "name": "Pergaminho de Ninpou",
+      "hatPdfName": "Ninja Scroll",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 600, "name": "Nove-Caudas" },
+        { "amount": 450, "name": "Presa" },
+        { "amount": 300, "name": "Pedaço de Escama Dura" },
+        { "amount": 150, "name": "Pedra Pome" },
+        { "amount": 450, "name": "Pele de Leopardo" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "sol-flamejante",
+      "name": "Sol Flamejante",
+      "hatPdfName": "Blazing Sun",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 15, "name": "Coração Flamejante" },
+        { "amount": 25, "name": "Sangue Escarlate" },
+        { "amount": 250, "name": "Fruta Espinhosa Escarlate" },
+        { "amount": 10, "name": "Concha Preta" },
+        { "amount": 300, "name": "Cipó" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "tiara-de-planta-carnivora",
+      "name": "Tiara de Planta Carnívora",
+      "hatPdfName": "Geographer hat",
+      "hatSlot": 1,
+      "ingredients": [
+        { "amount": 200, "name": "Flor de Planta Carnívora" },
+        { "amount": 200, "name": "Raiz de Planta Carnívora" },
+        { "amount": 5, "name": "Flor Cantante" },
+        { "amount": 3, "name": "Aloés" },
+        { "amount": 1, "name": "Boneco de Chonchon" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "touca-de-pijama-azul",
+      "name": "Touca de Pijama Azul",
+      "hatPdfName": "Blue Night Cap",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 300, "name": "Osso" },
+        { "amount": 200, "name": "Pó de Borboleta" },
+        { "amount": 150, "name": "Flor" },
+        { "amount": 250, "name": "Cabelo Azul" },
+        { "amount": 10, "name": "Marca-Página" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    },
+    {
+      "id": "venda-sombria",
+      "name": "Venda Sombria",
+      "hatPdfName": "Dark Blinder",
+      "hatSlot": 0,
+      "ingredients": [
+        { "amount": 250, "name": "Amuleto dos Orcs" },
+        { "amount": 100, "name": "Emveretarcon" },
+        { "amount": 2, "name": "Anel de Flor" },
+        { "amount": 300, "name": "Tora" },
+        { "amount": 200, "name": "Crina" },
+        { "amount": 1500, "name": "Aureum Coin" }
+      ]
+    }
+  ]
+}

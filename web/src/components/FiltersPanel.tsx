@@ -145,6 +145,16 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
           />
           Só com ícone
         </label>
+        <label className="toggle" style={{ marginTop: 6 }}>
+          <input
+            type="checkbox"
+            checked={filters.onlyHatQuestIngredient}
+            onChange={(e) =>
+              setFilters((f) => ({ ...f, onlyHatQuestIngredient: e.target.checked }))
+            }
+          />
+          Só ingredientes de quests de chapéu
+        </label>
       </div>
 
       {(hasActiveFacets(filters) || filters.text) && (

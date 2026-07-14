@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { ItemDetail } from "../types";
-import { loadItem, collectionUrl } from "../lib/data";
-import { colorize } from "../lib/rotext";
+import type { HatQuest, ItemDetail } from "../types";
+import { loadItem, loadHatQuests, collectionUrl } from "../lib/data";
+import { colorize, readableColor } from "../lib/rotext";
 import { ItemIcon } from "../components/ItemIcon";
 import { DropTable } from "../components/DropTable";
 import { tSubType, tJob } from "../lib/i18n";
@@ -35,6 +35,7 @@ export function ItemPage() {
   const [item, setItem] = useState<ItemDetail | null | undefined>(undefined);
   const [copied, setCopied] = useState(false);
   const [collFailed, setCollFailed] = useState(false);
+  const [hatQuests, setHatQuests] = useState<HatQuest[]>([]);
 
   useEffect(() => {
     setItem(undefined);
@@ -42,6 +43,18 @@ export function ItemPage() {
     window.scrollTo(0, 0);
     loadItem(itemId).then(setItem).catch(() => setItem(null));
   }, [itemId]);
+
+  // Nao bloqueia a pagina: se o hat-quests.json nao existir, as secoes so nao aparecem.
+  useEffect(() => {
+    loadHatQuests()
+      .then((f) => setHatQuests(f.quests))
+      .catch(() => setHatQuests([]));
+  }, []);
+
+  const usedInQuests = hatQuests.filter((q) =>
+    q.ingredients.some((i) => i.itemId === itemId),
+  );
+  const rewardOfQuests = hatQuests.filter((q) => q.hatId === itemId);
 
   useEffect(() => {
     if (item) document.title = `${item.name} — AureumRO DB`;
@@ -71,7 +84,7 @@ export function ItemPage() {
   const off = item.official;
   const f = item.facets;
   const divs = item.divergences;
-  const nameStyle = item.nameColor ? { color: item.nameColor } : undefined;
+  const nameStyle = item.nameColor ? { color: readableColor(item.nameColor) } : undefined;
   const showCollection = item.iconSource !== "none" && !collFailed;
 
   // A tabela principal usa os valores PRE-RENEWAL quando existem: o servidor é pré-re,
@@ -200,6 +213,36 @@ export function ItemPage() {
                 ))}
               </div>
             </>
+          )}
+
+          {rewardOfQuests.length > 0 && (
+            <div className="quest-links">
+              <h4>Obtido pela quest de chapéu</h4>
+              <div className="chip-row">
+                {rewardOfQuests.map((q) => (
+                  <Link key={q.id} className="chip" to={`/hat-quests?quest=${q.id}`}>
+                    {q.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {usedInQuests.length > 0 && (
+            <div className="quest-links">
+              <h4>Usado nas quests de chapéu</h4>
+              <div className="chip-row">
+                {usedInQuests.map((q) => {
+                  const ing = q.ingredients.find((i) => i.itemId === itemId);
+                  return (
+                    <Link key={q.id} className="chip" to={`/hat-quests?quest=${q.id}`}>
+                      {q.name}
+                      {ing ? ` (${ing.amount}x)` : ""}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
           )}
         </div>
       </div>

@@ -1,0 +1,6 @@
+﻿itens com hq=1: 197
+novos: [(90001, 'Olhos da Escurid�o', 'Headgear', 1), (90002, 'Nipper Crab Hairpin', 'Headgear', 1)]
+5076 desc: ['A cada 3 refinos = +5% resist�ncia a Congelar e +2% resist�ncia a �gua', '^777777Efeito atualizado � AureumRO^000000']
+5076 st: 'a cada 3 refinos = +5% resist�ncia a congelar e +2% resist�ncia a �gua\nefeito atualizado �'
+shard18 keys: ['90001', '90002']
+meta total/custom: 20774 1080
