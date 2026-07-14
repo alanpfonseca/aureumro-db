@@ -1,0 +1,14 @@
+# Dependências e build do site
+web/node_modules/
+web/dist/
+
+# Artefatos intermediários do pipeline (regeneráveis)
+build/cdn_cache/
+build/items.raw.json
+
+# Os dados finais (web/public/data + web/public/icons) SÃO versionados de propósito:
+# é o que faz o site funcionar como pasta estática sem rodar o pipeline.
+
+__pycache__/
+*.pyc
+.DS_Store
