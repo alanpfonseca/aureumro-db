@@ -1,5 +1,5 @@
 import type { Meta } from "../types";
-import { emptyFilters, hasActiveFacets, type Filters } from "../lib/search";
+import { emptyFilters, hasActiveFacets, type Filters } from "../lib/filters";
 
 interface Props {
   meta: Meta | null;

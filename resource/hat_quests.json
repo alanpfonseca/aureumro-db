@@ -189,10 +189,10 @@
       "hatPdfName": "Snake Head",
       "hatSlot": 1,
       "ingredients": [
+        { "amount": 1, "name": "Chapéu de Pintinho" },
         { "amount": 250, "name": "Canino Venenoso" },
         { "amount": 250, "name": "Escamas de Cobra" },
         { "amount": 50, "name": "Escama Brilhante" },
-        { "amount": 150, "name": "Raiz Marrom" },
         { "amount": 150, "name": "Pata de Inseto" },
         { "amount": 1500, "name": "Aureum Coin" }
       ]

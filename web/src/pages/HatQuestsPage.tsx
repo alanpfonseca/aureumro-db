@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { HatQuest, HatQuestsFile } from "../types";
-import { loadHatQuests } from "../lib/data";
+import { getHatQuests } from "../lib/queries";
 import { deaccent } from "../lib/deaccent";
 import { ItemIcon } from "../components/ItemIcon";
 
@@ -17,7 +17,7 @@ export function HatQuestsPage() {
   const questParam = searchParams.get("quest");
 
   useEffect(() => {
-    loadHatQuests().then(setData).catch((e) => setError(String(e)));
+    getHatQuests().then(setData).catch((e) => setError(String(e)));
   }, []);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export function HatQuestsPage() {
         <div className="center-note">
           Erro ao carregar as quests: {error}
           <br />
-          Rode <code>py tools/build_hats.py</code> para gerar o hat-quests.json.
+          Rode <code>py tools/build_hats.py</code> para gravar as quests no banco.
         </div>
       </div>
     );

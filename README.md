@@ -35,14 +35,20 @@ quase sempre, o descompasso renewal-vs-pré-re do próprio jogo base.)
 cliente AureumRO                          web/ (React + Vite + TS)
   SystemEN/itemInfo*.lua  ──┐
   SystemEN/mapInfo.lub      │   tools/ (Python)          public/data/
-  color_items.txt           ├─► parse_iteminfo.py  ──►    search-index.json  (busca + filtros)
-                            │   parse_facets.py           shards/<n>.json    (detalhe, sob demanda)
-rAthena pré-re (GitHub)  ───┼─► fetch_rathena.py          meta.json
+  color_items.txt           ├─► parse_iteminfo.py  ──►    aureumro.db   (SQLite: itens, detalhes,
+                            │   parse_facets.py                          busca FTS5, quests, meta)
+rAthena pré-re (GitHub)  ───┼─► fetch_rathena.py          db-info.json  (versão + tamanho)
   db/pre-re/item_db_*.yml   │   parse_rathena.py
-  db/pre-re/mob_db.yml      │   build_data.py
+  db/pre-re/mob_db.yml      │   build_data.py + build_hats.py
   npc/pre-re/mobs/*.txt     │
 divine-pride CDN  ──────────┴─► fetch_icons.py     ──►    public/icons/<id>.png
 ```
+
+O site consulta o `aureumro.db` **direto no navegador** via
+[sql.js-httpvfs](https://github.com/phiresky/sql.js-httpvfs): o SQLite roda em WASM num worker
+e baixa só as páginas de 4 KB necessárias por HTTP Range requests — nada de baixar a base
+inteira. O banco também pode ser aberto/editado no **DB Browser for SQLite** (depois de editar
+na mão, rode `build_hats.py` — ou regrave `db-info.json` — para atualizar a versão).
 
 ### Pipeline (`tools/`, Python 3)
 
@@ -69,14 +75,15 @@ Roda uma vez; regenera os dados que o site consome. Requer `pip install lupa pil
    Duas pegadinhas de formato tratadas aqui: em `mob_db.yml` os drops referenciam o item por
    `AegisName` (não por ID), e `Rate` é em 1/10000 (7000 = 70%).
    → `build/rathena.json`
-6. **`build_data.py`** — junta tudo: índice de busca enxuto, shards por bucket de ID, `meta.json`.
-   → `web/public/data/`
+6. **`build_data.py`** — junta tudo no banco: tabelas `items` (listagem/filtros),
+   `item_details` (JSON pesado por item), `items_fts` (busca FTS5) e `meta`.
+   → `web/public/data/aureumro.db` + `db-info.json`
 7. **`build_hats.py`** — aplica os efeitos custom dos chapéus do servidor
    (`resource/hats.json`) sobre as descrições, cria os chapéus que não existem na database
-   (IDs sintéticos 90001+) e gera `web/public/data/hat-quests.json` com as quests de chapéu
-   (`resource/hat_quests.json`) de nomes já resolvidos para IDs. Standalone: só precisa dos
-   JSONs do repo. Emite `build/hats_report.md` com as notas internas dos PDFs e os matches
-   ambíguos. → patch em `web/public/data/`
+   (IDs sintéticos 90001+) e grava as quests de chapéu (`resource/hat_quests.json`) nas
+   tabelas `hat_quests`/`hat_quest_ingredients`, com nomes já resolvidos para IDs.
+   Standalone: só precisa dos JSONs do repo. Emite `build/hats_report.md` com as notas
+   internas dos PDFs e os matches ambíguos. → patch no `aureumro.db`
 
 Ordem: `parse_iteminfo` → `fetch_icons` → `fetch_rathena` → `parse_rathena` → `build_data`
 → `build_hats`. (`fetch_icons` e `fetch_rathena` são resumíveis e usam cache em `build/`.)
@@ -93,11 +100,15 @@ npm run dev        # desenvolvimento
 npm run build      # gera dist/ estático (publicável em GitHub Pages / Netlify / Vercel)
 ```
 
-- Índice enxuto (~9 MB, ~2 MB gzip) carregado uma vez; busca com **MiniSearch** construída em
-  memória (~0,9 s). Filtros aplicados em JS.
+- Dados via **SQLite no navegador** (sql.js-httpvfs): nada é carregado em massa — a listagem
+  pagina com `LIMIT/OFFSET`, a busca é **FTS5** (`bm25` com peso 3× no nome, prefixos, sem
+  acento via `remove_diacritics`) e o detalhe é um probe de PK. O worker baixa só as páginas
+  de 4 KB necessárias (Range requests) e as mantém em cache entre navegações.
 - Lista **virtualizada** (`@tanstack/react-virtual`) — 20 k itens sem travar.
-- Detalhe carrega só o shard do item, sob demanda.
+- Voltar do item restaura busca, filtros e posição do scroll (`lib/homeSession.ts`).
 - Rotas por hash (`#/item/501`) — funciona em qualquer host estático, sem rewrite.
+- O `requestChunkSize` do front (`web/src/lib/db.ts`) deve ser sempre igual ao
+  `PRAGMA page_size` do banco (`tools/db_common.py`): hoje, 4096.
 
 ## Ícones
 

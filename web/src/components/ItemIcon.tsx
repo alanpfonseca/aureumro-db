@@ -1,21 +1,21 @@
 import { useState } from "react";
-import { cdnItemUrl } from "../lib/data";
+import { cdnItemUrl, localIconUrl } from "../lib/data";
 
 interface Props {
   id: number;
   hasIcon: boolean;
   name: string;
   size?: number;
-  big?: boolean; // no detalhe, tenta a imagem grande (collection) primeiro
+  // Tentar o CDN externo quando nao ha icone local. So a pagina de detalhe liga isso:
+  // na listagem (20k linhas) cada tentativa seria um request externo lento/404.
+  cdnFallback?: boolean;
 }
 
-// Degrada em cadeia: icone local -> CDN por id -> placeholder. Um item custom orfao
-// (sem icone local e inexistente no CDN) cai no placeholder sem quebrar o layout.
-export function ItemIcon({ id, hasIcon, name, size = 32 }: Props) {
-  const base = import.meta.env.BASE_URL;
+// Degrada em cadeia: icone local -> CDN por id (se cdnFallback) -> placeholder.
+export function ItemIcon({ id, hasIcon, name, size = 32, cdnFallback = false }: Props) {
   const chain: string[] = [];
-  if (hasIcon) chain.push(`${base}icons/${id}.png`);
-  chain.push(cdnItemUrl(id));
+  if (hasIcon) chain.push(localIconUrl(id));
+  if (cdnFallback) chain.push(cdnItemUrl(id));
 
   const [step, setStep] = useState(0);
   const failed = step >= chain.length;
@@ -39,6 +39,7 @@ export function ItemIcon({ id, hasIcon, name, size = 32 }: Props) {
       width={size}
       height={size}
       loading="lazy"
+      decoding="async"
       alt={name}
       className="item-icon"
       onError={() => setStep((s) => s + 1)}

@@ -239,6 +239,13 @@ select {
   min-width: 0;
   flex: 1;
 }
+.row-skeleton {
+  display: inline-block;
+  width: 40%;
+  height: 12px;
+  border-radius: 4px;
+  background: var(--bg-elev);
+}
 .row-name {
   font-weight: 600;
   white-space: nowrap;
@@ -313,6 +320,14 @@ select {
   white-space: pre-wrap;
   font-size: 13.5px;
   margin: 14px 0;
+}
+.detail-desc a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.detail-desc a:hover {
+  color: var(--accent);
 }
 .facet-table {
   width: 100%;
@@ -621,14 +636,4 @@ a.quest-ing:hover {
   font-variant-numeric: tabular-nums;
   min-width: 44px;
   text-align: right;
-}
-.quest-links {
-  margin-top: 16px;
-}
-.quest-links h4 {
-  margin: 0 0 8px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-dim);
 }

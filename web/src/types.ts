@@ -1,25 +1,18 @@
-// Registro enxuto do search-index.json (chaves curtas p/ economizar bytes em 20k itens).
-export interface IndexRecord {
+// Linha da listagem, como sai do SELECT em queries.ts (colunas da tabela `items`
+// do aureumro.db; SQL devolve null onde a coluna e opcional).
+export interface ListRow {
   id: number;
   n: string; // nome
-  sn: string; // nome sem acento (busca)
-  st: string; // texto da descricao em minusculo (busca)
   t: string; // tipo
   sl: number; // slots
   c: 0 | 1; // custom
   u: 0 | 1; // sem traducao (nome coreano)
   ic: 0 | 1; // tem icone
-  rl?: number; // nivel necessario
-  wl?: number; // nivel da arma
-  atk?: number;
-  def?: number;
-  matk?: number;
-  el?: string; // elemento
-  jb?: string; // profissoes
-  col?: string; // cor do nome
   dr: 0 | 1; // tem fonte de drop conhecida
-  pre: 0 | 1; // existe no pre-renewal oficial
-  hq?: 0 | 1; // e ingrediente de alguma quest de chapeu (setado pelo build_hats.py)
+  rl: number | null; // nivel necessario
+  atk: number | null;
+  def: number | null;
+  col: string | null; // cor do nome
 }
 
 // --- Quests de chapeu (hat-quests.json, gerado pelo tools/build_hats.py) ---------
@@ -134,9 +127,10 @@ export interface Meta {
   preRenewal: number;
   divergent: number;
   mobs: number;
-  shardSize: number;
   types: string[];
   elements: string[];
   maxSlots: number;
   generatedFrom: string;
+  dbVersion?: number;
+  zenyCost?: number; // custo das quests de chapeu (gravado pelo build_hats.py)
 }

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import type { HatQuest, ItemDetail } from "../types";
-import { loadItem, loadHatQuests, collectionUrl } from "../lib/data";
-import { colorize, readableColor } from "../lib/rotext";
+import type { ItemDetail } from "../types";
+import { collectionUrl } from "../lib/data";
+import { getItemDetail, getQuestsUsingItem, getQuestsRewarding, type QuestChip } from "../lib/queries";
+import { colorize, readableColor, stripColors } from "../lib/rotext";
 import { ItemIcon } from "../components/ItemIcon";
 import { DropTable } from "../components/DropTable";
 import { tSubType, tJob } from "../lib/i18n";
@@ -29,32 +30,54 @@ function loc(l: string) {
   return LOCATION_PT[l] ?? l.replace(/_/g, " ");
 }
 
+// A linha "Usado na fabricação de:" vem do cliente do jogo (rótulo em ^EE8800) e, quando
+// existe, ela e suas continuações (o cliente quebra em ~40 colunas) são sempre o fim da
+// descrição — verificado nos 197 ingredientes da base.
+const FAB_LABEL = "Usado na fabricação de:";
+const FAB_RE = /^usado na fabrica[çc][ãa]o de:\s*/i;
+
+// Acima disso, não listamos quest por quest: mantemos o texto do cliente como um link só
+// para a página de quests (caso Aureum Coin, ingrediente de todas as 45).
+const MANY_QUESTS = 10;
+
+const questLabelStyle = { color: readableColor("EE8800") };
+
+function questLinks(quests: QuestChip[]) {
+  return quests.map((q, i) => (
+    <Fragment key={q.id}>
+      {i > 0 && ", "}
+      <Link to={`/hat-quests?quest=${q.id}`}>{q.name}</Link>
+    </Fragment>
+  ));
+}
+
 export function ItemPage() {
   const { id } = useParams();
   const itemId = Number(id);
   const [item, setItem] = useState<ItemDetail | null | undefined>(undefined);
   const [copied, setCopied] = useState(false);
   const [collFailed, setCollFailed] = useState(false);
-  const [hatQuests, setHatQuests] = useState<HatQuest[]>([]);
+  const [usedInQuests, setUsedInQuests] = useState<QuestChip[]>([]);
+  const [rewardOfQuests, setRewardOfQuests] = useState<QuestChip[]>([]);
 
   useEffect(() => {
     setItem(undefined);
     setCollFailed(false);
     window.scrollTo(0, 0);
-    loadItem(itemId).then(setItem).catch(() => setItem(null));
+    getItemDetail(itemId).then(setItem).catch(() => setItem(null));
   }, [itemId]);
 
-  // Nao bloqueia a pagina: se o hat-quests.json nao existir, as secoes so nao aparecem.
+  // Nao bloqueia a pagina: se as queries de quest falharem, as secoes so nao aparecem.
   useEffect(() => {
-    loadHatQuests()
-      .then((f) => setHatQuests(f.quests))
-      .catch(() => setHatQuests([]));
-  }, []);
-
-  const usedInQuests = hatQuests.filter((q) =>
-    q.ingredients.some((i) => i.itemId === itemId),
-  );
-  const rewardOfQuests = hatQuests.filter((q) => q.hatId === itemId);
+    let alive = true;
+    setUsedInQuests([]);
+    setRewardOfQuests([]);
+    getQuestsUsingItem(itemId).then((q) => alive && setUsedInQuests(q)).catch(() => {});
+    getQuestsRewarding(itemId).then((q) => alive && setRewardOfQuests(q)).catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, [itemId]);
 
   useEffect(() => {
     if (item) document.title = `${item.name} — AureumRO DB`;
@@ -110,6 +133,36 @@ export function ItemPage() {
   add("Preço de compra", off?.buy ? `${off.buy.toLocaleString("pt-BR")} z` : undefined);
   add("Nome interno", off?.aegisName);
 
+  // Substitui a linha de fabricação do cliente por uma versão com links (dados do banco).
+  // Se as quests ainda não carregaram — ou a linha ficou órfã de quest — o texto original
+  // permanece intacto dentro de bodyLines.
+  const fabIdx = item.descriptionLines.findIndex((l) => FAB_RE.test(stripColors(l).trim()));
+  const cutTail = fabIdx >= 0 && usedInQuests.length > 0;
+  const bodyLines = cutTail ? item.descriptionLines.slice(0, fabIdx) : item.descriptionLines;
+  const fabTailText =
+    fabIdx >= 0
+      ? item.descriptionLines.slice(fabIdx).map((l) => stripColors(l).trim()).join(" ").replace(FAB_RE, "")
+      : "";
+
+  const fabLine =
+    usedInQuests.length >= MANY_QUESTS ? (
+      <>
+        <span style={questLabelStyle}>{FAB_LABEL}</span>{" "}
+        <Link to="/hat-quests">{fabTailText || "quests de chapéu"}</Link>
+      </>
+    ) : usedInQuests.length > 0 ? (
+      <>
+        <span style={questLabelStyle}>{FAB_LABEL}</span> {questLinks(usedInQuests)}
+      </>
+    ) : null;
+
+  const rewardLine =
+    rewardOfQuests.length > 0 ? (
+      <>
+        <span style={questLabelStyle}>Obtido na quest de:</span> {questLinks(rewardOfQuests)}
+      </>
+    ) : null;
+
   return (
     <div className="app">
       <Link className="back-link" to="/">← Voltar para a busca</Link>
@@ -124,7 +177,7 @@ export function ItemPage() {
               onError={() => setCollFailed(true)}
             />
           ) : (
-            <ItemIcon id={item.id} hasIcon={item.iconSource !== "none"} name={item.name} size={96} />
+            <ItemIcon id={item.id} hasIcon={item.iconSource !== "none"} name={item.name} size={96} cdnFallback />
           )}
         </div>
 
@@ -204,45 +257,17 @@ export function ItemPage() {
             </div>
           ) : null}
 
-          {item.descriptionLines.length > 0 && (
+          {(bodyLines.length > 0 || fabLine || rewardLine) && (
             <>
               <h4 className="desc-head">Descrição no jogo</h4>
               <div className="detail-desc">
-                {item.descriptionLines.map((line, i) => (
+                {bodyLines.map((line, i) => (
                   <div key={i}>{colorize(line)}</div>
                 ))}
+                {fabLine && <div>{fabLine}</div>}
+                {rewardLine && <div>{rewardLine}</div>}
               </div>
             </>
-          )}
-
-          {rewardOfQuests.length > 0 && (
-            <div className="quest-links">
-              <h4>Obtido pela quest de chapéu</h4>
-              <div className="chip-row">
-                {rewardOfQuests.map((q) => (
-                  <Link key={q.id} className="chip" to={`/hat-quests?quest=${q.id}`}>
-                    {q.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {usedInQuests.length > 0 && (
-            <div className="quest-links">
-              <h4>Usado nas quests de chapéu</h4>
-              <div className="chip-row">
-                {usedInQuests.map((q) => {
-                  const ing = q.ingredients.find((i) => i.itemId === itemId);
-                  return (
-                    <Link key={q.id} className="chip" to={`/hat-quests?quest=${q.id}`}>
-                      {q.name}
-                      {ing ? ` (${ing.amount}x)` : ""}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
           )}
         </div>
       </div>

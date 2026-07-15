@@ -1,26 +1,30 @@
-"""Transforma items.raw.json nos artefatos que o site consome.
+"""Transforma items.raw.json no banco SQLite que o site consome.
 
-Saidas (em web/public/data/):
-  search-index.json  -- UM registro enxuto por item, com tudo que a busca e os filtros
-                        precisam (nome, texto sem acento, e as facetas). Carregado uma vez
-                        no boot; e a lista-mestra em memoria. Campos com nome curto pra
-                        cortar bytes em 20k itens.
-  items-<shard>.json -- dados pesados (linhas de descricao com cor, resourceName) de cada
-                        item, agrupados por shard = id // SHARD_SIZE. Carregado sob demanda
-                        pela pagina de detalhe -- nunca tudo de uma vez.
-  meta.json          -- listas de valores distintos por faceta (pros dropdowns) + contagens.
+Saida: web/public/data/aureumro.db (+ db-info.json), consultado DIRETO no navegador
+via sql.js-httpvfs (HTTP Range requests — so as paginas necessarias sao baixadas).
+Tabelas (schema em db_common.py):
+  items         -- registro enxuto por item (listagem + filtros)
+  item_details  -- JSON pesado por item (descricao com cor, facetas, stats oficiais,
+                   drops com mapas) -- 1 probe de PK por pagina de detalhe
+  items_fts     -- FTS5 sobre nome (sn) + texto da descricao (st) p/ busca
+  meta          -- chave/valor (contagens, listas de facetas)
 
-O manifesto de icones (build/icon_manifest.json) diz quais itens tem icone e a proveniencia.
-Se ele ainda nao existe (fetch_icons nao rodou), assume "sem icone" e segue -- o build nao
-depende dos downloads terem terminado.
+O manifesto de icones (build/icon_manifest.json) diz quais itens tem icone e a
+proveniencia. Se ele ainda nao existe (fetch_icons nao rodou), assume "sem icone"
+e segue -- o build nao depende dos downloads terem terminado.
 
-ATENCAO: este script regenera web/public/data/ do zero -- rode tools/build_hats.py depois,
-ele aplica as descricoes custom dos chapeus e gera o hat-quests.json.
+ATENCAO: este script regenera o banco do zero -- rode tools/build_hats.py depois,
+ele aplica as descricoes custom dos chapeus e grava as quests de chapeu.
+O banco pode ser aberto/editado no DB Browser for SQLite; depois de editar na mao,
+regrave o db-info.json (ou rode build_hats.py, que ja faz isso).
 """
 
 import json
-from collections import Counter, defaultdict
+import shutil
+from collections import Counter
 from pathlib import Path
+
+from db_common import DB_PATH, open_db, rebuild_fts, finish
 
 ROOT = Path(__file__).parent.parent
 ITEMS = ROOT / "build" / "items.raw.json"
@@ -28,14 +32,11 @@ ICON_MANIFEST = ROOT / "build" / "icon_manifest.json"
 RATHENA = ROOT / "build" / "rathena.json"
 OUT = ROOT / "web" / "public" / "data"
 
-SHARD_SIZE = 5000  # id // 5000 -> shard. O front calcula igual.
-
 MAX_DROPS_PER_ITEM = 40   # itens de lixo (Jellopy) sao dropados por dezenas de mobs
 MAX_MAPS_PER_MOB = 8
 
-
-def shard_of(iid):
-    return iid // SHARD_SIZE
+# Saidas do formato antigo (JSON) -- removidas se ainda existirem.
+LEGACY_OUTPUTS = ["search-index.json", "meta.json", "hat-quests.json", "shards"]
 
 
 def main():
@@ -59,9 +60,9 @@ def main():
         print("AVISO: rathena.json ausente -- sem drops/stats pre-re.")
 
     OUT.mkdir(parents=True, exist_ok=True)
+    conn = open_db(fresh=True)
 
-    index = []
-    shards = defaultdict(dict)
+    item_rows, detail_rows, st_by_id = [], [], {}
 
     for it in items:
         iid = it["id"]
@@ -69,44 +70,37 @@ def main():
         off = official.get(iid)
         drops = dropped_by.get(iid, [])
 
-        # Registro enxuto (chaves curtas). Presenca de faceta > None so quando existe.
-        rec = {
-            "id": iid,
-            "n": it["name"],
-            "sn": it["searchName"],           # nome sem acento, minusculo
-            "st": it["descriptionText"].lower(),  # texto p/ busca (ja sem codigo de cor)
-            "t": it["type"],
-            "sl": it["slotCount"],
-            "c": 1 if it["isCustom"] else 0,
-            "u": 1 if it.get("untranslated") else 0,
-            "ic": 1 if icon != "none" else 0,
-            "dr": 1 if drops else 0,          # tem fonte de drop conhecida
-            "pre": 1 if off else 0,           # existe no pre-renewal oficial
-        }
         # Prefere os stats OFICIAIS pre-re nos filtros (sao os que valem num servidor
         # pre-re); cai no valor lido da descricao do cliente so quando o pre-re nao tem.
-        for dst, off_key, cli_key in [
-            ("rl", "requiredLevel", "requiredLevel"),
-            ("wl", "weaponLevel", "weaponLevel"),
-            ("atk", "attack", "attack"),
-            ("def", "defense", "defense"),
-            ("matk", "magicAttack", "magicAttack"),
-        ]:
+        def stat(off_key, cli_key):
             v = (off or {}).get(off_key)
-            if v is None:
-                v = it.get(cli_key)
-            if v is not None:
-                rec[dst] = v
-        for src, dst in [("element", "el"), ("jobs", "jb")]:
-            if it.get(src) is not None:
-                rec[dst] = it[src]
-        if it.get("nameColor"):
-            rec["col"] = it["nameColor"]
-        index.append(rec)
+            return it.get(cli_key) if v is None else v
+
+        item_rows.append((
+            iid,
+            it["name"],
+            it["searchName"],                   # nome sem acento, minusculo
+            it["type"],
+            it["slotCount"],
+            1 if it["isCustom"] else 0,
+            1 if it.get("untranslated") else 0,
+            1 if icon != "none" else 0,
+            1 if drops else 0,                  # tem fonte de drop conhecida
+            1 if off else 0,                    # existe no pre-renewal oficial
+            stat("requiredLevel", "requiredLevel"),
+            stat("weaponLevel", "weaponLevel"),
+            stat("attack", "attack"),
+            stat("defense", "defense"),
+            stat("magicAttack", "magicAttack"),
+            it.get("element"),
+            it.get("jobs"),
+            it.get("nameColor"),
+        ))
+        st_by_id[iid] = it["descriptionText"].lower()  # texto p/ busca (ja sem cor)
 
         # "Onde dropa": cada fonte de drop ja vem com os mapas onde aquele mob nasce.
-        # Cortamos as listas: Jellopy tem 16 fontes, e mob de campo aparece em dezenas de
-        # mapas -- despejar tudo incharia o shard sem ajudar ninguem.
+        # Cortamos as listas: Jellopy tem 16 fontes, e mob de campo aparece em dezenas
+        # de mapas -- despejar tudo incharia o payload sem ajudar ninguem.
         drop_list = []
         for d in drops[:MAX_DROPS_PER_ITEM]:
             mob = mobs.get(d["mob"], {})
@@ -124,8 +118,7 @@ def main():
                 "moreMaps": max(0, len(spawns) - MAX_MAPS_PER_MOB),
             })
 
-        # Dados pesados -> shard
-        shards[shard_of(iid)][str(iid)] = {
+        detail = {
             "id": iid,
             "name": it["name"],
             "unidentifiedName": it.get("unidentifiedName"),
@@ -147,20 +140,17 @@ def main():
             # Stats OFICIAIS pre-renewal (rAthena). Ausente => item nao existe no pre-re.
             "official": off,
             # Campos em que a descricao do cliente (renewal) diverge do pre-re.
-            # NAO significa "customizado pelo AureumRO" -- ver parse_rathena.find_divergences.
             "divergences": divergences.get(iid),
             "droppedBy": drop_list,
             "dropSourcesTotal": len(drops),
         }
+        detail_rows.append((iid, json.dumps(detail, ensure_ascii=False, separators=(",", ":"))))
 
-    (OUT / "search-index.json").write_text(
-        json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-
-    shard_dir = OUT / "shards"
-    shard_dir.mkdir(exist_ok=True)
-    for sid, data in shards.items():
-        (shard_dir / f"{sid}.json").write_text(
-            json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    conn.executemany(
+        "INSERT INTO items (id,n,sn,t,sl,c,u,ic,dr,pre,rl,wl,atk,def,matk,el,jb,col)"
+        " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", item_rows)
+    conn.executemany("INSERT INTO item_details (id,json) VALUES (?,?)", detail_rows)
+    rebuild_fts(conn, st_by_id)
 
     meta = {
         "total": len(items),
@@ -171,21 +161,33 @@ def main():
         "preRenewal": sum(1 for it in items if it["id"] in official),
         "divergent": len(divergences),
         "mobs": len(mobs),
-        "shardSize": SHARD_SIZE,
         "types": [t for t, _ in Counter(it["type"] for it in items).most_common()],
         "elements": sorted({it["element"] for it in items if it.get("element")}),
         "maxSlots": max((it["slotCount"] for it in items), default=0),
         "generatedFrom": "SystemEN/itemInfo (cliente AureumRO) + rAthena pre-renewal",
+        "dbVersion": 1,
     }
-    (OUT / "meta.json").write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+    conn.executemany(
+        "INSERT INTO meta (key, value) VALUES (?, ?)",
+        [(k, json.dumps(v, ensure_ascii=False)) for k, v in meta.items()])
 
-    idx_mb = (OUT / "search-index.json").stat().st_size / 1e6
-    print(f"search-index.json : {len(index)} itens, {idx_mb:.1f} MB")
-    print(f"shards            : {len(shards)} arquivos em {shard_dir}")
-    print(f"meta.json         : {meta['total']} itens, {meta['withIcon']} com icone, "
+    finish(conn)
+
+    # Limpa as saidas do formato JSON antigo.
+    for name in LEGACY_OUTPUTS:
+        p = OUT / name
+        if p.is_dir():
+            shutil.rmtree(p)
+        elif p.exists():
+            p.unlink()
+
+    db_mb = DB_PATH.stat().st_size / 1e6
+    print(f"aureumro.db : {len(item_rows)} itens, {db_mb:.1f} MB (page_size 4096)")
+    print(f"meta        : {meta['total']} itens, {meta['withIcon']} com icone, "
           f"{len(meta['types'])} tipos")
-    print(f"pre-renewal       : {meta['preRenewal']} itens oficiais, "
+    print(f"pre-renewal : {meta['preRenewal']} itens oficiais, "
           f"{meta['withDrops']} com drop conhecido, {meta['divergent']} divergentes")
+    print("Lembrete: rode tools/build_hats.py agora (chapeus + quests).")
 
 
 if __name__ == "__main__":

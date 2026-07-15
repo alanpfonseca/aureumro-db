@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.10.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
-    "minisearch": "^7.1.0",
-    "@tanstack/react-virtual": "^3.10.8"
+    "sql.js-httpvfs": "0.8.12"
   },
   "devDependencies": {
     "@types/react": "^18.3.11",
