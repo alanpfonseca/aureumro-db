@@ -35,8 +35,8 @@ quase sempre, o descompasso renewal-vs-pré-re do próprio jogo base.)
 cliente AureumRO                          web/ (React + Vite + TS)
   SystemEN/itemInfo*.lua  ──┐
   SystemEN/mapInfo.lub      │   tools/ (Python)          public/data/
-  color_items.txt           ├─► parse_iteminfo.py  ──►    aureumro.db   (SQLite: itens, detalhes,
-                            │   parse_facets.py                          busca FTS5, quests, meta)
+  color_items.txt           ├─► parse_iteminfo.py  ──►    aureumro.db.png  (SQLite: itens, detalhes,
+                            │   parse_facets.py                             busca FTS5, quests, meta)
 rAthena pré-re (GitHub)  ───┼─► fetch_rathena.py          db-info.json  (versão + tamanho)
   db/pre-re/item_db_*.yml   │   parse_rathena.py
   db/pre-re/mob_db.yml      │   build_data.py + build_hats.py
@@ -44,11 +44,16 @@ rAthena pré-re (GitHub)  ───┼─► fetch_rathena.py          db-info.j
 divine-pride CDN  ──────────┴─► fetch_icons.py     ──►    public/icons/<id>.png
 ```
 
-O site consulta o `aureumro.db` **direto no navegador** via
+O site consulta o `aureumro.db.png` **direto no navegador** via
 [sql.js-httpvfs](https://github.com/phiresky/sql.js-httpvfs): o SQLite roda em WASM num worker
 e baixa só as páginas de 4 KB necessárias por HTTP Range requests — nada de baixar a base
-inteira. O banco também pode ser aberto/editado no **DB Browser for SQLite** (depois de editar
-na mão, rode `build_hats.py` — ou regrave `db-info.json` — para atualizar a versão).
+inteira. O banco também pode ser aberto/editado no **DB Browser for SQLite** (é um SQLite
+normal apesar do nome; depois de editar na mão, rode `build_hats.py` — ou regrave
+`db-info.json` — para atualizar a versão).
+
+> A extensão `.png` é deliberada: o CDN do GitHub Pages gzipa `application/octet-stream`,
+> o que esconde o `Content-Length` real ("Length of the file not known") e faz os Range
+> requests contarem bytes do gzip. `image/png` fica fora da compressão e é servido intacto.
 
 ### Pipeline (`tools/`, Python 3)
 
@@ -77,13 +82,13 @@ Roda uma vez; regenera os dados que o site consome. Requer `pip install lupa pil
    → `build/rathena.json`
 6. **`build_data.py`** — junta tudo no banco: tabelas `items` (listagem/filtros),
    `item_details` (JSON pesado por item), `items_fts` (busca FTS5) e `meta`.
-   → `web/public/data/aureumro.db` + `db-info.json`
+   → `web/public/data/aureumro.db.png` + `db-info.json`
 7. **`build_hats.py`** — aplica os efeitos custom dos chapéus do servidor
    (`resource/hats.json`) sobre as descrições, cria os chapéus que não existem na database
    (IDs sintéticos 90001+) e grava as quests de chapéu (`resource/hat_quests.json`) nas
    tabelas `hat_quests`/`hat_quest_ingredients`, com nomes já resolvidos para IDs.
    Standalone: só precisa dos JSONs do repo. Emite `build/hats_report.md` com as notas
-   internas dos PDFs e os matches ambíguos. → patch no `aureumro.db`
+   internas dos PDFs e os matches ambíguos. → patch no `aureumro.db.png`
 
 Ordem: `parse_iteminfo` → `fetch_icons` → `fetch_rathena` → `parse_rathena` → `build_data`
 → `build_hats`. (`fetch_icons` e `fetch_rathena` são resumíveis e usam cache em `build/`.)

@@ -8,7 +8,12 @@ paginas sob demanda). Regras que NAO podem ser quebradas:
     ou features mais novas que 3.36 no schema;
   - VACUUM ao final de todo script que escreve (compacta e reordena as paginas);
   - apos escrever, regravar db-info.json (o tamanho muda com o VACUUM e o front usa
-    o version como cache-buster).
+    o version como cache-buster);
+  - a extensao e .png de PROPOSITO: o CDN do GitHub Pages (Fastly) gzipa
+    application/octet-stream, o que quebra os Range requests do httpvfs (os ranges
+    passam a contar bytes do gzip) e some com o Content-Length real. image/png esta
+    fora da lista de compressao. O arquivo continua sendo um SQLite normal — o DB
+    Browser abre pelo seletor "todos os arquivos".
 """
 
 import json
@@ -17,7 +22,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-DB_PATH = ROOT / "web" / "public" / "data" / "aureumro.db"
+DB_PATH = ROOT / "web" / "public" / "data" / "aureumro.db.png"
 DB_INFO_PATH = ROOT / "web" / "public" / "data" / "db-info.json"
 
 PAGE_SIZE = 4096

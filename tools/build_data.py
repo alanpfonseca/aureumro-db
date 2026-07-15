@@ -1,6 +1,6 @@
 """Transforma items.raw.json no banco SQLite que o site consome.
 
-Saida: web/public/data/aureumro.db (+ db-info.json), consultado DIRETO no navegador
+Saida: web/public/data/aureumro.db.png (+ db-info.json), consultado DIRETO no navegador
 via sql.js-httpvfs (HTTP Range requests — so as paginas necessarias sao baixadas).
 Tabelas (schema em db_common.py):
   items         -- registro enxuto por item (listagem + filtros)
@@ -182,7 +182,7 @@ def main():
             p.unlink()
 
     db_mb = DB_PATH.stat().st_size / 1e6
-    print(f"aureumro.db : {len(item_rows)} itens, {db_mb:.1f} MB (page_size 4096)")
+    print(f"aureumro.db.png : {len(item_rows)} itens, {db_mb:.1f} MB (page_size 4096)")
     print(f"meta        : {meta['total']} itens, {meta['withIcon']} com icone, "
           f"{len(meta['types'])} tipos")
     print(f"pre-renewal : {meta['preRenewal']} itens oficiais, "

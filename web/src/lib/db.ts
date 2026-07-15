@@ -3,9 +3,12 @@ import type { WorkerHttpvfs } from "sql.js-httpvfs";
 import workerUrl from "sql.js-httpvfs/dist/sqlite.worker.js?url";
 import wasmUrl from "sql.js-httpvfs/dist/sql-wasm.wasm?url";
 
-// O banco (web/public/data/aureumro.db) e consultado DIRETO no navegador: o worker
+// O banco (web/public/data/aureumro.db.png) e consultado DIRETO no navegador: o worker
 // do sql.js-httpvfs baixa so as paginas de 4 KB necessarias via HTTP Range requests.
 // requestChunkSize DEVE ser igual ao PRAGMA page_size do banco (tools/db_common.py).
+// A extensao .png engana o CDN do GitHub Pages: octet-stream ele gzipa (o que quebra
+// os Range requests e esconde o Content-Length — "Length of the file not known"),
+// image/png ele serve intacto.
 const BASE = import.meta.env.BASE_URL;
 const REQUEST_CHUNK_SIZE = 4096;
 
@@ -32,7 +35,7 @@ export function getDb(): Promise<WorkerHttpvfs> {
               serverMode: "full",
               // URL absoluta: o httpvfs resolve URLs relativas contra o script do
               // worker (que o Vite serve de outro caminho), nao contra a pagina.
-              url: new URL(`${BASE}data/aureumro.db`, location.href).toString(),
+              url: new URL(`${BASE}data/aureumro.db.png`, location.href).toString(),
               requestChunkSize: REQUEST_CHUNK_SIZE,
               // So em producao: o middleware do Vite DEV trata query string em asset
               // do public/ por um caminho lento (~2 s por range request); o dev

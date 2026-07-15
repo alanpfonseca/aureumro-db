@@ -1,10 +1,10 @@
-"""Aplica os efeitos dos chapeus e grava as quests de chapeu no aureumro.db.
+"""Aplica os efeitos dos chapeus e grava as quests de chapeu no aureumro.db.png.
 
 Fontes (transcritas dos PDFs em resource/):
   resource/hats.json        -- efeito de cada chapeu (substitui a descricao) + notas de bug
   resource/hat_quests.json  -- as 45 quests com custo e ingredientes
 
-Patches (sobre web/public/data/aureumro.db, gerado pelo build_data.py):
+Patches (sobre web/public/data/aureumro.db.png, gerado pelo build_data.py):
   item_details  -- descriptionLines substituidas pelos efeitos
   items         -- flag hq nos ingredientes; itens sinteticos criados (IDs 90001+)
   hat_quests / hat_quest_ingredients -- quests com nomes resolvidos para IDs
