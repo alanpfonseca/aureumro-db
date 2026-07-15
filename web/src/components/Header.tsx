@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 const NAV_TABS = [
   { label: "Itens", to: "/", alsoActive: ["/item/"] },
   { label: "Quests de Chapéu", to: "/hat-quests" },
+  { label: "Coleções de Mapa", to: "/map-collections" },
 ];
 
 export function Header({ tagline, children }: { tagline?: ReactNode; children?: ReactNode }) {

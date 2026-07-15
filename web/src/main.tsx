@@ -6,6 +6,7 @@ import { getDb } from "./lib/db";
 import { HomePage } from "./pages/HomePage";
 import { ItemPage } from "./pages/ItemPage";
 import { HatQuestsPage } from "./pages/HatQuestsPage";
+import { MapCollectionsPage } from "./pages/MapCollectionsPage";
 
 // Inicia o worker do SQLite ja no boot (paralelo ao primeiro render do React);
 // as paginas so aguardam queries, nunca a inicializacao.
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<HomePage />} />
         <Route path="/item/:id" element={<ItemPage />} />
         <Route path="/hat-quests" element={<HatQuestsPage />} />
+        <Route path="/map-collections" element={<MapCollectionsPage />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

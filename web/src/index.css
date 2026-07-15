@@ -677,3 +677,25 @@ a.quest-ing:hover {
   min-width: 44px;
   text-align: right;
 }
+
+/* --- Colecoes de mapa (reusa .quest-grid/.quest-card/.quest-ings) --------------- */
+.mapcol-city {
+  font-size: 12px;
+}
+.mapcol-bonus {
+  color: var(--custom);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 2px 0 10px;
+}
+.city-select {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 15px;
+  outline: none;
+}
+.city-select:focus {
+  border-color: var(--accent-dim);
+}

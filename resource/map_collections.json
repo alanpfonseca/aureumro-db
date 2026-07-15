@@ -1,0 +1,6733 @@
+{
+  "comment": "Transcrição curada de resource/Maps-Collection-Full.pdf (264 coleções). Nomes de itens são resolvidos para itemId pelo tools/build_maps.py. Pseudo-itens do print ('minimapa indisponível', tooltips de bônus) foram removidos; itens que referenciam outra coleção de mapa foram mantidos (não resolvem na database).",
+  "collections": [
+    {
+      "id": "ilha-da-tartaruga",
+      "name": "Ilha da Tartaruga",
+      "city": "Alberta",
+      "bonus": "Defesa à Raça Bruto +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Peridoto"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 1,
+          "name": "Asa de Mosca"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-ilha-da-tartaruga",
+      "name": "Subsolo da Ilha da Tartaruga",
+      "city": "Alberta",
+      "bonus": "Defesa à Raça Bruto +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Brigan"
+        },
+        {
+          "amount": 1,
+          "name": "Mastela"
+        },
+        {
+          "amount": 1,
+          "name": "Tronco"
+        },
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Lanças de Gelo Nível 5"
+        }
+      ]
+    },
+    {
+      "id": "vila-das-boas-tartarugas",
+      "name": "Vila das Boas Tartarugas",
+      "city": "Alberta",
+      "bonus": "Defesa à Raça Bruto +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Casca Quebrada"
+        },
+        {
+          "amount": 1,
+          "name": "Shuriken Gasto"
+        },
+        {
+          "amount": 1,
+          "name": "Madeira Queimada"
+        },
+        {
+          "amount": 1,
+          "name": "Geléia Real"
+        },
+        {
+          "amount": 1,
+          "name": "Cyfar"
+        }
+      ]
+    },
+    {
+      "id": "palacio-tartaruga",
+      "name": "Palacio Tartaruga",
+      "city": "Alberta",
+      "bonus": "Defesa à Raça Bruto +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Folha Romântica"
+        },
+        {
+          "amount": 1,
+          "name": "Casco de Tartaruga"
+        },
+        {
+          "amount": 1,
+          "name": "Armadura Destruída"
+        },
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-1",
+      "name": "Monte Mjolnir (1)",
+      "city": "Aldebaran",
+      "bonus": "Defesa à Raça Bruto +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Asa de Borboleta"
+        },
+        {
+          "amount": 1,
+          "name": "Pique"
+        },
+        {
+          "amount": 1,
+          "name": "Morango"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Rija"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-2",
+      "name": "Monte Mjolnir (2)",
+      "city": "Aldebaran",
+      "bonus": "Reflexão Mágica +25",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Flor"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        },
+        {
+          "amount": 1,
+          "name": "Flor Cantante"
+        },
+        {
+          "amount": 1,
+          "name": "Cauda de Dragão"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-3",
+      "name": "Monte Mjolnir (3)",
+      "city": "Aldebaran",
+      "bonus": "Defesa contra Monstros Grandes +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Folha de Aloe"
+        },
+        {
+          "amount": 1,
+          "name": "Scell"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-4",
+      "name": "Monte Mjolnir (4)",
+      "city": "Aldebaran",
+      "bonus": "Defesa à Raça Inseto +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Caule"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-5",
+      "name": "Monte Mjolnir (5)",
+      "city": "Aldebaran",
+      "bonus": "Ataque Mágico +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Aloés"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-6",
+      "name": "Monte Mjolnir (6)",
+      "city": "Aldebaran",
+      "bonus": "Aura Espinhosa +25",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Pique"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-7",
+      "name": "Monte Mjolnir (7)",
+      "city": "Aldebaran",
+      "bonus": "Dano em Inimigos Pequenos +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-8",
+      "name": "Monte Mjolnir (8)",
+      "city": "Aldebaran",
+      "bonus": "Defesa à Propriedade Terra +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Ametista"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Garleta"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-9",
+      "name": "Monte Mjolnir (9)",
+      "city": "Aldebaran",
+      "bonus": "Resistência a Atordoamento +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Capote"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Capuz"
+        },
+        {
+          "amount": 1,
+          "name": "Guisarme"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-10",
+      "name": "Monte Mjolnir (10)",
+      "city": "Aldebaran",
+      "bonus": "Defesa à Distância +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Flor Cantante"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-11",
+      "name": "Monte Mjolnir (11)",
+      "city": "Aldebaran",
+      "bonus": "Defesa Verdadeira +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Pele de Verme"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Folha de Aloe"
+        }
+      ]
+    },
+    {
+      "id": "monte-mjolnir-12",
+      "name": "Monte Mjolnir (12)",
+      "city": "Aldebaran",
+      "bonus": "AGI +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Asas de Traça"
+        },
+        {
+          "amount": 1,
+          "name": "Glaive"
+        }
+      ]
+    },
+    {
+      "id": "mina-abandonada-1",
+      "name": "Mina Abandonada (1)",
+      "city": "Aldebaran",
+      "bonus": "Dano em inimigos envenenados +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Óculos de Proteção"
+        },
+        {
+          "amount": 100,
+          "name": "Bigodes de Toupeira"
+        },
+        {
+          "amount": 10,
+          "name": "Garras de Toupeira"
+        },
+        {
+          "amount": 20,
+          "name": "Pluma"
+        }
+      ]
+    },
+    {
+      "id": "mina-abandonada-2",
+      "name": "Mina Abandonada (2)",
+      "city": "Aldebaran",
+      "bonus": "Dano em inimigos envenenados +2%",
+      "items": [
+        {
+          "amount": 2,
+          "name": "Emveretarcon"
+        },
+        {
+          "amount": 1,
+          "name": "Peridoto"
+        },
+        {
+          "amount": 2,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 1,
+          "name": "Natureza Grandiosa"
+        },
+        {
+          "amount": 100,
+          "name": "Lampião"
+        },
+        {
+          "amount": 1,
+          "name": "Carvão"
+        }
+      ]
+    },
+    {
+      "id": "mina-abandonada-3",
+      "name": "Mina Abandonada (3)",
+      "city": "Aldebaran",
+      "bonus": "Dano em inimigos envenenados +3%",
+      "items": [
+        {
+          "amount": 2,
+          "name": "Analgésico"
+        },
+        {
+          "amount": 2,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 20,
+          "name": "Tronco"
+        },
+        {
+          "amount": 1,
+          "name": "Aço"
+        },
+        {
+          "amount": 5,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 5,
+          "name": "Ferro"
+        }
+      ]
+    },
+    {
+      "id": "al-de-baran",
+      "name": "Al De Baran",
+      "city": "Aldebaran",
+      "bonus": "Velocidade de movimento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Chave para a Torre do Relógio"
+        },
+        {
+          "amount": 1,
+          "name": "Chave para o Subterrâneo"
+        }
+      ]
+    },
+    {
+      "id": "torre-do-relogio-1",
+      "name": "Torre do Relogio (1)",
+      "city": "Aldebaran",
+      "bonus": "Dano com Terror Ácido +5%",
+      "items": [
+        {
+          "amount": 2,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 50,
+          "name": "Areia Estelar de Bruxa"
+        },
+        {
+          "amount": 1,
+          "name": "Livro das Ondas"
+        },
+        {
+          "amount": 1,
+          "name": "Livro da Mãe Terra"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        }
+      ]
+    },
+    {
+      "id": "torre-do-relogio-2",
+      "name": "Torre do Relogio (2)",
+      "city": "Aldebaran",
+      "bonus": "Dano com Fogo grego +20%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Grimório Antigo"
+        },
+        {
+          "amount": 5,
+          "name": "Marca-Página"
+        },
+        {
+          "amount": 1,
+          "name": "Capuz"
+        },
+        {
+          "amount": 150,
+          "name": "Ponteiro"
+        }
+      ]
+    },
+    {
+      "id": "torre-do-relogio-3",
+      "name": "Torre do Relogio (3)",
+      "city": "Aldebaran",
+      "bonus": "Cura com arremessar poção +10%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 100,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 100,
+          "name": "Caveira"
+        }
+      ]
+    },
+    {
+      "id": "torre-do-relogio-4",
+      "name": "Torre do Relogio (4)",
+      "city": "Aldebaran",
+      "bonus": "Dano com esfera marinha +10%",
+      "items": [
+        {
+          "amount": 150,
+          "name": "Farrapos"
+        },
+        {
+          "amount": 50,
+          "name": "Pena Macia"
+        },
+        {
+          "amount": 10,
+          "name": "Limão"
+        },
+        {
+          "amount": 300,
+          "name": "Ponteiro"
+        },
+        {
+          "amount": 5,
+          "name": "Minério de Elunium"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-torre-do-relogio-1",
+      "name": "Subsolo da Torre do Relogio (1)",
+      "city": "Aldebaran",
+      "bonus": "Bomba Ácida +5%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 50,
+          "name": "Casca Arredondada"
+        },
+        {
+          "amount": 1,
+          "name": "Natureza Grandiosa"
+        },
+        {
+          "amount": 1,
+          "name": "Peridoto"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-torre-do-relogio-2",
+      "name": "Subsolo da Torre do Relogio (2)",
+      "city": "Aldebaran",
+      "bonus": "Dano com Choque de Carrinho +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Machado dos Orcs"
+        },
+        {
+          "amount": 1,
+          "name": "Dente de Ogro"
+        },
+        {
+          "amount": 1,
+          "name": "Folha de Yggdrasil"
+        },
+        {
+          "amount": 2,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 5,
+          "name": "Flecha de Vento"
+        },
+        {
+          "amount": 5,
+          "name": "Flecha de Pedra"
+        },
+        {
+          "amount": 3,
+          "name": "Flecha de Aço"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-torre-do-relogio-3",
+      "name": "Subsolo da Torre do Relogio (3)",
+      "city": "Aldebaran",
+      "bonus": "Dano com martelo de thor +7%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Coral"
+        },
+        {
+          "amount": 2,
+          "name": "Ametista"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Safira"
+        },
+        {
+          "amount": 1,
+          "name": "Emveretarcon"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-torre-do-relogio-4",
+      "name": "Subsolo da Torre do Relogio (4)",
+      "city": "Aldebaran",
+      "bonus": "Dano com martelo de thor +7%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Cetro"
+        },
+        {
+          "amount": 1,
+          "name": "Chapéu de Bathory"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Bathory"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-amatsu",
+      "name": "Arredores de Amatsu",
+      "city": "Amatsu",
+      "bonus": "Cast fixo +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Huuma da Calmaria"
+        },
+        {
+          "amount": 50,
+          "name": "Cyfar"
+        },
+        {
+          "amount": 50,
+          "name": "Pedaço de Papel"
+        },
+        {
+          "amount": 100,
+          "name": "Papel Amarelado"
+        },
+        {
+          "amount": 1,
+          "name": "Labirinto de Tatames"
+        },
+        {
+          "amount": 100,
+          "name": "Cabelos Perfumados"
+        },
+        {
+          "amount": 50,
+          "name": "Velho Obi"
+        },
+        {
+          "amount": 1,
+          "name": "Panacéia"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce Assada"
+        }
+      ]
+    },
+    {
+      "id": "floresta-subterranea",
+      "name": "Floresta Subterranea",
+      "city": "Amatsu",
+      "bonus": "Pós conjuração +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Álcool"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Assada"
+        },
+        {
+          "amount": 50,
+          "name": "Pele de Sapo"
+        },
+        {
+          "amount": 25,
+          "name": "Poeira Venenosa"
+        }
+      ]
+    },
+    {
+      "id": "templo-subterraneo",
+      "name": "Templo Subterraneo",
+      "city": "Amatsu",
+      "bonus": "Pós conjuração +5%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Pedaço de Papel"
+        },
+        {
+          "amount": 25,
+          "name": "Lâmina de Papel"
+        },
+        {
+          "amount": 25,
+          "name": "Máscara Ninja"
+        },
+        {
+          "amount": 50,
+          "name": "Shuriken Despedaçado"
+        },
+        {
+          "amount": 50,
+          "name": "Jarro de Saquê"
+        },
+        {
+          "amount": 25,
+          "name": "Nariz de Tengu"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-ayothaya-1",
+      "name": "Arredores de Ayothaya (1)",
+      "city": "Ayothaya",
+      "bonus": "Reduz o tempo de reuso de itens em 0,1 segundo",
+      "items": [
+        {
+          "amount": 150,
+          "name": "Avelã"
+        },
+        {
+          "amount": 150,
+          "name": "Folha de Figo"
+        },
+        {
+          "amount": 100,
+          "name": "Folha Gigante"
+        },
+        {
+          "amount": 25,
+          "name": "Cacao"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-ayothaya-2",
+      "name": "Arredores de Ayothaya (2)",
+      "city": "Ayothaya",
+      "bonus": "Reduz o tempo de reuso de itens em 0,1 segundo",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Pele de Verme"
+        },
+        {
+          "amount": 25,
+          "name": "Antenas de Inseto"
+        },
+        {
+          "amount": 100,
+          "name": "Ombreira"
+        },
+        {
+          "amount": 20,
+          "name": "Folha Gigante"
+        },
+        {
+          "amount": 1,
+          "name": "Labirinto Ancestral"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Espólio"
+        },
+        {
+          "amount": 100,
+          "name": "Mandíbula Horrenda"
+        },
+        {
+          "amount": 1,
+          "name": "Limão"
+        },
+        {
+          "amount": 1,
+          "name": "Camarão"
+        }
+      ]
+    },
+    {
+      "id": "santuario-ancestral",
+      "name": "Santuario Ancestral",
+      "city": "Ayothaya",
+      "bonus": "Taxa critica +3",
+      "items": [
+        {
+          "amount": 150,
+          "name": "Fitilhos"
+        },
+        {
+          "amount": 100,
+          "name": "Armadura Destruída"
+        },
+        {
+          "amount": 1,
+          "name": "Manto Prateado"
+        }
+      ]
+    },
+    {
+      "id": "floresta-papuchica",
+      "name": "Floresta Papuchica",
+      "city": "Comodo",
+      "bonus": "Dano com sacrificio +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Analgésico"
+        },
+        {
+          "amount": 200,
+          "name": "Crina"
+        },
+        {
+          "amount": 10,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Semente de Yggdrasil"
+        },
+        {
+          "amount": 30,
+          "name": "Uniforme Velho de Presidiário"
+        },
+        {
+          "amount": 150,
+          "name": "Pele de Anolian"
+        }
+      ]
+    },
+    {
+      "id": "praia-kokomo",
+      "name": "Praia Kokomo",
+      "city": "Comodo",
+      "bonus": "Dano com sacrificio +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Azul"
+        },
+        {
+          "amount": 10,
+          "name": "Garra de Crustáceo"
+        },
+        {
+          "amount": 2,
+          "name": "Torrão de Areia"
+        },
+        {
+          "amount": 1,
+          "name": "Coral"
+        },
+        {
+          "amount": 5,
+          "name": "Bolinha de Gude"
+        },
+        {
+          "amount": 100,
+          "name": "Cyfar"
+        },
+        {
+          "amount": 1,
+          "name": "Pérola"
+        },
+        {
+          "amount": 1,
+          "name": "Peridoto"
+        },
+        {
+          "amount": 1,
+          "name": "Safira"
+        },
+        {
+          "amount": 1,
+          "name": "Bolinha de Gude"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        }
+      ]
+    },
+    {
+      "id": "mangue-zenhai",
+      "name": "Mangue Zenhai",
+      "city": "Comodo",
+      "bonus": "Choque de escudo +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Sangue de Animal"
+        },
+        {
+          "amount": 1,
+          "name": "Analgésico"
+        },
+        {
+          "amount": 1,
+          "name": "Brigan"
+        },
+        {
+          "amount": 1,
+          "name": "Geléia Real"
+        },
+        {
+          "amount": 500,
+          "name": "Pele de Anolian"
+        },
+        {
+          "amount": 1,
+          "name": "Pano Vermelho"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-comodo-5",
+      "name": "Campos de Comodo (5)",
+      "city": "Comodo",
+      "bonus": "Ataque fisico +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        }
+      ]
+    },
+    {
+      "id": "fortaleza-oeste-de-sanderman",
+      "name": "Fortaleza Oeste de Sanderman",
+      "city": "Comodo",
+      "bonus": "Ataque magico +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Arco Composto"
+        },
+        {
+          "amount": 1,
+          "name": "Ferro"
+        },
+        {
+          "amount": 50,
+          "name": "Cabelo Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Suco de Laranja"
+        }
+      ]
+    },
+    {
+      "id": "ilha-do-farol-de-pharos",
+      "name": "Ilha do Farol de Pharos",
+      "city": "Comodo",
+      "bonus": "Hp maximo +50",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Torrão de Areia"
+        },
+        {
+          "amount": 1,
+          "name": "Pedra"
+        },
+        {
+          "amount": 1,
+          "name": "Garra de Crustáceo"
+        },
+        {
+          "amount": 1,
+          "name": "Poção da Concentração"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Célula Única"
+        }
+      ]
+    },
+    {
+      "id": "fortaleza-sul-de-sanderman",
+      "name": "Fortaleza Sul de Sanderman",
+      "city": "Comodo",
+      "bonus": "Quando parado a 3 segundos = Dano final +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Laranja"
+        },
+        {
+          "amount": 1,
+          "name": "Carne"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Escamada"
+        },
+        {
+          "amount": 1,
+          "name": "Emveretarcon"
+        },
+        {
+          "amount": 1,
+          "name": "Ferro"
+        }
+      ]
+    },
+    {
+      "id": "karu-a-caverna-do-oeste",
+      "name": "Karu, a Caverna do Oeste",
+      "city": "Comodo",
+      "bonus": "Soft def +10",
+      "items": [
+        {
+          "amount": 500,
+          "name": "Cabelo Horrendo"
+        },
+        {
+          "amount": 300,
+          "name": "Casco de Tartaruga"
+        },
+        {
+          "amount": 1,
+          "name": "Botas da Bruxa do Mar"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        }
+      ]
+    },
+    {
+      "id": "luanda-a-caverna-do-norte",
+      "name": "Luanda, a Caverna do Norte",
+      "city": "Comodo",
+      "bonus": "Soft mdef +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Detrimindexta"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 25,
+          "name": "Pedra"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 400,
+          "name": "Brigan"
+        }
+      ]
+    },
+    {
+      "id": "mao-a-caverna-do-leste",
+      "name": "Mao, a Caverna do Leste",
+      "city": "Comodo",
+      "bonus": "Hp maximo +150",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Peridoto"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Ametista"
+        },
+        {
+          "amount": 50,
+          "name": "Tentáculo"
+        }
+      ]
+    },
+    {
+      "id": "fortaleza-leste-de-sanderman",
+      "name": "Fortaleza Leste de Sanderman",
+      "city": "Comodo",
+      "bonus": "Dano à Distância +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        },
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 1,
+          "name": "Glaive"
+        },
+        {
+          "amount": 1,
+          "name": "Arco Composto"
+        },
+        {
+          "amount": 1,
+          "name": "Orelhas de Cachorrinho"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-1",
+      "name": "Arredores de Einbroch (1)",
+      "city": "Einbech",
+      "bonus": "Chance de refinar com Aprimorar Armamento +0,5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Chupeta"
+        },
+        {
+          "amount": 250,
+          "name": "Pó de Bolor"
+        },
+        {
+          "amount": 200,
+          "name": "Bactérias"
+        },
+        {
+          "amount": 100,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 200,
+          "name": "Areia Estelar de Bruxa"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-2",
+      "name": "Arredores de Einbroch (2)",
+      "city": "Einbech",
+      "bonus": "Chance de refinar com Aprimorar Armamento +0,5%",
+      "items": [
+        {
+          "amount": 200,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 200,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 350,
+          "name": "Brasão"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-3",
+      "name": "Arredores de Einbroch (3)",
+      "city": "Einbech",
+      "bonus": "Evasão +5",
+      "items": [
+        {
+          "amount": 150,
+          "name": "Garras de Toupeira"
+        },
+        {
+          "amount": 150,
+          "name": "Bigodes de Toupeira"
+        },
+        {
+          "amount": 10,
+          "name": "Parafuso Enferrujado"
+        },
+        {
+          "amount": 2,
+          "name": "Cura Nível 5"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-4",
+      "name": "Arredores de Einbroch (4)",
+      "city": "Einbech",
+      "bonus": "Acerto +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carvão"
+        },
+        {
+          "amount": 1,
+          "name": "Topázio"
+        },
+        {
+          "amount": 100,
+          "name": "Jubileu"
+        },
+        {
+          "amount": 100,
+          "name": "Tubo Flexível"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-5",
+      "name": "Arredores de Einbroch (5)",
+      "city": "Einbech",
+      "bonus": "SP maximo +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 2,
+          "name": "Carvão"
+        },
+        {
+          "amount": 2,
+          "name": "Aço"
+        },
+        {
+          "amount": 2,
+          "name": "Diamante de 1 quilate"
+        },
+        {
+          "amount": 2,
+          "name": "Bactérias"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-6",
+      "name": "Arredores de Einbroch (6)",
+      "city": "Einbech",
+      "bonus": "Ataque +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 100,
+          "name": "Chifre de Bode"
+        },
+        {
+          "amount": 35,
+          "name": "Pele de Bode"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-7",
+      "name": "Arredores de Einbroch (7)",
+      "city": "Einbech",
+      "bonus": "Ataque magico +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Folha de Aloe"
+        },
+        {
+          "amount": 1,
+          "name": "Aloés"
+        },
+        {
+          "amount": 1,
+          "name": "Flor Cantante"
+        },
+        {
+          "amount": 1,
+          "name": "Florzinha"
+        },
+        {
+          "amount": 1,
+          "name": "Girassol"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-8",
+      "name": "Arredores de Einbroch (8)",
+      "city": "Einbech",
+      "bonus": "EXP +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Main Gauche"
+        },
+        {
+          "amount": 1,
+          "name": "Líquido Fluorescente"
+        },
+        {
+          "amount": 200,
+          "name": "Jubileu"
+        },
+        {
+          "amount": 5,
+          "name": "Parafuso Enferrujado"
+        },
+        {
+          "amount": 10,
+          "name": "Ferro"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-einbroch-9",
+      "name": "Arredores de Einbroch (9)",
+      "city": "Einbech",
+      "bonus": "EXP +1%",
+      "items": [
+        {
+          "amount": 35,
+          "name": "Flor de Planta Carnívora"
+        },
+        {
+          "amount": 30,
+          "name": "Antenas de Inseto"
+        },
+        {
+          "amount": 1,
+          "name": "Gibão"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-einbech-10",
+      "name": "Campos de Einbech (10)",
+      "city": "Einbech",
+      "bonus": "Drop +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Folha de Aloe"
+        },
+        {
+          "amount": 1,
+          "name": "Flor Cantante"
+        },
+        {
+          "amount": 20,
+          "name": "Morango"
+        },
+        {
+          "amount": 35,
+          "name": "Banana"
+        },
+        {
+          "amount": 5,
+          "name": "Uvas"
+        }
+      ]
+    },
+    {
+      "id": "calabouco-da-mina-1",
+      "name": "Calabouco da Mina (1)",
+      "city": "Einbech",
+      "bonus": "Chance de dropar Oridecon de monstros Formless +1,0%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Analgésico"
+        },
+        {
+          "amount": 50,
+          "name": "Poeira Venenosa"
+        },
+        {
+          "amount": 100,
+          "name": "Gás Tóxico"
+        },
+        {
+          "amount": 10,
+          "name": "Carvão"
+        },
+        {
+          "amount": 20,
+          "name": "Aço"
+        },
+        {
+          "amount": 30,
+          "name": "Placa de Ferro Usada"
+        }
+      ]
+    },
+    {
+      "id": "calabouco-da-mina-2",
+      "name": "Calabouco da Mina (2)",
+      "city": "Einbech",
+      "bonus": "Chance de dropar elunium de monstros formless +1.0%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 5,
+          "name": "Topázio"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 10,
+          "name": "Emveretarcon"
+        },
+        {
+          "amount": 1,
+          "name": "Diamante de 1 quilate"
+        },
+        {
+          "amount": 1,
+          "name": "Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Ferro Enferrujado"
+        },
+        {
+          "amount": 1,
+          "name": "Broche Amald. Deusa Fortuna"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-0",
+      "name": "Arredores de Geffen (0)",
+      "city": "Geffen",
+      "bonus": "Redução de cast variavel +1%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Felpa"
+        },
+        {
+          "amount": 30,
+          "name": "Crisálida"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarga"
+        },
+        {
+          "amount": 1,
+          "name": "Mastela"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-1",
+      "name": "Arredores de Geffen (1)",
+      "city": "Geffen",
+      "bonus": "Redução de cast variavel +1%",
+      "items": [
+        {
+          "amount": 200,
+          "name": "Pata Pegajosa"
+        },
+        {
+          "amount": 1,
+          "name": "Esmeralda"
+        },
+        {
+          "amount": 10,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 5,
+          "name": "Uvas"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-2",
+      "name": "Arredores de Geffen (2)",
+      "city": "Geffen",
+      "bonus": "Redução de cast variavel +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Machado"
+        },
+        {
+          "amount": 5,
+          "name": "Morango"
+        },
+        {
+          "amount": 5,
+          "name": "Batata Doce"
+        },
+        {
+          "amount": 20,
+          "name": "Folha de Fumacento"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-3",
+      "name": "Arredores de Geffen (3)",
+      "city": "Geffen",
+      "bonus": "Redução de cast variavel +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Analgésico"
+        },
+        {
+          "amount": 15,
+          "name": "Uvas"
+        },
+        {
+          "amount": 10,
+          "name": "Ferro"
+        },
+        {
+          "amount": 200,
+          "name": "Amuleto dos Orcs"
+        },
+        {
+          "amount": 5,
+          "name": "Folha de Aloe"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-4",
+      "name": "Arredores de Geffen (4)",
+      "city": "Geffen",
+      "bonus": "Redução de cast variavel +1%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Asa de Mosca"
+        },
+        {
+          "amount": 10,
+          "name": "Ova de Sapo"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã Verde"
+        },
+        {
+          "amount": 5,
+          "name": "Pluma"
+        },
+        {
+          "amount": 5,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-5",
+      "name": "Arredores de Geffen (5)",
+      "city": "Geffen",
+      "bonus": "Redução de recarga +1%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Asas de Traça"
+        },
+        {
+          "amount": 2,
+          "name": "Rosa Eterna"
+        },
+        {
+          "amount": 2,
+          "name": "Peixe Podre"
+        },
+        {
+          "amount": 50,
+          "name": "Cabelo Azul"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-6",
+      "name": "Arredores de Geffen (6)",
+      "city": "Geffen",
+      "bonus": "Redução de recarga +1%",
+      "items": [
+        {
+          "amount": 250,
+          "name": "Escama de Dragão"
+        },
+        {
+          "amount": 50,
+          "name": "Cauda de Dragão"
+        },
+        {
+          "amount": 250,
+          "name": "Canino de Dragão"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-7",
+      "name": "Arredores de Geffen (7)",
+      "city": "Geffen",
+      "bonus": "Redução de recarga +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Fruto de Yggdrasil"
+        },
+        {
+          "amount": 1,
+          "name": "Semente de Yggdrasil"
+        },
+        {
+          "amount": 1,
+          "name": "Folha de Aloe"
+        },
+        {
+          "amount": 1,
+          "name": "Mastela"
+        },
+        {
+          "amount": 20,
+          "name": "Muco Pegajoso"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-8",
+      "name": "Arredores de Geffen (8)",
+      "city": "Geffen",
+      "bonus": "Redução de recarga +2%",
+      "items": [
+        {
+          "amount": 1000,
+          "name": "Cabelo Azul"
+        },
+        {
+          "amount": 5,
+          "name": "Gema Amarela"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-9",
+      "name": "Arredores de Geffen (9)",
+      "city": "Geffen",
+      "bonus": "Redução de pós conjuração +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Karvodailnirol"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 100,
+          "name": "Casco de Caramujo"
+        },
+        {
+          "amount": 5,
+          "name": "Cristal Azul"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-10",
+      "name": "Arredores de Geffen (10)",
+      "city": "Geffen",
+      "bonus": "Redução de pós conjuração +2%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Cyfar"
+        },
+        {
+          "amount": 1,
+          "name": "Babador"
+        },
+        {
+          "amount": 500,
+          "name": "Amuleto dos Orcs"
+        },
+        {
+          "amount": 1,
+          "name": "Machado dos Orcs"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-geffen-11",
+      "name": "Arredores de Geffen (11)",
+      "city": "Geffen",
+      "bonus": "Redução de pós conjuração +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Punhal"
+        },
+        {
+          "amount": 1,
+          "name": "Mangual"
+        },
+        {
+          "amount": 1,
+          "name": "Máscara Surpresa"
+        },
+        {
+          "amount": 1,
+          "name": "Esmagador"
+        },
+        {
+          "amount": 1,
+          "name": "Vareta"
+        },
+        {
+          "amount": 1,
+          "name": "Arco Composto"
+        },
+        {
+          "amount": 5,
+          "name": "Jellopy Tamanho Família"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-geffen-12",
+      "name": "Campos de Geffen (12)",
+      "city": "Geffen",
+      "bonus": "Redução de pós conjuração +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Orelhas de Cachorrinho"
+        },
+        {
+          "amount": 200,
+          "name": "Cabelo Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Vembrassa"
+        },
+        {
+          "amount": 5,
+          "name": "Aço"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-geffen-14",
+      "name": "Campos de Geffen (14)",
+      "city": "Geffen",
+      "bonus": "Redução de pós conjuração +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Machado dos Orcs"
+        },
+        {
+          "amount": 1,
+          "name": "Arco de Orc"
+        },
+        {
+          "amount": 250,
+          "name": "Amuleto dos Orcs"
+        },
+        {
+          "amount": 10,
+          "name": "Ferro"
+        }
+      ]
+    },
+    {
+      "id": "calabouco-de-geffen-0",
+      "name": "Calabouco de Geffen (0)",
+      "city": "Geffen",
+      "bonus": "Ignorar defesa magica +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Mosca Caçadora"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Esporo Venenoso"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Poporing"
+        }
+      ]
+    },
+    {
+      "id": "calabouco-de-geffen-1",
+      "name": "Calabouco de Geffen (1)",
+      "city": "Geffen",
+      "bonus": "Ignorar defesa magica +1%",
+      "items": [
+        {
+          "amount": 300,
+          "name": "Unha Apodrecida"
+        },
+        {
+          "amount": 600,
+          "name": "Mandíbula Horrenda"
+        },
+        {
+          "amount": 1,
+          "name": "Infiltrador"
+        },
+        {
+          "amount": 1,
+          "name": "Malha"
+        }
+      ]
+    },
+    {
+      "id": "calabouco-de-geffen-2",
+      "name": "Calabouco de Geffen (2)",
+      "city": "Geffen",
+      "bonus": "Ignorar defesa magica +3%",
+      "items": [
+        {
+          "amount": 400,
+          "name": "Pequeno Chifre Maligno"
+        },
+        {
+          "amount": 75,
+          "name": "Pequena Asa Maligna"
+        },
+        {
+          "amount": 1,
+          "name": "Boneca de Marionete"
+        }
+      ]
+    },
+    {
+      "id": "geffenia-1",
+      "name": "Geffenia (1)",
+      "city": "Geffen",
+      "bonus": "Dano com Magnus exorcismus +5%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 50,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 50,
+          "name": "Gema Azul"
+        },
+        {
+          "amount": 5,
+          "name": "Anel de Ouro"
+        },
+        {
+          "amount": 10,
+          "name": "Anel de Diamante"
+        },
+        {
+          "amount": 1,
+          "name": "Mão Divina"
+        }
+      ]
+    },
+    {
+      "id": "geffenia-2",
+      "name": "Geffenia (2)",
+      "city": "Geffen",
+      "bonus": "Dano com Magnus Exorcismus +5%",
+      "items": [
+        {
+          "amount": 400,
+          "name": "Pequeno Chifre Maligno"
+        },
+        {
+          "amount": 1,
+          "name": "Asas de Demônio"
+        },
+        {
+          "amount": 50,
+          "name": "Geléia Real"
+        },
+        {
+          "amount": 1,
+          "name": "Contra-Baixo"
+        }
+      ]
+    },
+    {
+      "id": "geffenia-3",
+      "name": "Geffenia (3)",
+      "city": "Geffen",
+      "bonus": "Dano com Crux Magnun+5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Flogopita"
+        },
+        {
+          "amount": 1,
+          "name": "Biotita"
+        },
+        {
+          "amount": 1,
+          "name": "Moscovita"
+        },
+        {
+          "amount": 1,
+          "name": "Lança de Gancho"
+        },
+        {
+          "amount": 3,
+          "name": "Brigan"
+        }
+      ]
+    },
+    {
+      "id": "geffenia-4",
+      "name": "Geffenia (4)",
+      "city": "Geffen",
+      "bonus": "Dano com Crux Magnun+5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Inccubus"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Succubus"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Diabinho"
+        }
+      ]
+    },
+    {
+      "id": "caverna-dos-orcs-1",
+      "name": "Caverna dos Orcs (1)",
+      "city": "Geffen",
+      "bonus": "Dano com Crux Divinum+5%",
+      "items": [
+        {
+          "amount": 500,
+          "name": "Garra de Orc"
+        },
+        {
+          "amount": 50,
+          "name": "Presa de Orc"
+        }
+      ]
+    },
+    {
+      "id": "caverna-dos-orcs-2",
+      "name": "Caverna dos Orcs (2)",
+      "city": "Geffen",
+      "bonus": "Dano com Crux Divinum+5%",
+      "items": [
+        {
+          "amount": 500,
+          "name": "Presa de Orc"
+        },
+        {
+          "amount": 500,
+          "name": "Presa de Zenorc"
+        },
+        {
+          "amount": 5,
+          "name": "Presa"
+        }
+      ]
+    },
+    {
+      "id": "abadia-de-glast-heim",
+      "name": "Abadia de Glast Heim",
+      "city": "Glast Heim",
+      "bonus": "Velocidade de conjuração do Disparo de esfera -0.5 segundo",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Solidéu"
+        },
+        {
+          "amount": 1,
+          "name": "Bíblia"
+        },
+        {
+          "amount": 500,
+          "name": "Tecido"
+        },
+        {
+          "amount": 10,
+          "name": "Velha Caixa Azul"
+        }
+      ]
+    },
+    {
+      "id": "cemiterio-de-glast-heim",
+      "name": "Cemiterio de Glast Heim",
+      "city": "Glast Heim",
+      "bonus": "Velocidade de conjuração do Disparo de esfera -0.5 segundo",
+      "items": [
+        {
+          "amount": 20,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 30,
+          "name": "Folha de Yggdrasil"
+        },
+        {
+          "amount": 50,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 150,
+          "name": "Mandíbula Horrenda"
+        }
+      ]
+    },
+    {
+      "id": "castelo-de-glast-heim",
+      "name": "Castelo de Glast Heim",
+      "city": "Glast Heim",
+      "bonus": "Dano do Disparo de Esfera +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Relâmpago Nível 5"
+        },
+        {
+          "amount": 50,
+          "name": "Farrapos"
+        },
+        {
+          "amount": 100,
+          "name": "Pena Macia"
+        },
+        {
+          "amount": 50,
+          "name": "Moldura Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Carat"
+        }
+      ]
+    },
+    {
+      "id": "castelo-de-glast-heim-2",
+      "name": "Castelo de Glast Heim (2)",
+      "city": "Glast Heim",
+      "bonus": "Dano do Combo Quadruplo +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Insígnia da Cavalaria"
+        },
+        {
+          "amount": 10,
+          "name": "Marca-Página"
+        },
+        {
+          "amount": 450,
+          "name": "Caveira"
+        },
+        {
+          "amount": 1,
+          "name": "Cura Nível 5"
+        },
+        {
+          "amount": 10,
+          "name": "Avental de Alice"
+        }
+      ]
+    },
+    {
+      "id": "prisao-de-glast-heim-1",
+      "name": "Prisao de Glast Heim (1)",
+      "city": "Glast Heim",
+      "bonus": "Dano do Ultimo Dragão +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Grilhões"
+        },
+        {
+          "amount": 150,
+          "name": "Uniforme Velho de Presidiário"
+        },
+        {
+          "amount": 1,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Jamadhar"
+        }
+      ]
+    },
+    {
+      "id": "prisao-de-glast-heim-2",
+      "name": "Prisao de Glast Heim (2)",
+      "city": "Glast Heim",
+      "bonus": "Dano do Combo Esmagador +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Fio Elétrico"
+        },
+        {
+          "amount": 50,
+          "name": "Língua"
+        },
+        {
+          "amount": 1,
+          "name": "Bolinha de Gude"
+        },
+        {
+          "amount": 1,
+          "name": "Vela do Marquês de Sade"
+        }
+      ]
+    },
+    {
+      "id": "cavalaria-de-glast-heim-1",
+      "name": "Cavalaria de Glast Heim (1)",
+      "city": "Glast Heim",
+      "bonus": "Dano do Rastrear Alvo +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Insígnia da Cavalaria"
+        },
+        {
+          "amount": 5,
+          "name": "Elunium"
+        },
+        {
+          "amount": 5,
+          "name": "Marca-Página"
+        },
+        {
+          "amount": 1,
+          "name": "Lâmina Perdida nas Trevas"
+        },
+        {
+          "amount": 1,
+          "name": "Arco"
+        },
+        {
+          "amount": 5,
+          "name": "Avental de Alice"
+        }
+      ]
+    },
+    {
+      "id": "cavalaria-de-glast-heim-2",
+      "name": "Cavalaria de Glast Heim (2)",
+      "city": "Glast Heim",
+      "bonus": "Dano Do Desperado +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Insígnia da Cavalaria"
+        },
+        {
+          "amount": 1,
+          "name": "Kataná"
+        },
+        {
+          "amount": 5,
+          "name": "Avental de Alice"
+        }
+      ]
+    },
+    {
+      "id": "biblioteca-de-glast-heim",
+      "name": "Biblioteca de Glast Heim",
+      "city": "Glast Heim",
+      "bonus": "Dano do Ataque Total +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Barreira de Fogo Nível 5"
+        },
+        {
+          "amount": 50,
+          "name": "Página Deteriorada"
+        },
+        {
+          "amount": 1,
+          "name": "Manteau"
+        },
+        {
+          "amount": 1,
+          "name": "Lanças de Gelo Nível 5"
+        }
+      ]
+    },
+    {
+      "id": "escadarias-de-glast-heim",
+      "name": "Escadarias de Glast Heim",
+      "city": "Glast Heim",
+      "bonus": "Dano dos chutes +10%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Armadilha"
+        },
+        {
+          "amount": 1,
+          "name": "Vento Bruto"
+        },
+        {
+          "amount": 1,
+          "name": "Bastão Arcano"
+        },
+        {
+          "amount": 300,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 10,
+          "name": "Elunium"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-glast-heim-1",
+      "name": "Esgotos de Glast Heim (1)",
+      "city": "Glast Heim",
+      "bonus": "Dano do Arremessar Kunai +5%",
+      "items": [
+        {
+          "amount": 20,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 50,
+          "name": "Pequena Asa Maligna"
+        },
+        {
+          "amount": 1,
+          "name": "Manto Prateado"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-glast-heim-2",
+      "name": "Esgotos de Glast Heim (2)",
+      "city": "Glast Heim",
+      "bonus": "Dano do Arremessar Huuma Shuriken +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Safira"
+        },
+        {
+          "amount": 1,
+          "name": "Bolinha de Gude"
+        },
+        {
+          "amount": 10,
+          "name": "Minério de Elunium"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-glast-heim-3",
+      "name": "Esgotos de Glast Heim (3)",
+      "city": "Glast Heim",
+      "bonus": "Dano de pétalas flamejantes +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carvão"
+        },
+        {
+          "amount": 1,
+          "name": "Natureza Grandiosa"
+        },
+        {
+          "amount": 300,
+          "name": "Monte de Lama"
+        },
+        {
+          "amount": 1,
+          "name": "Luva"
+        },
+        {
+          "amount": 50,
+          "name": "Flecha Emudecedora"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-glast-heim-4",
+      "name": "Esgotos de Glast Heim (4)",
+      "city": "Glast Heim",
+      "bonus": "Dano do escudo de chamas +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Broche"
+        },
+        {
+          "amount": 300,
+          "name": "Pele de Anolian"
+        },
+        {
+          "amount": 500,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 5,
+          "name": "Emveretarcon"
+        },
+        {
+          "amount": 1,
+          "name": "Luva de Puxada"
+        }
+      ]
+    },
+    {
+      "id": "caverna-profunda-de-glast-heim-1",
+      "name": "Caverna Profunda de Glast Heim (1)",
+      "city": "Glast Heim",
+      "bonus": "Dano da brisa cortante /lamina de vento +5%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 250,
+          "name": "Casca Arredondada"
+        },
+        {
+          "amount": 500,
+          "name": "Monte de Lama"
+        },
+        {
+          "amount": 1,
+          "name": "Luva"
+        }
+      ]
+    },
+    {
+      "id": "caverna-profunda-de-glast-heim-2",
+      "name": "Caverna Profunda de Glast Heim (2)",
+      "city": "Glast Heim",
+      "bonus": "Dano da Descarga eletrica +10%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Flecha Emudecedora"
+        },
+        {
+          "amount": 2,
+          "name": "Anel de Prata"
+        },
+        {
+          "amount": 1,
+          "name": "Machado de Duas Mãos"
+        },
+        {
+          "amount": 350,
+          "name": "Argola"
+        }
+      ]
+    },
+    {
+      "id": "kunlun",
+      "name": "Kunlun",
+      "city": "Gonryun",
+      "bonus": "Velocidade de movimento +1%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Pão de Carne"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-kunlun",
+      "name": "Arredores de Kunlun",
+      "city": "Gonryun",
+      "bonus": "Reduz o tempo de reuso de itens em 0,1 segundo",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Adaga"
+        },
+        {
+          "amount": 50,
+          "name": "Máscara do Festival"
+        },
+        {
+          "amount": 100,
+          "name": "Catavento"
+        }
+      ]
+    },
+    {
+      "id": "santuario-de-xi-wang-mu",
+      "name": "Santuario de Xi Wang Mu",
+      "city": "Gonryun",
+      "bonus": "Reduz o tempo de reuso de itens em 0,1 segundo",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Antenas Afiadas"
+        },
+        {
+          "amount": 5,
+          "name": "Galho Seco"
+        },
+        {
+          "amount": 150,
+          "name": "Pêssego Petrificado"
+        },
+        {
+          "amount": 75,
+          "name": "Misterioso Metal em Pano"
+        }
+      ]
+    },
+    {
+      "id": "tabuleiro-de-go",
+      "name": "Tabuleiro de Go",
+      "city": "Gonryun",
+      "bonus": "Cast variavel +2%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Pão de Carne"
+        },
+        {
+          "amount": 100,
+          "name": "Bolinhos de Arroz"
+        },
+        {
+          "amount": 20,
+          "name": "Geléia Real"
+        },
+        {
+          "amount": 200,
+          "name": "Pêssego Petrificado"
+        }
+      ]
+    },
+    {
+      "id": "terra-das-fadas",
+      "name": "Terra das Fadas",
+      "city": "Gonryun",
+      "bonus": "Recarga +5%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Manto Cerimonial Celestial"
+        },
+        {
+          "amount": 75,
+          "name": "Seda Macia"
+        },
+        {
+          "amount": 50,
+          "name": "Jarro de Nuvem"
+        },
+        {
+          "amount": 50,
+          "name": "Bolinhos de Arroz"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-hugel-1",
+      "name": "Arredores de Hugel (1)",
+      "city": "Hugel",
+      "bonus": "Acerto +3",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Scell"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Rubi Amaldiçoado"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-hugel-2",
+      "name": "Arredores de Hugel (2)",
+      "city": "Hugel",
+      "bonus": "SP maximo +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Girassol"
+        },
+        {
+          "amount": 1,
+          "name": "Florzinha"
+        },
+        {
+          "amount": 1,
+          "name": "Bactérias"
+        },
+        {
+          "amount": 1,
+          "name": "Escama de Dragão"
+        },
+        {
+          "amount": 10,
+          "name": "Cyfar"
+        }
+      ]
+    },
+    {
+      "id": "campo-de-caca",
+      "name": "Campo de Caca",
+      "city": "Hugel",
+      "bonus": "Hp maximo +100",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Aloe Vera"
+        },
+        {
+          "amount": 1,
+          "name": "Escama de Dragão"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-hugel-4",
+      "name": "Arredores de Hugel (4)",
+      "city": "Hugel",
+      "bonus": "Dano critico +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Cauda de Dragão"
+        },
+        {
+          "amount": 100,
+          "name": "Canino de Dragão"
+        },
+        {
+          "amount": 100,
+          "name": "Escama de Dragão"
+        },
+        {
+          "amount": 1,
+          "name": "Arco do Vendaval"
+        }
+      ]
+    },
+    {
+      "id": "lago-do-abismo",
+      "name": "Lago do Abismo",
+      "city": "Hugel",
+      "bonus": "Dano critico +1%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Cyfar"
+        },
+        {
+          "amount": 1,
+          "name": "Pedaço de Casca de Ovo"
+        },
+        {
+          "amount": 1,
+          "name": "Bactérias"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-hugel-6",
+      "name": "Arredores de Hugel (6)",
+      "city": "Hugel",
+      "bonus": "Cura recebida +1%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Bigodes de Toupeira"
+        },
+        {
+          "amount": 50,
+          "name": "Garras de Toupeira"
+        },
+        {
+          "amount": 1,
+          "name": "Pique"
+        },
+        {
+          "amount": 1,
+          "name": "Parafuso Enferrujado"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-hugel-7",
+      "name": "Campos de Hugel (7)",
+      "city": "Hugel",
+      "bonus": "Cura aplicada +1%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Canino de Dragão"
+        },
+        {
+          "amount": 20,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 60,
+          "name": "Pele de Dragão"
+        }
+      ]
+    },
+    {
+      "id": "caverna-subterranea-do-lago-do-abismo-1",
+      "name": "Caverna Subterranea do Lago do Abismo (1)",
+      "city": "Hugel",
+      "bonus": "Defesa a dragão +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Bijuteria Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Chapéu de Magni"
+        },
+        {
+          "amount": 50,
+          "name": "Escama de Dragão"
+        }
+      ]
+    },
+    {
+      "id": "caverna-subterranea-do-lago-do-abismo-2",
+      "name": "Caverna Subterranea do Lago do Abismo (2)",
+      "city": "Hugel",
+      "bonus": "Defesa a Dragão +3%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Bijuteria Amarela"
+        },
+        {
+          "amount": 10,
+          "name": "Bijuteria Azul"
+        }
+      ]
+    },
+    {
+      "id": "caverna-subterranea-do-lago-do-abismo-3",
+      "name": "Caverna Subterranea do Lago do Abismo (3)",
+      "city": "Hugel",
+      "bonus": "Exp +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Ferus Escarlate"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Acidus Dourado"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Acidus Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Ferus Verde"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-1",
+      "name": "Torre de Thanatos (1)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Marca-Página"
+        },
+        {
+          "amount": 1,
+          "name": "Scell"
+        },
+        {
+          "amount": 1,
+          "name": "Velha Caixa Azul"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-2",
+      "name": "Torre de Thanatos (2)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Pergaminho Antigo"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Azul"
+        },
+        {
+          "amount": 10,
+          "name": "Página Sangrenta"
+        },
+        {
+          "amount": 1,
+          "name": "Caixa de Presente"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-3",
+      "name": "Torre de Thanatos (3)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Página Sangrenta"
+        },
+        {
+          "amount": 2,
+          "name": "Marca-Página"
+        },
+        {
+          "amount": 100,
+          "name": "Página Deteriorada"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Grimório Antigo"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-4",
+      "name": "Torre de Thanatos (4)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Relâmpago Nível 5"
+        },
+        {
+          "amount": 10,
+          "name": "Pena Macia"
+        },
+        {
+          "amount": 20,
+          "name": "Farrapos"
+        },
+        {
+          "amount": 1,
+          "name": "Anel de Ouro"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-5",
+      "name": "Torre de Thanatos (5)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 200,
+          "name": "Farrapos"
+        },
+        {
+          "amount": 50,
+          "name": "Pena Macia"
+        },
+        {
+          "amount": 2,
+          "name": "Pergaminho Gasto"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-6",
+      "name": "Torre de Thanatos (6)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Velha Caixa Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Caixa de Presente"
+        },
+        {
+          "amount": 1,
+          "name": "Sapatos de Fricco"
+        },
+        {
+          "amount": 1,
+          "name": "Botas de Vidar"
+        },
+        {
+          "amount": 1,
+          "name": "Torre de Thanatos (7)"
+        },
+        {
+          "amount": 1,
+          "name": "Pedra do Sábio"
+        },
+        {
+          "amount": 5,
+          "name": "Rubi"
+        },
+        {
+          "amount": 1,
+          "name": "Pena Vermelha"
+        },
+        {
+          "amount": 5,
+          "name": "Pérola"
+        },
+        {
+          "amount": 5,
+          "name": "Topázio"
+        },
+        {
+          "amount": 1,
+          "name": "Pena Azul"
+        },
+        {
+          "amount": 5,
+          "name": "Granada"
+        },
+        {
+          "amount": 1,
+          "name": "Torre de Thanatos (8)"
+        },
+        {
+          "amount": 1,
+          "name": "Harpa"
+        },
+        {
+          "amount": 1,
+          "name": "Selo Maldito"
+        },
+        {
+          "amount": 1,
+          "name": "Marca-Página"
+        },
+        {
+          "amount": 1,
+          "name": "Caveira"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-9",
+      "name": "Torre de Thanatos (9)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Topázio"
+        },
+        {
+          "amount": 1,
+          "name": "Pérola"
+        },
+        {
+          "amount": 1,
+          "name": "Rubi"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-10",
+      "name": "Torre de Thanatos (10)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Scell"
+        },
+        {
+          "amount": 1,
+          "name": "Brigan"
+        },
+        {
+          "amount": 1,
+          "name": "Granada"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-11",
+      "name": "Torre de Thanatos (11)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Brigan"
+        },
+        {
+          "amount": 1,
+          "name": "Diamante de 2 quilates"
+        }
+      ]
+    },
+    {
+      "id": "torre-de-thanatos-12",
+      "name": "Torre de Thanatos (12)",
+      "city": "Hugel",
+      "bonus": "Defesa ao Thanatos +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Brigan"
+        },
+        {
+          "amount": 1,
+          "name": "Diamante de 2 quilates"
+        }
+      ]
+    },
+    {
+      "id": "templo-de-odin-1",
+      "name": "Templo de Odin (1)",
+      "city": "Hugel",
+      "bonus": "Velocidade de ataque +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Folha de Fumacento"
+        },
+        {
+          "amount": 1,
+          "name": "Scell"
+        }
+      ]
+    },
+    {
+      "id": "templo-de-odin-2",
+      "name": "Templo de Odin (2)",
+      "city": "Hugel",
+      "bonus": "Velocidade de ataque +1%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 75,
+          "name": "Runa da Escuridão"
+        },
+        {
+          "amount": 10,
+          "name": "Batom"
+        },
+        {
+          "amount": 2,
+          "name": "Gema Vermelha"
+        }
+      ]
+    },
+    {
+      "id": "templo-de-odin-3",
+      "name": "Templo de Odin (3)",
+      "city": "Hugel",
+      "bonus": "Velocidade de ataque +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Bênção de Odin"
+        },
+        {
+          "amount": 1,
+          "name": "Manto de Seda"
+        },
+        {
+          "amount": 100,
+          "name": "Runa da Escuridão"
+        }
+      ]
+    },
+    {
+      "id": "tunel-submarino-0",
+      "name": "Tunel Submarino (0)",
+      "city": "Izlude",
+      "bonus": "Dano com lança congelante +5%",
+      "items": [
+        {
+          "amount": 200,
+          "name": "Garra de Crustáceo"
+        },
+        {
+          "amount": 5,
+          "name": "Cristal Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Detrimindexta"
+        },
+        {
+          "amount": 50,
+          "name": "Tentáculo"
+        }
+      ]
+    },
+    {
+      "id": "tunel-submarino-1",
+      "name": "Tunel Submarino (1)",
+      "city": "Izlude",
+      "bonus": "Dano com Grande floco de neve +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Azul"
+        },
+        {
+          "amount": 50,
+          "name": "Célula Única"
+        },
+        {
+          "amount": 2,
+          "name": "Cristal Azul"
+        },
+        {
+          "amount": 5,
+          "name": "Antenas de Inseto"
+        },
+        {
+          "amount": 200,
+          "name": "Pele de Verme"
+        }
+      ]
+    },
+    {
+      "id": "tunel-submarino-2",
+      "name": "Tunel Submarino (2)",
+      "city": "Izlude",
+      "bonus": "Dano com lança de gelo +5%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Rosa Eterna"
+        },
+        {
+          "amount": 1,
+          "name": "Aquamarina"
+        },
+        {
+          "amount": 100,
+          "name": "Concha"
+        },
+        {
+          "amount": 25,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 1,
+          "name": "Gelo Místico"
+        },
+        {
+          "amount": 100,
+          "name": "Tinta de Polvo"
+        }
+      ]
+    },
+    {
+      "id": "tunel-submarino-3",
+      "name": "Tunel Submarino (3)",
+      "city": "Izlude",
+      "bonus": "Dano com nevasca +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Kataná"
+        },
+        {
+          "amount": 20,
+          "name": "Neurônio"
+        },
+        {
+          "amount": 1,
+          "name": "Aquamarina"
+        },
+        {
+          "amount": 20,
+          "name": "Nadadeira"
+        },
+        {
+          "amount": 100,
+          "name": "Cauda de Peixe"
+        }
+      ]
+    },
+    {
+      "id": "tunel-submarino-4",
+      "name": "Tunel Submarino (4)",
+      "city": "Izlude",
+      "bonus": "Dano com Esfera d'agua +5%",
+      "items": [
+        {
+          "amount": 300,
+          "name": "Nadadeira"
+        },
+        {
+          "amount": 1,
+          "name": "Tridente"
+        },
+        {
+          "amount": 5,
+          "name": "Dente Fossilizado"
+        },
+        {
+          "amount": 5,
+          "name": "Água Benta"
+        },
+        {
+          "amount": 10,
+          "name": "Limão"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-lighthalzen-1",
+      "name": "Arredores de Lighthalzen (1)",
+      "city": "Lighthalzen",
+      "bonus": "Chance de não consumir munições ao atacar/usar skills +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Glaive"
+        },
+        {
+          "amount": 1,
+          "name": "Pique"
+        },
+        {
+          "amount": 1,
+          "name": "Ranseur"
+        },
+        {
+          "amount": 100,
+          "name": "Bigodes de Toupeira"
+        },
+        {
+          "amount": 100,
+          "name": "Garras de Toupeira"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-lighthalzen-2",
+      "name": "Arredores de Lighthalzen (2)",
+      "city": "Lighthalzen",
+      "bonus": "Chance de não consumir munições ao atacar/usar skills +2%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Bactérias"
+        },
+        {
+          "amount": 50,
+          "name": "Garras de Toupeira"
+        },
+        {
+          "amount": 50,
+          "name": "Bigodes de Toupeira"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Ferro"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-lighthalzen-3",
+      "name": "Arredores de Lighthalzen (3)",
+      "city": "Lighthalzen",
+      "bonus": "Chance de não consumir munições ao atacar/usar skills +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Menta"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Ração para Monstros"
+        }
+      ]
+    },
+    {
+      "id": "biolaboratorio-1",
+      "name": "Biolaboratorio (1)",
+      "city": "Lighthalzen",
+      "bonus": "Defesa a Jogador +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Espada Matadora"
+        },
+        {
+          "amount": 1,
+          "name": "Lâmina da Covardia"
+        },
+        {
+          "amount": 1,
+          "name": "Demolidor"
+        },
+        {
+          "amount": 1,
+          "name": "Machado de Batalha"
+        },
+        {
+          "amount": 1,
+          "name": "Maça de Guerra"
+        },
+        {
+          "amount": 1,
+          "name": "Maça Espada"
+        },
+        {
+          "amount": 1,
+          "name": "Arco Grande"
+        },
+        {
+          "amount": 1,
+          "name": "Cajado"
+        }
+      ]
+    },
+    {
+      "id": "biolaboratorio-2",
+      "name": "Biolaboratorio (2)",
+      "city": "Lighthalzen",
+      "bonus": "Defesa a jogador +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Pedra do Sábio"
+        },
+        {
+          "amount": 1,
+          "name": "Karvodailnirol"
+        },
+        {
+          "amount": 1,
+          "name": "Detrimindexta"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce Assada"
+        }
+      ]
+    },
+    {
+      "id": "biolaboratorio-3",
+      "name": "Biolaboratorio (3)",
+      "city": "Lighthalzen",
+      "bonus": "Defesa a jogador +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Claymore"
+        },
+        {
+          "amount": 1,
+          "name": "Garrafa de Veneno"
+        },
+        {
+          "amount": 1,
+          "name": "Machado de Duas Mãos"
+        },
+        {
+          "amount": 1,
+          "name": "Besta"
+        },
+        {
+          "amount": 1,
+          "name": "Vembrassa"
+        },
+        {
+          "amount": 1,
+          "name": "Sapatos"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-louyang",
+      "name": "Arredores de Louyang",
+      "city": "Louyang",
+      "bonus": "Hard def +2",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Monte de Lama"
+        },
+        {
+          "amount": 150,
+          "name": "Areia Seca"
+        }
+      ]
+    },
+    {
+      "id": "tumba-real-1",
+      "name": "Tumba Real (1)",
+      "city": "Louyang",
+      "bonus": "Hard def +1",
+      "items": [
+        {
+          "amount": 75,
+          "name": "Tanga de Tigre"
+        },
+        {
+          "amount": 1,
+          "name": "Pequena Boneca Fantasma"
+        },
+        {
+          "amount": 50,
+          "name": "Batata Doce Assada"
+        },
+        {
+          "amount": 25,
+          "name": "Canino Venenoso"
+        },
+        {
+          "amount": 50,
+          "name": "Escamas de Cobra"
+        }
+      ]
+    },
+    {
+      "id": "tumba-real-2",
+      "name": "Tumba Real (2)",
+      "city": "Louyang",
+      "bonus": "Hard mdef +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Amuleto"
+        },
+        {
+          "amount": 1,
+          "name": "Boneco de Munak"
+        },
+        {
+          "amount": 1,
+          "name": "Túnica"
+        }
+      ]
+    },
+    {
+      "id": "suei-long-gon",
+      "name": "Suei Long Gon",
+      "city": "Louyang",
+      "bonus": "Hard mdef +1",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Leque Fantasma"
+        },
+        {
+          "amount": 50,
+          "name": "Olho de Gato"
+        },
+        {
+          "amount": 1,
+          "name": "Boneco de Pelúcia"
+        },
+        {
+          "amount": 1,
+          "name": "Pequena Boneca Fantasma"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-lutie",
+      "name": "Arredores de Lutie",
+      "city": "Lutie",
+      "bonus": "Int +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Rajada Congelante Nível 1"
+        },
+        {
+          "amount": 5,
+          "name": "Bala"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Opala"
+        }
+      ]
+    },
+    {
+      "id": "fabrica-de-brinquedos-1",
+      "name": "Fabrica de Brinquedos (1)",
+      "city": "Lutie",
+      "bonus": "Agi +1",
+      "items": [
+        {
+          "amount": 25,
+          "name": "Biscoito de Gengibre"
+        },
+        {
+          "amount": 1,
+          "name": "Pérola"
+        },
+        {
+          "amount": 1,
+          "name": "Bengala Doce"
+        },
+        {
+          "amount": 1,
+          "name": "Bala"
+        }
+      ]
+    },
+    {
+      "id": "fabrica-de-brinquedos-2",
+      "name": "Fabrica de Brinquedos (2)",
+      "city": "Lutie",
+      "bonus": "Str +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Algemas"
+        },
+        {
+          "amount": 1,
+          "name": "Ferro"
+        },
+        {
+          "amount": 50,
+          "name": "Pedaço de Bolo"
+        },
+        {
+          "amount": 10,
+          "name": "Bala"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-1",
+      "name": "Deserto de Sograt (1)",
+      "city": "Morroc",
+      "bonus": "VIT +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        },
+        {
+          "amount": 1,
+          "name": "Fracon"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Carne"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-2",
+      "name": "Deserto de Sograt (2)",
+      "city": "Morroc",
+      "bonus": "Soft DEF (VIT) +10",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Camisa de Algodão"
+        },
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        },
+        {
+          "amount": 1,
+          "name": "Bastão"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-3",
+      "name": "Deserto de Sograt (3)",
+      "city": "Morroc",
+      "bonus": "STR +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Tronco de Alta Qualidade"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Sangue Escarlate"
+        },
+        {
+          "amount": 1,
+          "name": "Incubadora"
+        },
+        {
+          "amount": 1,
+          "name": "Brigan"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-7",
+      "name": "Deserto de Sograt (7)",
+      "city": "Morroc",
+      "bonus": "Defesa Verdadeira +20",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        },
+        {
+          "amount": 1,
+          "name": "Leite"
+        },
+        {
+          "amount": 1,
+          "name": "Pluma"
+        },
+        {
+          "amount": 1,
+          "name": "Bastão"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-11",
+      "name": "Deserto de Sograt (11)",
+      "city": "Morroc",
+      "bonus": "Aura Espinhosa +10",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Aço"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Garleta"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-12",
+      "name": "Deserto de Sograt (12)",
+      "city": "Morroc",
+      "bonus": "HP Máximo +75",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        },
+        {
+          "amount": 1,
+          "name": "Leite"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        },
+        {
+          "amount": 1,
+          "name": "Suco de Laranja"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-13",
+      "name": "Deserto de Sograt (13)",
+      "city": "Morroc",
+      "bonus": "Defesa à Propriedade Veneno +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Canino Venenoso"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Escamada"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Katar"
+        },
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-16",
+      "name": "Deserto de Sograt (16)",
+      "city": "Morroc",
+      "bonus": "LUK +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        },
+        {
+          "amount": 1,
+          "name": "Garleta"
+        },
+        {
+          "amount": 1,
+          "name": "Natureza Grandiosa"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-19",
+      "name": "Deserto de Sograt (19)",
+      "city": "Morroc",
+      "bonus": "Velocidade de Movimento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Ração para Bichinho"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-20",
+      "name": "Deserto de Sograt (20)",
+      "city": "Morroc",
+      "bonus": "Defesa contra Tamanho Pequeno +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Leite"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-21",
+      "name": "Deserto de Sograt (21)",
+      "city": "Morroc",
+      "bonus": "VIT +3",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Fragmento Estelar"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        }
+      ]
+    },
+    {
+      "id": "deserto-de-sograt-22",
+      "name": "Deserto de Sograt (22)",
+      "city": "Morroc",
+      "bonus": "Defesa contra o MVP Morroc Ferido +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Cristal da Escuridão"
+        },
+        {
+          "amount": 1,
+          "name": "Cyfar"
+        }
+      ]
+    },
+    {
+      "id": "ruinas-de-morroc",
+      "name": "Ruinas de Morroc",
+      "city": "Morroc",
+      "bonus": "Velocidade de Movimento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        }
+      ]
+    },
+    {
+      "id": "piramide-1",
+      "name": "Piramide (1)",
+      "city": "Morroc",
+      "bonus": "Resistência ao Ataque Mortal +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Asa de Mosca"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Poção da Concentração"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Alfanje"
+        }
+      ]
+    },
+    {
+      "id": "piramide-2",
+      "name": "Piramide (2)",
+      "city": "Morroc",
+      "bonus": "Resistência ao Ataque Mortal +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Escama Brilhante"
+        },
+        {
+          "amount": 1,
+          "name": "Faca"
+        },
+        {
+          "amount": 1,
+          "name": "Panacéia"
+        },
+        {
+          "amount": 1,
+          "name": "Arco"
+        }
+      ]
+    },
+    {
+      "id": "piramide-3",
+      "name": "Piramide (3)",
+      "city": "Morroc",
+      "bonus": "Resistência ao Ataque Mortal +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Espólio"
+        },
+        {
+          "amount": 1,
+          "name": "Anel de Flor"
+        },
+        {
+          "amount": 1,
+          "name": "Ração para Bichinho"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        }
+      ]
+    },
+    {
+      "id": "piramide-4",
+      "name": "Piramide (4)",
+      "city": "Morroc",
+      "bonus": "Resistência à Asura +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Diamante de 2 quilates"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        }
+      ]
+    },
+    {
+      "id": "guilda-dos-gatunos",
+      "name": "Guilda dos Gatunos",
+      "city": "Morroc",
+      "bonus": "Resistência à Asura +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gibão"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-piramide-1",
+      "name": "Subsolo da Piramide (1)",
+      "city": "Morroc",
+      "bonus": "Resistência à Asura +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Anel de Flor"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Limão"
+        },
+        {
+          "amount": 1,
+          "name": "Machado"
+        }
+      ]
+    },
+    {
+      "id": "subsolo-da-piramide-2",
+      "name": "Subsolo da Piramide (2)",
+      "city": "Morroc",
+      "bonus": "Resistência à Asura e ao Ataque Mortal +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Velha Caixa Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Luva"
+        }
+      ]
+    },
+    {
+      "id": "esfinge-1",
+      "name": "Esfinge (1)",
+      "city": "Morroc",
+      "bonus": "DEX +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Velha Caixa Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Roupa de Baixo"
+        },
+        {
+          "amount": 1,
+          "name": "Ração para Bichinho"
+        }
+      ]
+    },
+    {
+      "id": "esfinge-2",
+      "name": "Esfinge (2)",
+      "city": "Morroc",
+      "bonus": "Redução de Recarga -2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Drainliar"
+        },
+        {
+          "amount": 1,
+          "name": "Coleira de Matyr"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Réquiem"
+        },
+        {
+          "amount": 1,
+          "name": "Grilhões"
+        }
+      ]
+    },
+    {
+      "id": "esfinge-3",
+      "name": "Esfinge (3)",
+      "city": "Morroc",
+      "bonus": "Redução de Recarga -3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Livro do Diabo"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Pasana"
+        },
+        {
+          "amount": 1,
+          "name": "Velha Caixa Azul"
+        }
+      ]
+    },
+    {
+      "id": "esfinge-4",
+      "name": "Esfinge (4)",
+      "city": "Morroc",
+      "bonus": "Redução de Tempo de Conjuração -3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Cajado Restaurador"
+        },
+        {
+          "amount": 1,
+          "name": "Machado"
+        },
+        {
+          "amount": 1,
+          "name": "Stiletto"
+        }
+      ]
+    },
+    {
+      "id": "esfinge-5",
+      "name": "Esfinge (5)",
+      "city": "Morroc",
+      "bonus": "Redução de Tempo de Conjuração -2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Canino Venenoso"
+        },
+        {
+          "amount": 1,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Ração para Bichinho"
+        },
+        {
+          "amount": 1,
+          "name": "Camiseta"
+        }
+      ]
+    },
+    {
+      "id": "formigueiro-infernal-1",
+      "name": "Formigueiro Infernal (1)",
+      "city": "Morroc",
+      "bonus": "Defesa contra Tamanho Pequeno +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 1,
+          "name": "Sangue Escarlate"
+        },
+        {
+          "amount": 1,
+          "name": "Bigode de Anão Ancião"
+        },
+        {
+          "amount": 1,
+          "name": "Frescor do Vento"
+        }
+      ]
+    },
+    {
+      "id": "formigueiro-infernal-2",
+      "name": "Formigueiro Infernal (2)",
+      "city": "Morroc",
+      "bonus": "Aumenta a Cura Aplicada +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Asa de Mosca"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Sangue Escarlate"
+        },
+        {
+          "amount": 1,
+          "name": "Bigode de Anão Ancião"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-moscovia",
+      "name": "Arredores de Moscovia",
+      "city": "Moscovia",
+      "bonus": "Reduz o tempo de reuso de itens em 0,1 segundo",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 1,
+          "name": "Pique"
+        },
+        {
+          "amount": 1,
+          "name": "Boneco de Pelúcia"
+        }
+      ]
+    },
+    {
+      "id": "floresta-encantada-1",
+      "name": "Floresta Encantada (1)",
+      "city": "Moscovia",
+      "bonus": "Dano a distancia +1%",
+      "items": [
+        {
+          "amount": 150,
+          "name": "Tora"
+        },
+        {
+          "amount": 300,
+          "name": "Galho Resistente"
+        },
+        {
+          "amount": 1,
+          "name": "Pulso de Ferro"
+        },
+        {
+          "amount": 10,
+          "name": "Folha de Aloe"
+        },
+        {
+          "amount": 100,
+          "name": "Folha Afiada"
+        }
+      ]
+    },
+    {
+      "id": "floresta-encantada-2",
+      "name": "Floresta Encantada (2)",
+      "city": "Moscovia",
+      "bonus": "Dano magico +1%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Pergaminho Antigo"
+        },
+        {
+          "amount": 30,
+          "name": "Pão"
+        },
+        {
+          "amount": 1,
+          "name": "Mastela"
+        },
+        {
+          "amount": 15,
+          "name": "Folha de Hinalle"
+        }
+      ]
+    },
+    {
+      "id": "floresta-encantada-3",
+      "name": "Floresta Encantada (3)",
+      "city": "Moscovia",
+      "bonus": "Dano fisico +1%",
+      "items": [
+        {
+          "amount": 20,
+          "name": "Espelho de Cristal"
+        },
+        {
+          "amount": 1,
+          "name": "Rosa Eterna"
+        },
+        {
+          "amount": 1,
+          "name": "Flor Cantante"
+        },
+        {
+          "amount": 1,
+          "name": "Planta da Melodia"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarga"
+        },
+        {
+          "amount": 1,
+          "name": "Pílula"
+        }
+      ]
+    },
+    {
+      "id": "skellington",
+      "name": "Skellington",
+      "city": "Niflheim",
+      "bonus": "Dano critico +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Rubi Amaldiçoado"
+        },
+        {
+          "amount": 100,
+          "name": "Corda Decomposta"
+        },
+        {
+          "amount": 80,
+          "name": "Coluna de Madeira"
+        },
+        {
+          "amount": 10,
+          "name": "Elmo de Dullahan"
+        },
+        {
+          "amount": 1,
+          "name": "Capa Velha"
+        },
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Poeira Venenosa"
+        }
+      ]
+    },
+    {
+      "id": "vale-de-gyoll",
+      "name": "Vale de Gyoll",
+      "city": "Niflheim",
+      "bonus": "Dano critico +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Galho Seco"
+        },
+        {
+          "amount": 1,
+          "name": "Boneco de Gato Preto"
+        },
+        {
+          "amount": 1,
+          "name": "Elunium"
+        },
+        {
+          "amount": 20,
+          "name": "Auto Retrato"
+        },
+        {
+          "amount": 1,
+          "name": "Máscara Assustadora"
+        },
+        {
+          "amount": 1,
+          "name": "Boneco de Pelúcia"
+        },
+        {
+          "amount": 1,
+          "name": "Fonte de Hvergelmir"
+        },
+        {
+          "amount": 1,
+          "name": "Menta"
+        },
+        {
+          "amount": 1,
+          "name": "Mastela"
+        },
+        {
+          "amount": 1,
+          "name": "Aloés"
+        },
+        {
+          "amount": 1,
+          "name": "Felpa"
+        },
+        {
+          "amount": 1,
+          "name": "Hinalle"
+        },
+        {
+          "amount": 1,
+          "name": "Folha de Aloe"
+        },
+        {
+          "amount": 1,
+          "name": "Mel"
+        }
+      ]
+    },
+    {
+      "id": "vila-dos-arqueiros",
+      "name": "Vila dos Arqueiros",
+      "city": "Payon",
+      "bonus": "Velocidade de Movimento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Tronco"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-1",
+      "name": "Floresta de Payon (1)",
+      "city": "Payon",
+      "bonus": "DEX +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Caule"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-2",
+      "name": "Floresta de Payon (2)",
+      "city": "Payon",
+      "bonus": "Precisão +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Escama Afiada"
+        },
+        {
+          "amount": 1,
+          "name": "Pluma"
+        },
+        {
+          "amount": 1,
+          "name": "Morango"
+        },
+        {
+          "amount": 1,
+          "name": "Emveretarcon"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-3",
+      "name": "Floresta de Payon (3)",
+      "city": "Payon",
+      "bonus": "HP Máximo +50",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Faca"
+        },
+        {
+          "amount": 1,
+          "name": "Casca"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce"
+        },
+        {
+          "amount": 1,
+          "name": "Pluma"
+        },
+        {
+          "amount": 1,
+          "name": "Flor"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-4",
+      "name": "Floresta de Payon (4)",
+      "city": "Payon",
+      "bonus": "SP Máximo +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Bala"
+        },
+        {
+          "amount": 1,
+          "name": "Maçã"
+        },
+        {
+          "amount": 1,
+          "name": "Semente de Yggdrasil"
+        },
+        {
+          "amount": 1,
+          "name": "Garleta"
+        },
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-5",
+      "name": "Floresta de Payon (5)",
+      "city": "Payon",
+      "bonus": "Defesa à Propriedade Veneno +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Túnica"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Arredondada"
+        },
+        {
+          "amount": 1,
+          "name": "Chapéu"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-6",
+      "name": "Floresta de Payon (6)",
+      "city": "Payon",
+      "bonus": "Precisão +3",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Lâmina"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Sangue Escarlate"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-7",
+      "name": "Floresta de Payon (7)",
+      "city": "Payon",
+      "bonus": "Resistência à Propriedade Fogo +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Armadura de Madeira"
+        },
+        {
+          "amount": 1,
+          "name": "Galho Seco"
+        },
+        {
+          "amount": 1,
+          "name": "Tronco de Alta Qualidade"
+        },
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-8",
+      "name": "Floresta de Payon (8)",
+      "city": "Payon",
+      "bonus": "Precisão +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Maçã Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce"
+        },
+        {
+          "amount": 1,
+          "name": "Chapéu"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-9",
+      "name": "Floresta de Payon (9)",
+      "city": "Payon",
+      "bonus": "AGI +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Zargônio"
+        },
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Flor"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-10",
+      "name": "Floresta de Payon (10)",
+      "city": "Payon",
+      "bonus": "Evasão +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Karvodailnirol"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Clava"
+        },
+        {
+          "amount": 1,
+          "name": "Galho Seco"
+        },
+        {
+          "amount": 1,
+          "name": "Brigan"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-payon-11",
+      "name": "Floresta de Payon (11)",
+      "city": "Payon",
+      "bonus": "Dano à Distância +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Galho Seco"
+        },
+        {
+          "amount": 1,
+          "name": "Emblema Oficial"
+        },
+        {
+          "amount": 1,
+          "name": "Florzinha"
+        },
+        {
+          "amount": 1,
+          "name": "Sangue Escarlate"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-payon-0",
+      "name": "Caverna de Payon (0)",
+      "city": "Payon",
+      "bonus": "Defesa à Raça Morto-Vivo +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Asa de Mosca"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Opala"
+        },
+        {
+          "amount": 1,
+          "name": "Osso"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-payon-1",
+      "name": "Caverna de Payon (1)",
+      "city": "Payon",
+      "bonus": "Defesa à Raça Morto-Vivo +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Arco Grande"
+        },
+        {
+          "amount": 1,
+          "name": "Faca"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 1,
+          "name": "Incubadora"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-payon-2",
+      "name": "Caverna de Payon (2)",
+      "city": "Payon",
+      "bonus": "Dano com Golpe Fulminante +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Flecha de Fogo"
+        },
+        {
+          "amount": 1,
+          "name": "Diário de Menina"
+        },
+        {
+          "amount": 1,
+          "name": "Stiletto"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-payon-3",
+      "name": "Caverna de Payon (3)",
+      "city": "Payon",
+      "bonus": "DEX +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Saia Virginal"
+        },
+        {
+          "amount": 1,
+          "name": "Tecido"
+        },
+        {
+          "amount": 1,
+          "name": "Emblema Oficial"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-payon-4",
+      "name": "Caverna de Payon (4)",
+      "city": "Payon",
+      "bonus": "Defesa contra Tamanho Médio +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Álcool"
+        },
+        {
+          "amount": 1,
+          "name": "Bolinha de Gude"
+        },
+        {
+          "amount": 1,
+          "name": "Tronco"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-0",
+      "name": "Arredores de Prontera (0)",
+      "city": "Prontera",
+      "bonus": "Defesa à Propriedade Vento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Flor"
+        },
+        {
+          "amount": 1,
+          "name": "Cenoura Arco-Íris"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-1",
+      "name": "Arredores de Prontera (1)",
+      "city": "Prontera",
+      "bonus": "INT +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Pluma"
+        },
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        },
+        {
+          "amount": 1,
+          "name": "Clava"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-2",
+      "name": "Arredores de Prontera (2)",
+      "city": "Prontera",
+      "bonus": "SP +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Broto"
+        },
+        {
+          "amount": 1,
+          "name": "Pluma"
+        },
+        {
+          "amount": 1,
+          "name": "Clava"
+        },
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-3",
+      "name": "Arredores de Prontera (3)",
+      "city": "Prontera",
+      "bonus": "Recuperação de HP com Consumíveis +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Morango"
+        },
+        {
+          "amount": 1,
+          "name": "Batata Doce"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Suco de Banana"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-4",
+      "name": "Arredores de Prontera (4)",
+      "city": "Prontera",
+      "bonus": "-50ms no Tempo de Conjuração",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Asa de Borboleta"
+        },
+        {
+          "amount": 1,
+          "name": "Antenas Verdes"
+        },
+        {
+          "amount": 1,
+          "name": "Garrafa Vazia"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-5",
+      "name": "Arredores de Prontera (5)",
+      "city": "Prontera",
+      "bonus": "Evasão +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Gibão"
+        },
+        {
+          "amount": 1,
+          "name": "Cenoura"
+        },
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-6",
+      "name": "Arredores de Prontera (6)",
+      "city": "Prontera",
+      "bonus": "Acerto +2",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Muco Pegajoso"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-7",
+      "name": "Arredores de Prontera (7)",
+      "city": "Prontera",
+      "bonus": "Redução de Tempo de Conjuração -2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Rocker"
+        },
+        {
+          "amount": 1,
+          "name": "Antenas Verdes"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-8",
+      "name": "Arredores de Prontera (8)",
+      "city": "Prontera",
+      "bonus": "Taxa de Drop +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Maçã Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Fracon"
+        },
+        {
+          "amount": 1,
+          "name": "Cenoura Arco-Íris"
+        },
+        {
+          "amount": 1,
+          "name": "Bastão"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-9",
+      "name": "Arredores de Prontera (9)",
+      "city": "Prontera",
+      "bonus": "AGI +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Leite"
+        },
+        {
+          "amount": 1,
+          "name": "Fracon"
+        },
+        {
+          "amount": 1,
+          "name": "Leite Doce"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-10",
+      "name": "Arredores de Prontera (10)",
+      "city": "Prontera",
+      "bonus": "SP +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Analgésico"
+        },
+        {
+          "amount": 1,
+          "name": "Pluma"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-prontera-11",
+      "name": "Arredores de Prontera (11)",
+      "city": "Prontera",
+      "bonus": "Ataque +5",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Punhal"
+        },
+        {
+          "amount": 1,
+          "name": "Mangual"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Esmagador"
+        },
+        {
+          "amount": 1,
+          "name": "Vareta"
+        },
+        {
+          "amount": 1,
+          "name": "Arco Composto"
+        },
+        {
+          "amount": 1,
+          "name": "Aço"
+        }
+      ]
+    },
+    {
+      "id": "abadia-de-santa-capitolina",
+      "name": "Abadia de Santa Capitolina",
+      "city": "Prontera",
+      "bonus": "Velocidade de Movimento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Amarela"
+        }
+      ]
+    },
+    {
+      "id": "labirinto-da-floresta-1",
+      "name": "Labirinto da Floresta (1)",
+      "city": "Prontera",
+      "bonus": "Todos os Atributos +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Poring"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Fabre"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Pupa"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Chonchon"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Lobo"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Creamy"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Jibóia"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Mosca Caçadora"
+        }
+      ]
+    },
+    {
+      "id": "labirinto-da-floresta-2",
+      "name": "Labirinto da Floresta (2)",
+      "city": "Prontera",
+      "bonus": "HP Máximo +100",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 1,
+          "name": "Mel"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        }
+      ]
+    },
+    {
+      "id": "labirinto-da-floresta-3",
+      "name": "Labirinto da Floresta (3)",
+      "city": "Prontera",
+      "bonus": "Todos os Atributos +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Carta Sorrateiro"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Mosca Caçadora"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Bafomé Jr."
+        },
+        {
+          "amount": 1,
+          "name": "Carta Louva-a-Deus"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Talo de Verme"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-prontera-1",
+      "name": "Esgotos de Prontera (1)",
+      "city": "Prontera",
+      "bonus": "Dano com arremessar pedra +10%",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Erva Vermelha"
+        },
+        {
+          "amount": 5,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Concha Preta"
+        },
+        {
+          "amount": 50,
+          "name": "Pele de Verme"
+        },
+        {
+          "amount": 50,
+          "name": "Cauda de Rato"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-prontera-2",
+      "name": "Esgotos de Prontera (2)",
+      "city": "Prontera",
+      "bonus": "Dano com rajada de flechas +10%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 50,
+          "name": "Morango"
+        },
+        {
+          "amount": 1,
+          "name": "Musgo Encharcado"
+        },
+        {
+          "amount": 1,
+          "name": "Lâmina"
+        },
+        {
+          "amount": 10,
+          "name": "Antenas de Inseto"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-prontera-3",
+      "name": "Esgotos de Prontera (3)",
+      "city": "Prontera",
+      "bonus": "Dano com golpe fulminante +10%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Karvodailnirol"
+        },
+        {
+          "amount": 2,
+          "name": "Kataná"
+        },
+        {
+          "amount": 1,
+          "name": "Espada Matadora"
+        },
+        {
+          "amount": 30,
+          "name": "Pele de Verme"
+        },
+        {
+          "amount": 3,
+          "name": "Emveretarcon"
+        },
+        {
+          "amount": 10,
+          "name": "Garleta"
+        }
+      ]
+    },
+    {
+      "id": "esgotos-de-prontera-4",
+      "name": "Esgotos de Prontera (4)",
+      "city": "Prontera",
+      "bonus": "Dano com bola de fogo +10%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Erva Amarela"
+        },
+        {
+          "amount": 50,
+          "name": "Asa de Morcego Vermelho"
+        },
+        {
+          "amount": 10,
+          "name": "Bolinha de Gude"
+        },
+        {
+          "amount": 50,
+          "name": "Garleta"
+        }
+      ]
+    },
+    {
+      "id": "pradaria-audhumbla",
+      "name": "Pradaria Audhumbla",
+      "city": "Rachel",
+      "bonus": "Peso extra na mochila +50",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Flor de Planta Carnívora"
+        },
+        {
+          "amount": 100,
+          "name": "Veneno Pegajoso"
+        },
+        {
+          "amount": 10,
+          "name": "Carne Estragada"
+        },
+        {
+          "amount": 150,
+          "name": "Couro de Animal"
+        },
+        {
+          "amount": 150,
+          "name": "Carne Estragada"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 200,
+          "name": "Pena de Harpia"
+        },
+        {
+          "amount": 200,
+          "name": "Garra de Harpia"
+        }
+      ]
+    },
+    {
+      "id": "od-canyon",
+      "name": "Od Canyon",
+      "city": "Rachel",
+      "bonus": "Peso extra na mochila +50",
+      "items": [
+        {
+          "amount": 20,
+          "name": "Caule"
+        },
+        {
+          "amount": 20,
+          "name": "Raiz de Planta Carnívora"
+        },
+        {
+          "amount": 50,
+          "name": "Carne Estragada"
+        },
+        {
+          "amount": 50,
+          "name": "Couro de Animal"
+        },
+        {
+          "amount": 1,
+          "name": "Frescor do Vento"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        }
+      ]
+    },
+    {
+      "id": "planicie-de-ida",
+      "name": "Planicie de Ida",
+      "city": "Rachel",
+      "bonus": "Peso extra na mochila +50",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 1,
+          "name": "Jellopy Tamanho Família"
+        },
+        {
+          "amount": 1,
+          "name": "Frescor do Vento"
+        },
+        {
+          "amount": 100,
+          "name": "Carne Estragada"
+        },
+        {
+          "amount": 150,
+          "name": "Jubileu"
+        },
+        {
+          "amount": 150,
+          "name": "Jellopy"
+        },
+        {
+          "amount": 1,
+          "name": "Suco de Laranja"
+        },
+        {
+          "amount": 1,
+          "name": "Bastão"
+        },
+        {
+          "amount": 1,
+          "name": "Jellopy Tamanho Família"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Drops"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Stapo"
+        }
+      ]
+    },
+    {
+      "id": "portus-luna",
+      "name": "Portus Luna",
+      "city": "Rachel",
+      "bonus": "Peso extra na mochila +50",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Asa de Mosca"
+        },
+        {
+          "amount": 20,
+          "name": "Ração para Monstros"
+        }
+      ]
+    },
+    {
+      "id": "audumla-grassland",
+      "name": "Audumla Grassland",
+      "city": "Rachel",
+      "bonus": "Duração de poções de buff +5 minutos",
+      "items": [
+        {
+          "amount": 75,
+          "name": "Flor de Planta Carnívora"
+        },
+        {
+          "amount": 75,
+          "name": "Raiz de Planta Carnívora"
+        },
+        {
+          "amount": 1,
+          "name": "Parafuso Enferrujado"
+        },
+        {
+          "amount": 1,
+          "name": "Ferro"
+        }
+      ]
+    },
+    {
+      "id": "canion-de-oz",
+      "name": "Canion de Oz",
+      "city": "Rachel",
+      "bonus": "+2 de Ataque e +1 de Ataque Mágico por célula de distância do alvo",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Vento Bruto"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        }
+      ]
+    },
+    {
+      "id": "shore-of-tears",
+      "name": "Shore of Tears",
+      "city": "Rachel",
+      "bonus": "Redução do custo de sp em skills +2%",
+      "items": [
+        {
+          "amount": 2,
+          "name": "Frescor do Vento"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-gelo-1",
+      "name": "Caverna de Gelo (1)",
+      "city": "Rachel",
+      "bonus": "Int +1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Cristal Azul"
+        },
+        {
+          "amount": 10,
+          "name": "Cubo de Gelo"
+        },
+        {
+          "amount": 50,
+          "name": "Coração Glacial"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-gelo-2",
+      "name": "Caverna de Gelo (2)",
+      "city": "Rachel",
+      "bonus": "Vit+1",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Cristal Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Rosa de Gelo"
+        },
+        {
+          "amount": 1,
+          "name": "Gelo Místico"
+        },
+        {
+          "amount": 25,
+          "name": "Coração Glacial"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-gelo-3",
+      "name": "Caverna de Gelo (3)",
+      "city": "Rachel",
+      "bonus": "Luk+3",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Rosa de Gelo"
+        },
+        {
+          "amount": 1,
+          "name": "Arco Glacial"
+        }
+      ]
+    },
+    {
+      "id": "santuario-de-freya-1",
+      "name": "Santuario de Freya (1)",
+      "city": "Rachel",
+      "bonus": "Duração de buffs usados +30 segundos",
+      "items": [
+        {
+          "amount": 300,
+          "name": "Runa Sangrenta"
+        },
+        {
+          "amount": 600,
+          "name": "Máscara Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Bisturi"
+        },
+        {
+          "amount": 1,
+          "name": "Anel de Ouro"
+        }
+      ]
+    },
+    {
+      "id": "santuario-de-freya-2",
+      "name": "Santuario de Freya (2)",
+      "city": "Rachel",
+      "bonus": "Duração de buffs usados +30 segundos",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Ametista"
+        },
+        {
+          "amount": 50,
+          "name": "Desejo das Trevas"
+        },
+        {
+          "amount": 1,
+          "name": "Vento Bruto"
+        }
+      ]
+    },
+    {
+      "id": "santuario-de-freya-3",
+      "name": "Santuario de Freya (3)",
+      "city": "Rachel",
+      "bonus": "Duração de buffs usados +60 segundos",
+      "items": [
+        {
+          "amount": 10,
+          "name": "Fruta Espinhosa Escarlate"
+        },
+        {
+          "amount": 1,
+          "name": "Passo das Sombras"
+        },
+        {
+          "amount": 1,
+          "name": "Bardiche Dentilhado"
+        }
+      ]
+    },
+    {
+      "id": "santuario-de-freya-4",
+      "name": "Santuario de Freya (4)",
+      "city": "Rachel",
+      "bonus": "Recuperação de hp passiva +10%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Chapéu Suspeito"
+        },
+        {
+          "amount": 50,
+          "name": "Runa Sangrenta"
+        },
+        {
+          "amount": 1,
+          "name": "Boina"
+        }
+      ]
+    },
+    {
+      "id": "santuario-de-freya-5",
+      "name": "Santuario de Freya (5)",
+      "city": "Rachel",
+      "bonus": "Recuperação de sp passiva +10%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Runa Sangrenta"
+        },
+        {
+          "amount": 100,
+          "name": "Chapéu Suspeito"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-luluka",
+      "name": "Floresta de Luluka",
+      "city": "Umbala",
+      "bonus": "Dano com Furia da terra +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Corda de Pular"
+        },
+        {
+          "amount": 100,
+          "name": "Pena de Harpia"
+        },
+        {
+          "amount": 50,
+          "name": "Folha Gigante"
+        },
+        {
+          "amount": 1,
+          "name": "Folha Romântica"
+        }
+      ]
+    },
+    {
+      "id": "floresta-de-hoomga",
+      "name": "Floresta de Hoomga",
+      "city": "Umbala",
+      "bonus": "Dano com Perfurar +3%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Tora"
+        },
+        {
+          "amount": 10,
+          "name": "Pedra"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 50,
+          "name": "Ombreira"
+        },
+        {
+          "amount": 10,
+          "name": "Folha Gigante"
+        }
+      ]
+    },
+    {
+      "id": "pantano-de-kalala",
+      "name": "Pantano de Kalala",
+      "city": "Umbala",
+      "bonus": "Dano com brandir lança +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Garra de Grifo"
+        },
+        {
+          "amount": 15,
+          "name": "Casca Arredondada"
+        },
+        {
+          "amount": 100,
+          "name": "Grama"
+        },
+        {
+          "amount": 250,
+          "name": "Semente"
+        }
+      ]
+    },
+    {
+      "id": "selva-de-hoomga",
+      "name": "Selva de Hoomga",
+      "city": "Umbala",
+      "bonus": "Dano com gloria Domini +1000",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Banana"
+        },
+        {
+          "amount": 100,
+          "name": "Pata de Besouro"
+        },
+        {
+          "amount": 150,
+          "name": "Casco de Inseto"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        }
+      ]
+    },
+    {
+      "id": "loja-de-carpintaria",
+      "name": "Loja de Carpintaria",
+      "city": "Umbala",
+      "bonus": "Dano com lança bumerangue +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Chapéu de Banana"
+        },
+        {
+          "amount": 5,
+          "name": "Cacao"
+        },
+        {
+          "amount": 150,
+          "name": "Galho Resistente"
+        },
+        {
+          "amount": 250,
+          "name": "Tora"
+        }
+      ]
+    },
+    {
+      "id": "estrada-para-o-alem",
+      "name": "Estrada para o Alem",
+      "city": "Umbala",
+      "bonus": "Dano com impacto de tyr +15%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Folha Romântica"
+        },
+        {
+          "amount": 1,
+          "name": "Carta Golem de Madeira"
+        },
+        {
+          "amount": 50,
+          "name": "Galho Seco"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-veins-1",
+      "name": "Arredores de Veins (1)",
+      "city": "Veins",
+      "bonus": "Ataque +3",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 100,
+          "name": "Espinho de Cacto"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 25,
+          "name": "Escamas de Cobra"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-veins-2",
+      "name": "Arredores de Veins (2)",
+      "city": "Veins",
+      "bonus": "Soft def +10",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Crina"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 25,
+          "name": "Carne Estragada"
+        },
+        {
+          "amount": 1,
+          "name": "Frescor do Vento"
+        },
+        {
+          "amount": 5,
+          "name": "Jubileu"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-veins-3",
+      "name": "Arredores de Veins (3)",
+      "city": "Veins",
+      "bonus": "Dano critico +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 1,
+          "name": "Areia Fina"
+        },
+        {
+          "amount": 100,
+          "name": "Coração Incandescente"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-veins-4",
+      "name": "Arredores de Veins (4)",
+      "city": "Veins",
+      "bonus": "Dano critico +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Stiletto"
+        },
+        {
+          "amount": 40,
+          "name": "Garra de Lobo"
+        },
+        {
+          "amount": 5,
+          "name": "Raiz de Planta Carnívora"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-veins-5",
+      "name": "Arredores de Veins (5)",
+      "city": "Veins",
+      "bonus": "Taxa critica +2",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Torrão de Areia"
+        },
+        {
+          "amount": 10,
+          "name": "Areia Fina"
+        },
+        {
+          "amount": 5,
+          "name": "Carne Estragada"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-veins-7",
+      "name": "Arredores de Veins (7)",
+      "city": "Veins",
+      "bonus": "Sp maximo +40",
+      "items": [
+        {
+          "amount": 2,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Poção da Concentração"
+        },
+        {
+          "amount": 100,
+          "name": "Jellopy"
+        }
+      ]
+    },
+    {
+      "id": "vulcao-de-thor-1",
+      "name": "Vulcao de Thor (1)",
+      "city": "Veins",
+      "bonus": "Experiencia extra +2%",
+      "items": [
+        {
+          "amount": 20,
+          "name": "Lenha em Brasa"
+        },
+        {
+          "amount": 30,
+          "name": "Pelugem Incandescente"
+        },
+        {
+          "amount": 1,
+          "name": "Coração Flamejante"
+        }
+      ]
+    },
+    {
+      "id": "vulcao-de-thor-2",
+      "name": "Vulcao de Thor (2)",
+      "city": "Veins",
+      "bonus": "Experiencia extra +3%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Lanças de Fogo Nível 3"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 100,
+          "name": "Bigode de Anão Ancião"
+        }
+      ]
+    },
+    {
+      "id": "vulcao-de-thor-3",
+      "name": "Vulcao de Thor (3)",
+      "city": "Veins",
+      "bonus": "Experiencia extra +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Coração Flamejante"
+        },
+        {
+          "amount": 50,
+          "name": "Coração Incandescente"
+        },
+        {
+          "amount": 1,
+          "name": "Traje de Atirador"
+        },
+        {
+          "amount": 1,
+          "name": "Claymore"
+        }
+      ]
+    },
+    {
+      "id": "ilha-esquecida",
+      "name": "Ilha Esquecida",
+      "city": "Veins",
+      "bonus": "Dano com propriedade fantasma +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Erva Branca"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 20,
+          "name": "Osso"
+        },
+        {
+          "amount": 10,
+          "name": "Espólio"
+        }
+      ]
+    },
+    {
+      "id": "monasterio-1",
+      "name": "Monasterio (1)",
+      "city": "Veins",
+      "bonus": "Dano com propriedade fantasma +4%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Utensílio Rural Quebrado"
+        },
+        {
+          "amount": 50,
+          "name": "Crânio Atordoante"
+        },
+        {
+          "amount": 1,
+          "name": "Sapatos da Maré"
+        },
+        {
+          "amount": 1,
+          "name": "Bata de Orleans"
+        }
+      ]
+    },
+    {
+      "id": "monasterio-2",
+      "name": "Monasterio (2)",
+      "city": "Veins",
+      "bonus": "Dano com propriedade sombrio +5%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Crânio Atordoante"
+        },
+        {
+          "amount": 100,
+          "name": "Utensílio Rural Quebrado"
+        },
+        {
+          "amount": 1,
+          "name": "Desbravadora"
+        },
+        {
+          "amount": 1,
+          "name": "Rifle Calibre 12"
+        }
+      ]
+    },
+    {
+      "id": "monasterio-3",
+      "name": "Monasterio (3)",
+      "city": "Veins",
+      "bonus": "Dano com propriedade sombrio +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Cajado do Feiticeiro"
+        },
+        {
+          "amount": 1,
+          "name": "Manto de Mithril"
+        },
+        {
+          "amount": 1,
+          "name": "Cachecol de Lã"
+        }
+      ]
+    },
+    {
+      "id": "juno",
+      "name": "Juno",
+      "city": "Yuno",
+      "bonus": "Velocidade de movimento +1%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Mastela"
+        }
+      ]
+    },
+    {
+      "id": "fronteira-de-al-de-baran",
+      "name": "Fronteira de Al De Baran",
+      "city": "Yuno",
+      "bonus": "Dano com armadilha congelante +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 50,
+          "name": "Asas de Traça"
+        },
+        {
+          "amount": 1,
+          "name": "Uvas"
+        },
+        {
+          "amount": 50,
+          "name": "Muco Pegajoso"
+        },
+        {
+          "amount": 1,
+          "name": "Faca"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-juno-2",
+      "name": "Arredores de Juno (2)",
+      "city": "Yuno",
+      "bonus": "Dano com armadilha explosiva +10%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Pó de Traça"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 1,
+          "name": "Casco de Inseto"
+        },
+        {
+          "amount": 1,
+          "name": "Pata de Besouro"
+        }
+      ]
+    },
+    {
+      "id": "planalto-de-elmes",
+      "name": "Planalto de Elmes",
+      "city": "Yuno",
+      "bonus": "Dano com armadilha atordoante +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Suco de Laranja"
+        },
+        {
+          "amount": 1,
+          "name": "Aquamarina"
+        },
+        {
+          "amount": 1,
+          "name": "Florzinha"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 1,
+          "name": "Bastão"
+        },
+        {
+          "amount": 1,
+          "name": "Minério de Oridecon"
+        },
+        {
+          "amount": 50,
+          "name": "Pó de Bolor"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Verde"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Vermelha"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-yuno-5",
+      "name": "Campos de Yuno (5)",
+      "city": "Yuno",
+      "bonus": "Dano com Tiro preciso +10%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        },
+        {
+          "amount": 1,
+          "name": "Casca Rija"
+        },
+        {
+          "amount": 1,
+          "name": "Vida Verdejante"
+        },
+        {
+          "amount": 5,
+          "name": "Broto"
+        }
+      ]
+    },
+    {
+      "id": "desfiladeiro-elmes",
+      "name": "Desfiladeiro Elmes",
+      "city": "Yuno",
+      "bonus": "Dano com Flecha melódica +5%",
+      "items": [
+        {
+          "amount": 15,
+          "name": "Gema Amarela"
+        },
+        {
+          "amount": 15,
+          "name": "Gema Vermelha"
+        },
+        {
+          "amount": 1,
+          "name": "Izidor"
+        },
+        {
+          "amount": 1,
+          "name": "Cura Nível 5"
+        }
+      ]
+    },
+    {
+      "id": "academia-kiel-hyre",
+      "name": "Academia Kiel Hyre",
+      "city": "Yuno",
+      "bonus": "Dano com Vulcão de Flechas +5%",
+      "items": [
+        {
+          "amount": 200,
+          "name": "Pena de Grand Peco"
+        },
+        {
+          "amount": 5,
+          "name": "Mastela"
+        },
+        {
+          "amount": 1,
+          "name": "Rosa Eterna"
+        },
+        {
+          "amount": 20,
+          "name": "Asas de Traça"
+        }
+      ]
+    },
+    {
+      "id": "acampamento-dos-guardas-de-schwaltzwald",
+      "name": "Acampamento dos Guardas de Schwaltzwald",
+      "city": "Yuno",
+      "bonus": "Dano com Vulcão de flechas +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Aço"
+        },
+        {
+          "amount": 1,
+          "name": "Frescor do Vento"
+        },
+        {
+          "amount": 1,
+          "name": "Antenas de Inseto"
+        }
+      ]
+    },
+    {
+      "id": "campos-de-yuno-10",
+      "name": "Campos de Yuno (10)",
+      "city": "Yuno",
+      "bonus": "Dano com Apunhalar +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Minério de Ferro"
+        },
+        {
+          "amount": 1,
+          "name": "Florzinha"
+        },
+        {
+          "amount": 1,
+          "name": "Poeira Estelar"
+        }
+      ]
+    },
+    {
+      "id": "arredores-de-juno-11",
+      "name": "Arredores de Juno (11)",
+      "city": "Yuno",
+      "bonus": "Dano com Ataque surpresa +5%",
+      "items": [
+        {
+          "amount": 100,
+          "name": "Natureza Grandiosa"
+        },
+        {
+          "amount": 200,
+          "name": "Areia Estelar de Bruxa"
+        },
+        {
+          "amount": 1,
+          "name": "Girassol"
+        }
+      ]
+    },
+    {
+      "id": "controle-da-fronteira",
+      "name": "Controle da Fronteira",
+      "city": "Yuno",
+      "bonus": "Dano com Laminas destruidoras +5%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Pó de Bolor"
+        },
+        {
+          "amount": 50,
+          "name": "Flor de Planta Carnívora"
+        },
+        {
+          "amount": 15,
+          "name": "Asas de Traça"
+        },
+        {
+          "amount": 5,
+          "name": "Erva Verde"
+        }
+      ]
+    },
+    {
+      "id": "ruinas-de-juperos-1",
+      "name": "Ruinas de Juperos (1)",
+      "city": "Yuno",
+      "bonus": "Dano com Tocaia +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Elunium"
+        },
+        {
+          "amount": 1,
+          "name": "Aço"
+        },
+        {
+          "amount": 1,
+          "name": "Fragmento Misterioso"
+        },
+        {
+          "amount": 1,
+          "name": "Rifle de Alcance"
+        },
+        {
+          "amount": 3,
+          "name": "Pedaço de Crista"
+        },
+        {
+          "amount": 1,
+          "name": "Pedaço de Crista"
+        }
+      ]
+    },
+    {
+      "id": "ruinas-de-juperos-2",
+      "name": "Ruinas de Juperos (2)",
+      "city": "Yuno",
+      "bonus": "Dano com explosão toxica +5%",
+      "items": [
+        {
+          "amount": 50,
+          "name": "Engrenagem"
+        },
+        {
+          "amount": 100,
+          "name": "Fragmento Misterioso"
+        },
+        {
+          "amount": 250,
+          "name": "Pedaço de Metal"
+        }
+      ]
+    },
+    {
+      "id": "centro-de-juperos",
+      "name": "Centro de Juperos",
+      "city": "Yuno",
+      "bonus": "Dano com Destruidor de almas +2%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Elunium"
+        },
+        {
+          "amount": 5,
+          "name": "Oridecon"
+        },
+        {
+          "amount": 100,
+          "name": "Placa de Ferro Usada"
+        },
+        {
+          "amount": 1,
+          "name": "Trovoada"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-magma-1",
+      "name": "Caverna de Magma (1)",
+      "city": "Yuno",
+      "bonus": "Dano com impacto meteoro +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Coração Flamejante"
+        },
+        {
+          "amount": 1,
+          "name": "Carvão"
+        },
+        {
+          "amount": 100,
+          "name": "Pedra Pome"
+        },
+        {
+          "amount": 25,
+          "name": "Lenha em Brasa"
+        }
+      ]
+    },
+    {
+      "id": "caverna-de-magma-2",
+      "name": "Caverna de Magma (2)",
+      "city": "Yuno",
+      "bonus": "Dano com chuva de meteoros +2%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Rosário"
+        },
+        {
+          "amount": 1,
+          "name": "Erva Azul"
+        },
+        {
+          "amount": 300,
+          "name": "Pele de Dragão"
+        },
+        {
+          "amount": 50,
+          "name": "Pequeno Chifre Maligno"
+        },
+        {
+          "amount": 50,
+          "name": "Pequena Asa Maligna"
+        }
+      ]
+    },
+    {
+      "id": "fabrica-de-robos-1",
+      "name": "Fabrica de Robos (1)",
+      "city": "Yuno",
+      "bonus": "Dano com Trovão de jupiter +5%",
+      "items": [
+        {
+          "amount": 1,
+          "name": "Batom"
+        },
+        {
+          "amount": 20,
+          "name": "Peça Queimada"
+        },
+        {
+          "amount": 1,
+          "name": "Véu de Morpheus"
+        },
+        {
+          "amount": 1,
+          "name": "Kit de Culinária Real"
+        }
+      ]
+    },
+    {
+      "id": "fabrica-de-robos-2",
+      "name": "Fabrica de Robos (2)",
+      "city": "Yuno",
+      "bonus": "Dano com ira de thor+2%",
+      "items": [
+        {
+          "amount": 5,
+          "name": "Pedaço de Ferro Sólido"
+        },
+        {
+          "amount": 10,
+          "name": "Aço"
+        },
+        {
+          "amount": 1,
+          "name": "Elunium"
+        },
+        {
+          "amount": 50,
+          "name": "Brigan"
+        }
+      ]
+    }
+  ]
+}

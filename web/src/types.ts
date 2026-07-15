@@ -39,6 +39,27 @@ export interface HatQuestsFile {
   quests: HatQuest[];
 }
 
+// --- Colecoes de mapa (map_collections.json, gerado pelo tools/build_maps.py) ----
+
+export interface MapCollectionItem {
+  amount: number;
+  itemId: number | null; // null = nome nao resolvido (ex.: referencia a outro mapa)
+  name: string;
+  icon: 0 | 1;
+}
+
+export interface MapCollection {
+  id: string; // slug estavel
+  name: string;
+  city: string;
+  bonus: string;
+  items: MapCollectionItem[];
+}
+
+export interface MapCollectionsFile {
+  collections: MapCollection[];
+}
+
 // Stats oficiais pre-renewal (rAthena). Sao os que valem num servidor pre-re.
 export interface OfficialStats {
   aegisName: string;

@@ -79,6 +79,24 @@ CREATE TABLE hat_quest_ingredients (
 );
 CREATE INDEX idx_hqi_item ON hat_quest_ingredients(item_id);
 CREATE INDEX idx_hq_hat   ON hat_quests(hat_id);
+
+CREATE TABLE map_collections (
+  id    TEXT PRIMARY KEY,
+  name  TEXT NOT NULL,
+  city  TEXT NOT NULL,
+  bonus TEXT NOT NULL,
+  sort  INTEGER NOT NULL
+);
+CREATE TABLE map_collection_items (
+  collection_id TEXT    NOT NULL REFERENCES map_collections(id),
+  ord           INTEGER NOT NULL,
+  amount        INTEGER NOT NULL,
+  item_id       INTEGER,
+  name          TEXT NOT NULL,
+  icon          INTEGER NOT NULL,
+  PRIMARY KEY (collection_id, ord)
+);
+CREATE INDEX idx_mci_item ON map_collection_items(item_id);
 """
 
 # FTS5 STANDALONE (guarda sn/st): visivel/editavel no DB Browser e legivel pelo

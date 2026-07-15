@@ -13,7 +13,8 @@ Patches (sobre web/public/data/aureumro.db.png, gerado pelo build_data.py):
   build/hats_report.md -- notas internas dos PDFs, matches ambiguos e nao resolvidos
 
 IMPORTANTE: build_data.py regenera o banco do zero e DESFAZ este patch.
-Ordem do pipeline: ... -> build_data.py -> build_hats.py (re-rode este sempre).
+Ordem do pipeline: ... -> build_data.py -> build_hats.py -> build_maps.py
+(re-rode este sempre que build_data.py rodar).
 Standalone: nao precisa do cliente do jogo nem de lupa. Re-rodar e seguro (idempotente).
 """
 
