@@ -6,6 +6,7 @@ import { getItemDetail, getQuestsUsingItem, getQuestsRewarding, type QuestChip }
 import { colorize, readableColor, stripColors } from "../lib/rotext";
 import { ItemIcon } from "../components/ItemIcon";
 import { DropTable } from "../components/DropTable";
+import { Header } from "../components/Header";
 import { tSubType, tJob } from "../lib/i18n";
 
 const DIV_LABELS: Record<string, string> = {
@@ -89,6 +90,7 @@ export function ItemPage() {
   if (item === undefined) {
     return (
       <div className="app">
+        <Header />
         <Link className="back-link" to="/">← Voltar</Link>
         <div className="center-note"><span className="spinner" /> Carregando item…</div>
       </div>
@@ -98,6 +100,7 @@ export function ItemPage() {
   if (item === null) {
     return (
       <div className="app">
+        <Header />
         <Link className="back-link" to="/">← Voltar</Link>
         <div className="center-note">Item #{itemId} não encontrado.</div>
       </div>
@@ -165,6 +168,7 @@ export function ItemPage() {
 
   return (
     <div className="app">
+      <Header />
       <Link className="back-link" to="/">← Voltar para a busca</Link>
 
       <div className="detail">

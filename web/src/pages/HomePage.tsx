@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { ListRow, Meta } from "../types";
 import { countItems, getMeta, queryItemsWindow } from "../lib/queries";
@@ -9,6 +9,7 @@ import { readableColor } from "../lib/rotext";
 import { ItemIcon } from "../components/ItemIcon";
 import { FiltersPanel } from "../components/FiltersPanel";
 import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 
 // A listagem e paginada por SQL: COUNT(*) + janelas de CHUNK linhas sob demanda do
 // virtualizer. Nada e carregado em massa -- o worker do SQLite baixa so as paginas
@@ -131,18 +132,11 @@ export function HomePage() {
 
   return (
     <div className="app">
-      <header className="header">
-        <div className="header-row">
-          <div className="logo">
-            <span className="gold">Aureum</span>RO
-          </div>
-          <span className="tagline">
-            Database de itens do servidor{meta ? ` — ${meta.total.toLocaleString("pt-BR")} itens` : ""}
-          </span>
-          <Link className="nav-link" to="/hat-quests">
-            Quests de Chapéu
-          </Link>
-        </div>
+      <Header
+        tagline={
+          <>Database de itens do servidor{meta ? ` — ${meta.total.toLocaleString("pt-BR")} itens` : ""}</>
+        }
+      >
         <div className="searchbar">
           <input
             autoFocus
@@ -151,7 +145,7 @@ export function HomePage() {
             onChange={(e) => setFilters((f) => ({ ...f, text: e.target.value }))}
           />
         </div>
-      </header>
+      </Header>
 
       <div className="main">
         <FiltersPanel meta={meta} filters={filters} setFilters={setFilters} />
@@ -175,7 +169,7 @@ export function HomePage() {
             <div
               className="list"
               ref={parentRef}
-              style={{ height: "calc(100vh - 210px)", overflow: "auto" }}
+              style={{ height: "calc(100vh - 256px)", overflow: "auto" }}
               onScroll={(e) => (scrollOffsetRef.current = e.currentTarget.scrollTop)}
             >
               <div style={{ height: rowVirtualizer.getTotalSize(), position: "relative" }}>

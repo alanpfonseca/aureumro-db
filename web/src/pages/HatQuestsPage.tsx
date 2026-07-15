@@ -4,6 +4,7 @@ import type { HatQuest, HatQuestsFile } from "../types";
 import { getHatQuests } from "../lib/queries";
 import { deaccent } from "../lib/deaccent";
 import { ItemIcon } from "../components/ItemIcon";
+import { Header } from "../components/Header";
 
 function fmtZeny(v: number) {
   return `${v.toLocaleString("pt-BR")} z`;
@@ -44,7 +45,7 @@ export function HatQuestsPage() {
   if (error) {
     return (
       <div className="app">
-        <Link className="back-link" to="/">← Voltar para a busca</Link>
+        <Header />
         <div className="center-note">
           Erro ao carregar as quests: {error}
           <br />
@@ -56,19 +57,13 @@ export function HatQuestsPage() {
 
   return (
     <div className="app">
-      <Link className="back-link" to="/">← Voltar para a busca</Link>
-
-      <header className="header">
-        <div className="header-row">
-          <div className="logo">
-            Quests de <span className="gold">Chapéu</span>
-          </div>
-          <span className="tagline">
-            {data
-              ? `${data.quests.length} quests — custo ${fmtZeny(data.zenyCost)} + ingredientes`
-              : "Carregando…"}
-          </span>
-        </div>
+      <Header
+        tagline={
+          data
+            ? `${data.quests.length} quests — custo ${fmtZeny(data.zenyCost)} + ingredientes`
+            : "Carregando…"
+        }
+      >
         {questParam ? (
           <button className="clear-btn" onClick={() => setSearchParams({})}>
             Mostrar todas as quests
@@ -83,7 +78,7 @@ export function HatQuestsPage() {
             />
           </div>
         )}
-      </header>
+      </Header>
 
       {!data ? (
         <div className="center-note">

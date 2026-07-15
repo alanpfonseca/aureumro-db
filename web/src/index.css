@@ -62,7 +62,7 @@ select {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: linear-gradient(180deg, var(--bg) 70%, transparent);
+  background: var(--bg);
   padding: 16px 0 12px;
 }
 .header-row {
@@ -82,6 +82,58 @@ select {
 .tagline {
   color: var(--text-dim);
   font-size: 13px;
+}
+.logo {
+  color: inherit;
+}
+.logo:hover {
+  text-decoration: none;
+}
+
+/* Abas de navegação — mobile-first */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; /* scroll horizontal se estourar no mobile */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+.tab {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch target mobile */
+  padding: 0 14px;
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px; /* a borda ativa cobre a linha do .tabs */
+}
+.tab:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+.tab:focus-visible {
+  outline: 2px solid var(--accent-dim);
+  outline-offset: -2px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+@media (min-width: 761px) {
+  .tab {
+    min-height: 40px;
+    font-size: 13.5px;
+  }
 }
 
 .searchbar {
@@ -120,7 +172,7 @@ select {
 
 .filters {
   position: sticky;
-  top: 128px;
+  top: 174px;
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -566,18 +618,6 @@ select {
 }
 
 /* --- Quests de chapeu ---------------------------------------------------------- */
-.nav-link {
-  margin-left: auto;
-  font-size: 13px;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg-panel);
-  padding: 4px 12px;
-}
-.nav-link:hover {
-  border-color: var(--accent-dim);
-}
 .quest-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
