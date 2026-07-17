@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { ListRow, Meta } from "../types";
 import { countItems, getMeta, queryItemsWindow } from "../lib/queries";
-import { emptyFilters, type Filters } from "../lib/filters";
+import { emptyFilters, normalizeFilters, type Filters, type ItemSort } from "../lib/filters";
 import { saveHomeSession, takeHomeSession } from "../lib/homeSession";
 import { useModalNav } from "../lib/modalNav";
 import { readableColor } from "../lib/rotext";
@@ -16,11 +16,21 @@ import { Header } from "../components/Header";
 // do banco que essas queries tocam.
 const CHUNK = 200;
 
+const SORT_OPTIONS: { value: ItemSort; label: string }[] = [
+  { value: "auto", label: "Relevância" },
+  { value: "id", label: "ID" },
+  { value: "name", label: "Nome" },
+  { value: "levelAsc", label: "Nível ↑" },
+  { value: "levelDesc", label: "Nível ↓" },
+  { value: "atkDesc", label: "ATQ" },
+  { value: "defDesc", label: "DEF" },
+];
+
 export function HomePage() {
   // Sessao anterior (voltar do item): filtros + scroll restaurados.
   const restored = useRef(takeHomeSession());
   const [filters, setFilters] = useState<Filters>(
-    () => restored.current?.filters ?? emptyFilters(),
+    () => normalizeFilters(restored.current?.filters ?? emptyFilters()),
   );
   // Filtros efetivos das queries: texto e debounced (200 ms), facetas aplicam direto.
   const [queryFilters, setQueryFilters] = useState<Filters>(filters);
@@ -53,12 +63,13 @@ export function HomePage() {
     rowCache.current.clear();
     inflight.current.clear();
     setCount(null);
-    countItems(queryFilters)
+    if (!meta) return;
+    countItems(queryFilters, meta)
       .then((total) => {
         if (gen.current === g) setCount(total);
       })
       .catch((e) => setError(String(e)));
-  }, [queryFilters]);
+  }, [queryFilters, meta]);
 
   const parentRef = useRef<HTMLDivElement>(null);
   const rowVirtualizer = useVirtualizer({
@@ -74,14 +85,14 @@ export function HomePage() {
 
   // Busca as janelas visiveis que ainda nao estao no cache.
   useEffect(() => {
-    if (count == null || count === 0) return;
+    if (!meta || count == null || count === 0) return;
     const g = gen.current;
     const start = Math.floor(firstIdx / CHUNK) * CHUNK;
     const end = Math.min(lastIdx, count - 1);
     for (let cs = start; cs <= end; cs += CHUNK) {
       if (rowCache.current.has(cs) || inflight.current.has(cs)) continue;
       inflight.current.add(cs);
-      queryItemsWindow(queryFilters, cs, CHUNK)
+      queryItemsWindow(queryFilters, meta, cs, CHUNK)
         .then((rows) => {
           if (gen.current !== g) return;
           rows.forEach((r, i) => rowCache.current.set(cs + i, r));
@@ -92,7 +103,7 @@ export function HomePage() {
           if (gen.current === g) inflight.current.delete(cs);
         });
     }
-  }, [firstIdx, lastIdx, count, queryFilters]);
+  }, [firstIdx, lastIdx, count, queryFilters, meta]);
 
   // Restaura o scroll da sessao anterior assim que a contagem chega.
   const didRestoreScroll = useRef(false);
@@ -157,6 +168,18 @@ export function HomePage() {
                 ? `${count.toLocaleString("pt-BR")} resultado${count === 1 ? "" : "s"}`
                 : "Carregando…"}
             </span>
+            <select
+              className="sort-select"
+              value={filters.sort}
+              onChange={(e) =>
+                setFilters((f) => ({ ...f, sort: e.target.value as ItemSort }))
+              }
+              aria-label="Ordenar por"
+            >
+              {SORT_OPTIONS.map((o) => (
+                <option key={o.value} value={o.value}>{o.label}</option>
+              ))}
+            </select>
           </div>
 
           {count == null ? (

@@ -1,5 +1,6 @@
 import type { Meta } from "../types";
-import { emptyFilters, hasActiveFacets, type Filters } from "../lib/filters";
+import { emptyFilters, hasActiveFacets, normalizeFilters, type Filters } from "../lib/filters";
+import { tJob, tSubType } from "../lib/i18n";
 
 interface Props {
   meta: Meta | null;
@@ -18,6 +19,11 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
   if (!meta) return <aside className="filters" />;
 
   const slotOptions = Array.from({ length: meta.maxSlots + 1 }, (_, i) => i);
+  const showWeaponSub = filters.types.has("Arma");
+  const showClass = [...filters.types].some((t) => meta.equipTypes.includes(t));
+
+  const apply = (patch: Partial<Filters>) =>
+    setFilters((f) => normalizeFilters({ ...f, ...patch }));
 
   return (
     <aside className="filters">
@@ -32,7 +38,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
                 (v === "custom" ? " custom" : "") +
                 (filters.custom === v ? " active" : "")
               }
-              onClick={() => setFilters((f) => ({ ...f, custom: v }))}
+              onClick={() => apply({ custom: v })}
             >
               {v === "all" ? "Todos" : v === "vanilla" ? "Oficial" : "Custom"}
             </span>
@@ -47,13 +53,69 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
             <span
               key={t}
               className={"chip" + (filters.types.has(t) ? " active" : "")}
-              onClick={() => setFilters((f) => ({ ...f, types: toggleInSet(f.types, t) }))}
+              onClick={() => apply({ types: toggleInSet(filters.types, t) })}
             >
               {t}
             </span>
           ))}
         </div>
+
+        {showWeaponSub && meta.weaponSubTypes.length > 0 && (
+          <div className="filter-subgroup">
+            <h5>Tipo de arma</h5>
+            <div className="chip-row">
+              {meta.weaponSubTypes.map((st) => (
+                <span
+                  key={st}
+                  className={"chip" + (filters.weaponSubTypes.has(st) ? " active" : "")}
+                  onClick={() =>
+                    apply({ weaponSubTypes: toggleInSet(filters.weaponSubTypes, st) })
+                  }
+                >
+                  {tSubType(st)}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
+
+      {showClass && (
+        <div className="filter-group">
+          <h4>Classe</h4>
+          <p className="dim small" style={{ margin: "0 0 8px" }}>
+            Filtra pela base pré-renewal. Itens custom sem dados oficiais ficam de fora.
+          </p>
+          <div className="chip-row">
+            {meta.jobBits.map((j) => (
+              <span
+                key={j}
+                className={"chip" + (filters.jobs.has(j) ? " active" : "")}
+                onClick={() => apply({ jobs: toggleInSet(filters.jobs, j) })}
+              >
+                {tJob(j)}
+              </span>
+            ))}
+          </div>
+          <div className="radio-row" style={{ marginTop: 10 }}>
+            {([
+              { k: "all", label: "Todas" },
+              { k: "trans", label: "Só transcendentais" },
+              { k: "nontrans", label: "Só classes normais" },
+            ] as const).map((o) => (
+              <label key={o.k} className="radio">
+                <input
+                  type="radio"
+                  name="item-class-filter"
+                  checked={filters.classes === o.k}
+                  onChange={() => apply({ classes: o.k })}
+                />
+                {o.label}
+              </label>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="filter-group">
         <h4>Slots (brechas)</h4>
@@ -62,7 +124,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
             <span
               key={n}
               className={"chip" + (filters.slots.has(n) ? " active" : "")}
-              onClick={() => setFilters((f) => ({ ...f, slots: toggleInSet(f.slots, n) }))}
+              onClick={() => apply({ slots: toggleInSet(filters.slots, n) })}
             >
               {n}
             </span>
@@ -78,9 +140,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
               <span
                 key={el}
                 className={"chip" + (filters.elements.has(el) ? " active" : "")}
-                onClick={() =>
-                  setFilters((f) => ({ ...f, elements: toggleInSet(f.elements, el) }))
-                }
+                onClick={() => apply({ elements: toggleInSet(filters.elements, el) })}
               >
                 {el}
               </span>
@@ -98,10 +158,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
             placeholder="mín"
             value={filters.minReqLevel ?? ""}
             onChange={(e) =>
-              setFilters((f) => ({
-                ...f,
-                minReqLevel: e.target.value === "" ? null : Number(e.target.value),
-              }))
+              apply({ minReqLevel: e.target.value === "" ? null : Number(e.target.value) })
             }
           />
           <span>—</span>
@@ -111,10 +168,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
             placeholder="máx"
             value={filters.maxReqLevel ?? ""}
             onChange={(e) =>
-              setFilters((f) => ({
-                ...f,
-                maxReqLevel: e.target.value === "" ? null : Number(e.target.value),
-              }))
+              apply({ maxReqLevel: e.target.value === "" ? null : Number(e.target.value) })
             }
           />
         </div>
@@ -125,7 +179,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
           <input
             type="checkbox"
             checked={filters.onlyWithDrops}
-            onChange={(e) => setFilters((f) => ({ ...f, onlyWithDrops: e.target.checked }))}
+            onChange={(e) => apply({ onlyWithDrops: e.target.checked })}
           />
           Só o que monstro dropa
         </label>
@@ -133,7 +187,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
           <input
             type="checkbox"
             checked={filters.onlyPreRenewal}
-            onChange={(e) => setFilters((f) => ({ ...f, onlyPreRenewal: e.target.checked }))}
+            onChange={(e) => apply({ onlyPreRenewal: e.target.checked })}
           />
           Só pré-renewal
         </label>
@@ -141,7 +195,7 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
           <input
             type="checkbox"
             checked={filters.onlyWithIcon}
-            onChange={(e) => setFilters((f) => ({ ...f, onlyWithIcon: e.target.checked }))}
+            onChange={(e) => apply({ onlyWithIcon: e.target.checked })}
           />
           Só com ícone
         </label>
@@ -149,19 +203,14 @@ export function FiltersPanel({ meta, filters, setFilters }: Props) {
           <input
             type="checkbox"
             checked={filters.onlyHatQuestIngredient}
-            onChange={(e) =>
-              setFilters((f) => ({ ...f, onlyHatQuestIngredient: e.target.checked }))
-            }
+            onChange={(e) => apply({ onlyHatQuestIngredient: e.target.checked })}
           />
           Só ingredientes de quests de chapéu
         </label>
       </div>
 
       {(hasActiveFacets(filters) || filters.text) && (
-        <button
-          className="clear-btn"
-          onClick={() => setFilters(emptyFilters())}
-        >
+        <button className="clear-btn" onClick={() => setFilters(emptyFilters())}>
           Limpar filtros
         </button>
       )}

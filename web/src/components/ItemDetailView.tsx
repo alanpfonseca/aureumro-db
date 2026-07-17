@@ -1,8 +1,8 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import type { ItemDetail } from "../types";
+import type { ItemDetail, Meta } from "../types";
 import { collectionUrl } from "../lib/data";
-import { getItemDetail, getQuestsUsingItem, getQuestsRewarding, type QuestChip } from "../lib/queries";
+import { getItemDetail, getMeta, getQuestsUsingItem, getQuestsRewarding, type QuestChip } from "../lib/queries";
 import { colorize, readableColor, stripColors } from "../lib/rotext";
 import { ItemIcon } from "./ItemIcon";
 import { DropTable } from "./DropTable";
@@ -46,6 +46,7 @@ function questLinks(quests: QuestChip[]) {
 
 export function ItemDetailView({ itemId }: { itemId: number }) {
   const [item, setItem] = useState<ItemDetail | null | undefined>(undefined);
+  const [meta, setMeta] = useState<Meta | null>(null);
   const [copied, setCopied] = useState(false);
   const [collFailed, setCollFailed] = useState(false);
   const [usedInQuests, setUsedInQuests] = useState<QuestChip[]>([]);
@@ -55,6 +56,7 @@ export function ItemDetailView({ itemId }: { itemId: number }) {
     setItem(undefined);
     setCollFailed(false);
     getItemDetail(itemId).then(setItem).catch(() => setItem(null));
+    getMeta().then(setMeta).catch(() => {});
   }, [itemId]);
 
   useEffect(() => {
@@ -219,11 +221,15 @@ export function ItemDetailView({ itemId }: { itemId: number }) {
           {off?.jobs?.length ? (
             <div className="jobs">
               <h4>Profissões</h4>
-              <div className="chip-row">
-                {off.jobs.map((j) => (
-                  <span key={j} className="chip static">{tJob(j)}</span>
-                ))}
-              </div>
+              {meta && off.jobs.length === meta.jobBits.length ? (
+                <span className="chip static">Todas as classes</span>
+              ) : (
+                <div className="chip-row">
+                  {off.jobs.map((j) => (
+                    <span key={j} className="chip static">{tJob(j)}</span>
+                  ))}
+                </div>
+              )}
             </div>
           ) : f.jobs ? (
             <div className="jobs">
