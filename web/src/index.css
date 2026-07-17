@@ -699,3 +699,73 @@ a.quest-ing:hover {
 .city-select:focus {
   border-color: var(--accent-dim);
 }
+
+/* --- Modal global ---------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.72);
+  overscroll-behavior: contain;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow-y: auto;
+  background: var(--bg);
+  padding: 52px 16px 64px;
+  outline: none;
+}
+
+.modal-close {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: -44px 0 0;
+  padding: 0;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: var(--text);
+  border-color: var(--accent-dim);
+}
+
+@media (min-width: 761px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 16px;
+  }
+  .modal {
+    width: 100%;
+    max-width: 920px;
+    height: auto;
+    max-height: 92dvh;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-panel);
+    padding: 48px 24px 24px;
+  }
+  .modal-close {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    margin: 0;
+  }
+}

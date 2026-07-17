@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import type { HatQuest, HatQuestsFile } from "../types";
 import { getHatQuests } from "../lib/queries";
 import { deaccent } from "../lib/deaccent";
@@ -15,6 +15,7 @@ export function HatQuestsPage() {
   const [error, setError] = useState<string | null>(null);
   const [text, setText] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
   const questParam = searchParams.get("quest");
 
   useEffect(() => {
@@ -94,7 +95,11 @@ export function HatQuestsPage() {
             <article key={q.id} className="quest-card">
               <div className="quest-hat">
                 {q.hatId != null ? (
-                  <Link to={`/item/${q.hatId}`} className="quest-hat-link">
+                  <Link
+                    to={`/item/${q.hatId}`}
+                    className="quest-hat-link"
+                    state={{ backgroundLocation: location }}
+                  >
                     <ItemIcon id={q.hatId} hasIcon={q.hatIcon === 1} name={q.hatName} size={40} />
                     <span className="quest-hat-name">
                       {q.hatName}
@@ -110,7 +115,11 @@ export function HatQuestsPage() {
                 {q.ingredients.map((ing, i) => (
                   <li key={i}>
                     {ing.itemId != null ? (
-                      <Link to={`/item/${ing.itemId}`} className="quest-ing">
+                      <Link
+                        to={`/item/${ing.itemId}`}
+                        className="quest-ing"
+                        state={{ backgroundLocation: location }}
+                      >
                         <ItemIcon id={ing.itemId} hasIcon={ing.icon === 1} name={ing.name} size={24} />
                         <span className="quest-ing-amount">{ing.amount}x</span>
                         <span>{ing.name}</span>
