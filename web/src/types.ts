@@ -59,6 +59,7 @@ export interface MapCollection {
 
 export interface MapCollectionsFile {
   collections: MapCollection[];
+  bonusTypes?: { id: string; label: string }[];
 }
 
 // Stats oficiais pre-renewal (rAthena). Sao os que valem num servidor pre-re.
