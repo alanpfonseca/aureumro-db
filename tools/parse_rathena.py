@@ -28,6 +28,9 @@ except ImportError:
 
 from lupa import LuaRuntime
 
+sys.path.insert(0, str(Path(__file__).parent))
+from db_common import JOB_BITS
+
 ROOT = Path(__file__).parent.parent
 RA = ROOT / "build" / "rathena"
 CLIENT_ITEMS = ROOT / "build" / "items.raw.json"
@@ -87,6 +90,12 @@ def load_item_db():
         for e in doc.get("Body", []):
             iid = e["Id"]
             aegis_to_id[e["AegisName"]] = iid
+            jobs_raw = e.get("Jobs") or {}
+            if jobs_raw.get("All"):
+                # Expande "All:true" para a lista explicita, descartando os false.
+                jobs = [j for j in JOB_BITS if jobs_raw.get(j, True)]
+            else:
+                jobs = sorted(k for k, v in jobs_raw.items() if v)
             rec = {
                 "aegisName": e["AegisName"],
                 "nameEn": e.get("Name"),
@@ -104,7 +113,8 @@ def load_item_db():
                 "weaponLevel": e.get("WeaponLevel"),
                 "requiredLevel": e.get("EquipLevelMin"),
                 "refineable": e.get("Refineable", False),
-                "jobs": sorted(k for k, v in (e.get("Jobs") or {}).items() if v),
+                "jobs": jobs,
+                "classes": sorted(k for k, v in (e.get("Classes") or {}).items() if v),
                 "locations": sorted(k for k, v in (e.get("Locations") or {}).items() if v),
             }
             official[iid] = {k: v for k, v in rec.items() if v not in (None, [], {})}
@@ -123,16 +133,32 @@ def load_mobs(aegis_to_id):
         mobs[mid] = {
             "id": mid,
             "name": e.get("Name"),
-            "level": e.get("Level"),
-            "hp": e.get("Hp"),
+            "level": e.get("Level", 1),
+            "hp": e.get("Hp", 1),
+            "sp": e.get("Sp", 1),
             "race": e.get("Race"),
             "element": e.get("Element"),
-            "elementLevel": e.get("ElementLevel"),
+            "elementLevel": e.get("ElementLevel", 1),
             "size": e.get("Size"),
-            "baseExp": e.get("BaseExp"),
-            "jobExp": e.get("JobExp"),
+            "baseExp": e.get("BaseExp", 0),
+            "jobExp": e.get("JobExp", 0),
+            "mvpExp": e.get("MvpExp", 0),
             "mvp": is_mvp,
             "spawns": [],
+            # Stats completos para a aba Monstros.
+            "attack": e.get("Attack", 0),
+            "attack2": e.get("Attack2", 0),
+            "defense": e.get("Defense", 0),
+            "magicDefense": e.get("MagicDefense", 0),
+            "str": e.get("Str", 1),
+            "agi": e.get("Agi", 1),
+            "vit": e.get("Vit", 1),
+            "int": e.get("Int", 1),
+            "dex": e.get("Dex", 1),
+            "luk": e.get("Luk", 1),
+            "attackRange": e.get("AttackRange", 0),
+            "walkSpeed": e.get("WalkSpeed", 0),
+            "drops": [],
         }
 
         for key, mvp_flag in (("Drops", False), ("MvpDrops", True)):
@@ -140,11 +166,17 @@ def load_mobs(aegis_to_id):
                 iid = aegis_to_id.get(d["Item"])
                 if iid is None:
                     continue  # item que nao existe no item_db pre-re
+                drop_rec = {
+                    "item": iid,
+                    "rate": d.get("Rate", 0) / 100.0,  # 1/10000 -> porcentagem
+                    "mvp": mvp_flag,
+                }
+                mobs[mid]["drops"].append(drop_rec)
                 dropped_by[iid].append({
                     "mob": mid,
                     "name": e.get("Name"),
-                    "level": e.get("Level"),
-                    "rate": d.get("Rate", 0) / 100.0,  # 1/10000 -> porcentagem
+                    "level": e.get("Level", 1),
+                    "rate": drop_rec["rate"],
                     "mvp": mvp_flag,
                     "mvpMob": is_mvp,
                 })
@@ -265,6 +297,7 @@ def main():
         "droppedBy": dropped_by,
         "mobs": mobs,
         "divergences": divs,
+        "mapNames": map_names,
     }, ensure_ascii=False), encoding="utf-8")
     print(f"\nEscrito: {OUT}  ({OUT.stat().st_size / 1e6:.1f} MB)")
 

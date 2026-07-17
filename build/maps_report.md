@@ -1,5 +1,14 @@
 # Relatório — build_maps.py
 
+## Categorias de bônus
+
+- Drop: 4
+- EXP: 6
+
+## Bônus não categorizados
+
+- (nenhum)
+
 ## Referências a outras coleções (sem link, esperado)
 
 - "Arredores de Amatsu": "Labirinto de Tatames" referencia outro mapa
