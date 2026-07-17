@@ -159,10 +159,78 @@ export interface Meta {
   jobBits: string[];
   weaponSubTypes: string[];
   equipTypes: string[];
-  mobRaces?: string[];
-  mobElements?: string[];
-  mobSizes?: string[];
-  mobMaxLevel?: number;
-  mobsWithSpawn?: number;
+  mobRaces: string[];
+  mobElements: string[];
+  mobSizes: string[];
+  mobMaxLevel: number;
+  mobsWithSpawn: number;
   bonusTypes?: { id: string; label: string }[];
+}
+
+// --- Monstros (tabelas mobs/mob_drops/mob_spawns) ----------------------------------
+
+export interface MobRow {
+  id: number;
+  n: string;
+  sn: string;
+  lv: number;
+  hp: number;
+  sp: number;
+  atk1: number;
+  atk2: number;
+  def: number;
+  mdef: number;
+  s_str: number;
+  s_agi: number;
+  s_vit: number;
+  s_int: number;
+  s_dex: number;
+  s_luk: number;
+  rng: number;
+  spd: number;
+  race: string;
+  el: string;
+  elv: number;
+  sz: string;
+  bexp: number;
+  jexp: number;
+  mexp: number;
+  mvp: 0 | 1;
+  spn: 0 | 1;
+}
+
+export interface MobDrop {
+  itemId: number | null;
+  name: string;
+  icon: 0 | 1;
+  rate: number;
+  mvp: 0 | 1;
+}
+
+export interface MobSpawn {
+  map: string;
+  mapName: string;
+  amount: number;
+}
+
+export interface MobDetail {
+  mob: MobRow;
+  drops: MobDrop[];
+  spawns: MobSpawn[];
+}
+
+export interface MapMob {
+  mobId: number;
+  name: string;
+  level: number;
+  amount: number;
+  mvp: 0 | 1;
+  race: string;
+  el: string;
+}
+
+export interface MapDetail {
+  id: string;
+  name: string;
+  mobs: MapMob[];
 }

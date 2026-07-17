@@ -740,6 +740,28 @@ a.quest-ing:hover {
   border-color: var(--accent-dim);
 }
 
+.link-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--link);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.link-btn:hover {
+  text-decoration: underline;
+}
+.map-chip.link-btn {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
 /* --- Modal global ---------------------------------------------------------------- */
 .modal-overlay {
   position: fixed;

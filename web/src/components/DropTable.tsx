@@ -1,5 +1,6 @@
 import type { DropSource } from "../types";
 import { tRace, tElement } from "../lib/i18n";
+import { useModalNav } from "../lib/modalNav";
 
 // Taxa de drop com escala de cor: quanto mais raro, mais "quente" o rotulo.
 // As faixas seguem como o jogador realmente pensa (>10% comum, <0,1% carta/raro).
@@ -21,6 +22,8 @@ interface Props {
 }
 
 export function DropTable({ drops, total }: Props) {
+  const { openModal } = useModalNav();
+
   if (!drops.length) return null;
 
   return (
@@ -45,7 +48,12 @@ export function DropTable({ drops, total }: Props) {
           {drops.map((d, i) => (
             <tr key={`${d.mob}-${i}`}>
               <td>
-                <span className="mob-name">{d.name}</span>
+                <button
+                  className="link-btn mob-name"
+                  onClick={() => openModal(`/mob/${d.mob}`)}
+                >
+                  {d.name}
+                </button>
                 {d.mvpMob && <span className="badge mvp">MVP</span>}
                 {d.mvp && <span className="badge mvp-drop">drop de MVP</span>}
                 {d.race && (
@@ -65,9 +73,14 @@ export function DropTable({ drops, total }: Props) {
                 ) : (
                   <span className="maps">
                     {d.maps.map((m) => (
-                      <span key={m.map} className="map-chip" title={m.map}>
+                      <button
+                        key={m.map}
+                        className="map-chip link-btn"
+                        title={m.map}
+                        onClick={() => openModal(`/map/${m.map}`)}
+                      >
                         {m.mapName} <em>×{m.amount}</em>
-                      </span>
+                      </button>
                     ))}
                     {d.moreMaps > 0 && <span className="dim">+{d.moreMaps} mapas</span>}
                   </span>

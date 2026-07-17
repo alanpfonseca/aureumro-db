@@ -7,7 +7,12 @@ import { HomePage } from "./pages/HomePage";
 import { ItemPage } from "./pages/ItemPage";
 import { HatQuestsPage } from "./pages/HatQuestsPage";
 import { MapCollectionsPage } from "./pages/MapCollectionsPage";
+import { MobsPage } from "./pages/MobsPage";
+import { MobPage } from "./pages/MobPage";
+import { MapPage } from "./pages/MapPage";
 import { ItemModal } from "./components/modals/ItemModal";
+import { MobModal } from "./components/modals/MobModal";
+import { MapModal } from "./components/modals/MapModal";
 
 // Inicia o worker do SQLite ja no boot (paralelo ao primeiro render do React);
 // as paginas so aguardam queries, nunca a inicializacao.
@@ -24,10 +29,15 @@ function App() {
         <Route path="/item/:id" element={<ItemPage />} />
         <Route path="/hat-quests" element={<HatQuestsPage />} />
         <Route path="/map-collections" element={<MapCollectionsPage />} />
+        <Route path="/mobs" element={<MobsPage />} />
+        <Route path="/mob/:id" element={<MobPage />} />
+        <Route path="/map/:mapId" element={<MapPage />} />
       </Routes>
       {state?.backgroundLocation && (
         <Routes>
           <Route path="/item/:id" element={<ItemModal />} />
+          <Route path="/mob/:id" element={<MobModal />} />
+          <Route path="/map/:mapId" element={<MapModal />} />
         </Routes>
       )}
     </>

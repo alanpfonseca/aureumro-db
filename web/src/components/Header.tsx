@@ -6,6 +6,7 @@ const NAV_TABS = [
   { label: "Itens", to: "/", alsoActive: ["/item/"] },
   { label: "Quests de Chapéu", to: "/hat-quests" },
   { label: "Coleções de Mapa", to: "/map-collections" },
+  { label: "Monstros", to: "/mobs", alsoActive: ["/mob/", "/map/"] },
 ];
 
 export function Header({ tagline, children }: { tagline?: ReactNode; children?: ReactNode }) {
