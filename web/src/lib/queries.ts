@@ -305,3 +305,94 @@ export function getQuestsRewarding(itemId: number): Promise<QuestChip[]> {
     [itemId],
   );
 }
+
+// ---- Monstros -----------------------------------------------------------------------
+
+import type { MobDetail, MobDrop, MobRow, MobSpawn, MapDetail, MapMob } from "../types";
+import type { MobFilters } from "./mobFilters";
+
+export async function listMobs(f: MobFilters): Promise<MobRow[]> {
+  const conds: string[] = [];
+  const params: unknown[] = [];
+
+  const tokens = deaccent(f.text.trim())
+    .split(/[\s,.:/()[\]{}+\-]+/)
+    .filter(Boolean);
+  if (tokens.length) {
+    conds.push(
+      tokens.map(() => "sn LIKE ?").join(" AND "),
+    );
+    params.push(...tokens.map((t) => `%${t}%`));
+  }
+
+  if (f.races.size) {
+    conds.push(`race IN (${[...f.races].map(() => "?").join(",")})`);
+    params.push(...f.races);
+  }
+  if (f.elements.size) {
+    conds.push(`el IN (${[...f.elements].map(() => "?").join(",")})`);
+    params.push(...f.elements);
+  }
+  if (f.sizes.size) {
+    conds.push(`sz IN (${[...f.sizes].map(() => "?").join(",")})`);
+    params.push(...f.sizes);
+  }
+  if (f.mvp === "mvp") conds.push("mvp = 1");
+  if (f.mvp === "normal") conds.push("mvp = 0");
+  if (f.minLevel != null) {
+    conds.push("lv >= ?");
+    params.push(f.minLevel);
+  }
+  if (f.maxLevel != null) {
+    conds.push("lv <= ?");
+    params.push(f.maxLevel);
+  }
+  if (f.onlyWithSpawn) conds.push("spn = 1");
+
+  const orderBy = {
+    level: "lv, id",
+    hp: "hp DESC, id",
+    name: "n, id",
+    exp: "bexp DESC, id",
+    id: "id",
+  }[f.sort];
+
+  const where = conds.length ? `WHERE ${conds.join(" AND ")}` : "";
+  return query<MobRow>(`SELECT * FROM mobs ${where} ORDER BY ${orderBy}`, params);
+}
+
+export async function getMobDetail(id: number): Promise<MobDetail | null> {
+  const [mobs, drops, spawns] = await Promise.all([
+    query<MobRow>("SELECT * FROM mobs WHERE id = ?", [id]),
+    query<MobDrop>(
+      "SELECT item_id AS itemId, name, icon, rate, mvp FROM mob_drops WHERE mob_id = ? ORDER BY ord",
+      [id],
+    ),
+    query<MobSpawn>(
+      `SELECT s.map, s.amount, COALESCE(m.name, s.map) AS mapName
+       FROM mob_spawns s LEFT JOIN maps m ON m.id = s.map
+       WHERE s.mob_id = ? ORDER BY s.amount DESC`,
+      [id],
+    ),
+  ]);
+  if (!mobs.length) return null;
+  return { mob: mobs[0], drops, spawns };
+}
+
+export async function getMapDetail(mapId: string): Promise<MapDetail | null> {
+  const [maps, mobs] = await Promise.all([
+    query<{ name: string }>("SELECT name FROM maps WHERE id = ?", [mapId]),
+    query<MapMob>(
+      `SELECT s.mob_id AS mobId, m.n AS name, m.lv AS level, s.amount,
+              m.mvp, m.race, m.el AS el
+       FROM mob_spawns s JOIN mobs m ON m.id = s.mob_id
+       WHERE s.map = ? ORDER BY s.amount DESC`,
+      [mapId],
+    ),
+  ]);
+  return {
+    id: mapId,
+    name: maps[0]?.name ?? mapId,
+    mobs,
+  };
+}
