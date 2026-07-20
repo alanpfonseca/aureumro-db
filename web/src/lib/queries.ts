@@ -32,7 +32,12 @@ export function ftsQuery(input: string): string | null {
 
 // ---- WHERE dos filtros de faceta (mesma semantica do applyFilters antigo) -----------
 
-function buildWhere(f: Filters): { conds: string[]; params: unknown[] } {
+const EQUIP_TYPES = new Set([
+  "Arma", "Armadura", "Escudo", "Traje", "Headgear",
+  "Capa", "Calçado", "Acessório", "Sombrio",
+]);
+
+function buildWhere(f: Filters, meta: Meta): { conds: string[]; params: unknown[] } {
   const conds: string[] = [];
   const params: unknown[] = [];
   const inList = (col: string, values: Iterable<string | number>) => {
@@ -40,7 +45,29 @@ function buildWhere(f: Filters): { conds: string[]; params: unknown[] } {
     conds.push(`${col} IN (${arr.map(() => "?").join(",")})`);
     params.push(...arr);
   };
-  if (f.types.size) inList("i.t", f.types);
+
+  // Tipos: subfiltro de arma restringe so a fatia Arma quando varios tipos estao
+  // selecionados (OR escopado).
+  if (f.types.size) {
+    const types = [...f.types];
+    const otherTypes = types.filter((t) => t !== "Arma");
+    const armaSelected = types.includes("Arma");
+    const hasSub = f.weaponSubTypes.size > 0;
+
+    if (armaSelected && hasSub) {
+      const parts: string[] = [];
+      if (otherTypes.length) {
+        parts.push(`i.t IN (${otherTypes.map(() => "?").join(",")})`);
+        params.push(...otherTypes);
+      }
+      parts.push("(i.t = 'Arma' AND i.wt IN (" + [...f.weaponSubTypes].map(() => "?").join(",") + "))");
+      params.push(...f.weaponSubTypes);
+      conds.push(`(${parts.join(" OR ")})`);
+    } else {
+      inList("i.t", types);
+    }
+  }
+
   if (f.custom === "custom") conds.push("i.c = 1");
   if (f.custom === "vanilla") conds.push("i.c = 0");
   if (f.slots.size) inList("i.sl", f.slots);
@@ -57,42 +84,107 @@ function buildWhere(f: Filters): { conds: string[]; params: unknown[] } {
     conds.push("COALESCE(i.rl, 0) <= ?");
     params.push(f.maxReqLevel);
   }
+
+  // Jobs: restringe so os equipamentos selecionados; itens fora de equipTypes passam.
+  if (f.jobs.size > 0) {
+    const mask = [...f.jobs].reduce((acc, j) => {
+      const bit = meta.jobBits.indexOf(j);
+      return bit >= 0 ? acc | (1 << bit) : acc;
+    }, 0);
+    const equipSelected = [...f.types].filter((t) => EQUIP_TYPES.has(t));
+    const parts: string[] = [];
+    if (equipSelected.length < f.types.size || f.types.size === 0) {
+      // tipos nao-equipaveis selecionados (ou nenhum tipo) passam livremente
+      const nonEquip = f.types.size ? [...f.types].filter((t) => !EQUIP_TYPES.has(t)) : [];
+      if (nonEquip.length) {
+        parts.push(`i.t IN (${nonEquip.map(() => "?").join(",")})`);
+        params.push(...nonEquip);
+      } else {
+        parts.push("i.t NOT IN (" + equipSelected.map(() => "?").join(",") + ")");
+        params.push(...equipSelected);
+      }
+    }
+    parts.push("(i.jbm IS NOT NULL AND (i.jbm & ?) != 0)");
+    params.push(mask);
+    conds.push(`(${parts.join(" OR ")})`);
+  }
+
+  // Classes (trans/normal) — so afeta equips (itens nao-equipaveis selecionados passam).
+  if (f.classes !== "all" && f.types.size > 0) {
+    const equipSelected = [...f.types].filter((t) => EQUIP_TYPES.has(t));
+    const nonEquip = [...f.types].filter((t) => !EQUIP_TYPES.has(t));
+    const bit = f.classes === "trans" ? 2 : 1;
+    const parts: string[] = [];
+    if (nonEquip.length) {
+      parts.push(`i.t IN (${nonEquip.map(() => "?").join(",")})`);
+      params.push(...nonEquip);
+    }
+    parts.push("(i.t IN (" + equipSelected.map(() => "?").join(",") + ") AND (i.cls & ?) != 0)");
+    params.push(...equipSelected, bit);
+    conds.push(`(${parts.join(" OR ")})`);
+  } else if (f.classes !== "all") {
+    // sem tipo selecionado: aplica em todos os equips (qualquer item com cls not null)
+    const bit = f.classes === "trans" ? 2 : 1;
+    conds.push("(i.cls IS NOT NULL AND (i.cls & ?) != 0)");
+    params.push(bit);
+  }
+
   return { conds, params };
 }
 
 // Com texto: JOIN no FTS ordenado por bm25 (peso 3x no nome, como a busca antiga).
-// Sem texto: SELECT simples na ordem de id.
-function listQuery(f: Filters, select: string): { sql: string; params: unknown[] } {
+// Sem texto: SELECT simples na ordem escolhida; SEMPRE i.id como desempate.
+function listQuery(f: Filters, select: string, meta: Meta): { sql: string; params: unknown[] } {
   const match = ftsQuery(f.text.trim());
-  const { conds, params } = buildWhere(f);
+  const { conds, params } = buildWhere(f, meta);
+  const orderBy = orderClause(f.sort, !!match);
   if (match) {
     const where = ["items_fts MATCH ?", ...conds].join(" AND ");
     return {
       sql:
         `SELECT ${select} FROM items_fts JOIN items i ON i.id = items_fts.rowid ` +
-        `WHERE ${where} ORDER BY bm25(items_fts, 3.0, 1.0)`,
+        `WHERE ${where} ORDER BY ${orderBy}`,
       params: [match, ...params],
     };
   }
   const where = conds.length ? ` WHERE ${conds.join(" AND ")}` : "";
-  return { sql: `SELECT ${select} FROM items i${where} ORDER BY i.id`, params };
+  return { sql: `SELECT ${select} FROM items i${where} ORDER BY ${orderBy}`, params };
+}
+
+function orderClause(sort: Filters["sort"], hasMatch: boolean): string {
+  switch (sort) {
+    case "id":
+      return "i.id";
+    case "name":
+      return "i.sn, i.id";
+    case "levelAsc":
+      return "COALESCE(i.rl, 0), i.id";
+    case "levelDesc":
+      return "COALESCE(i.rl, 0) DESC, i.id";
+    case "atkDesc":
+      return "i.atk DESC, i.id";
+    case "defDesc":
+      return "i.def DESC, i.id";
+    default:
+      return hasMatch ? "bm25(items_fts, 3.0, 1.0)" : "i.id";
+  }
 }
 
 const LIST_COLUMNS = "i.id, i.n, i.t, i.sl, i.c, i.u, i.ic, i.dr, i.rl, i.atk, i.def, i.col";
 
-export async function countItems(f: Filters): Promise<number> {
-  const { sql, params } = listQuery(f, "count(*) AS total");
-  // ORDER BY num count(*) e inofensivo, mas cortamos para o SQLite nao trabalhar a toa.
+export async function countItems(f: Filters, meta: Meta): Promise<number> {
+  const { sql, params } = listQuery(f, "count(*) AS total", meta);
   const rows = await query<{ total: number }>(sql.replace(/ ORDER BY .+$/, ""), params);
   return rows[0]?.total ?? 0;
 }
 
 export async function queryItemsWindow(
   f: Filters,
+  meta: Meta,
   offset: number,
   limit: number,
 ): Promise<ListRow[]> {
-  const { sql, params } = listQuery(f, LIST_COLUMNS);
+  const { sql, params } = listQuery(f, LIST_COLUMNS, meta);
   return query<ListRow>(`${sql} LIMIT ? OFFSET ?`, [...params, limit, offset]);
 }
 
@@ -163,8 +255,8 @@ export function getMapCollections(): Promise<MapCollectionsFile> {
   if (!mapCollectionsPromise) {
     mapCollectionsPromise = (async () => {
       const [cols, items] = await Promise.all([
-        query<{ id: string; name: string; city: string; bonus: string }>(
-          "SELECT id, name, city, bonus FROM map_collections ORDER BY sort",
+        query<{ id: string; name: string; city: string; bonus: string; bonus_type: string }>(
+          "SELECT id, name, city, bonus, bonus_type FROM map_collections ORDER BY sort",
         ),
         query<{
           collection_id: string; amount: number; item_id: number | null; name: string; icon: 0 | 1;
@@ -174,7 +266,7 @@ export function getMapCollections(): Promise<MapCollectionsFile> {
       const result: MapCollection[] = [];
       for (const c of cols) {
         const col: MapCollection = {
-          id: c.id, name: c.name, city: c.city, bonus: c.bonus, items: [],
+          id: c.id, name: c.name, city: c.city, bonus: c.bonus, bonusType: c.bonus_type, items: [],
         };
         byId.set(c.id, col);
         result.push(col);

@@ -53,6 +53,7 @@ export interface MapCollection {
   name: string;
   city: string;
   bonus: string;
+  bonusType: string;
   items: MapCollectionItem[];
 }
 
@@ -154,4 +155,13 @@ export interface Meta {
   generatedFrom: string;
   dbVersion?: number;
   zenyCost?: number; // custo das quests de chapeu (gravado pelo build_hats.py)
+  jobBits: string[];
+  weaponSubTypes: string[];
+  equipTypes: string[];
+  mobRaces?: string[];
+  mobElements?: string[];
+  mobSizes?: string[];
+  mobMaxLevel?: number;
+  mobsWithSpawn?: number;
+  bonusTypes?: { id: string; label: string }[];
 }

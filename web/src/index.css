@@ -188,6 +188,35 @@ select {
   letter-spacing: 0.6px;
   color: var(--text-dim);
 }
+.filter-subgroup {
+  margin: 12px 0 0 8px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+.filter-subgroup h5 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.radio input {
+  accent-color: var(--accent);
+}
 .chip-row {
   display: flex;
   flex-wrap: wrap;
@@ -254,6 +283,17 @@ select {
   margin-bottom: 8px;
   color: var(--text-dim);
   font-size: 13px;
+}
+.sort-select {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  font-size: 13px;
+  outline: none;
+}
+.sort-select:focus {
+  border-color: var(--accent-dim);
 }
 .list {
   border: 1px solid var(--border);
