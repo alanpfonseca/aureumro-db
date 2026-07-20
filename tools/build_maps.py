@@ -59,11 +59,12 @@ EQUIP_TYPES = {"Arma", "Headgear", "Armadura", "Escudo", "Calçado",
 # em bancos antigos elas precisam ser criadas aqui.
 TABLES = """
 CREATE TABLE IF NOT EXISTS map_collections (
-  id    TEXT PRIMARY KEY,
-  name  TEXT NOT NULL,
-  city  TEXT NOT NULL,
-  bonus TEXT NOT NULL,
-  sort  INTEGER NOT NULL
+  id          TEXT PRIMARY KEY,
+  name        TEXT NOT NULL,
+  city        TEXT NOT NULL,
+  bonus       TEXT NOT NULL,
+  bonus_type  TEXT NOT NULL DEFAULT 'outros',
+  sort        INTEGER NOT NULL
 );
 CREATE TABLE IF NOT EXISTS map_collection_items (
   collection_id TEXT    NOT NULL REFERENCES map_collections(id),
@@ -81,6 +82,84 @@ CREATE INDEX IF NOT EXISTS idx_mci_item ON map_collection_items(item_id);
 def norm(text):
     """Nome -> chave de comparacao: sem acento, minusculo, espacos colapsados."""
     return re.sub(r"\s+", " ", deaccent(text).strip())
+
+
+# Ordem e labels PT das categorias de bonus de mapa (conforme TASKS.md).
+# A primeira regex que casar vence; mais especifica deve vir antes de generica.
+BONUS_CATEGORIES = [
+    # Atributos (regexes flexiveis para texto com espacos e capitalizacao irregular)
+    (r"\b(str|for)\s*\+?\s*\d+\b", "for"),
+    (r"\bagi\s*\+?\s*\d+\b", "agi"),
+    (r"\bvit\s*\+?\s*\d+\b", "vit"),
+    (r"\bint\s*\+?\s*\d+\b", "int"),
+    (r"\bdex\s*\+?\s*\d+\b", "des"),
+    (r"\bluk\s*\+?\s*\d+\b", "sor"),
+    ("todos os atributos", "todos-atributos"),
+    # Cast / conjuracao
+    ("cast fixo|-50ms no tempo de conjuracao", "cast-fixo"),
+    ("reducao de tempo de conjuracao|tempo de conjuracao|velocidade de conjuracao|cast variavel|cast variável", "cast-variavel"),
+    ("pos[ -]?conjuracao|pos[ -]?conjuração", "pos-conjuracao"),
+    ("recarga|reuso de itens|reuso", "recarga"),
+    # Dano
+    ("^atq\\b|^ataque\\b", "atq"),
+    ("^matq\\b|^ataque magico\\b", "matq"),
+    ("dano critico|dano crítico|taxa critica|taxa crítica", "dano-critico"),
+    ("^dano (com|do|da|de p|dos)|bomba acida|choque de escudo|aura espinhosa|reflexao magica|reflexão mágica", "dano-skill"),
+    ("dano|ignorar def|a distancia|fisico|magico|danos", "dano"),
+    # Sobrevivencia / defesa
+    ("resistencia|defesa a raca|defesa à raça|defesa a propriedade|defesa à propriedade|contra tamanho|ao thanatos|a jogador|a distancia|a distância", "resistencias"),
+    ("defesa verdadeira|hard def|soft def|defesa|defesa magica|mdef", "def-mdef"),
+    (r"hp\s*\+\d|sp\s*\+\d|hp/sp|hp e sp|sp/hp|max hp|max sp|hp maximo|sp maximo|recuperacao de hp|recuperacao de sp|recuperação de hp|recuperação de sp", "hp-sp"),
+    # Precisao / mobilidade / utilidade
+    ("acerto|precisao", "acerto"),
+    ("evasao|evasão|esquiva|flee", "esquiva"),
+    ("aspd|velocidade de ataque", "aspd"),
+    (r"velocidade de movimento|vel\. movimento|movimento", "vel-movimento"),
+    ("drop", "drop"),
+    ("exp", "exp"),
+    ("cura|heal", "cura"),
+    ("peso|municao|nao consumir munic|nao consumir muni|duracao de po|duracao de buff|custo de sp|refino|aprimorar armamento|refinar", "utilidade"),
+]
+
+BONUS_LABELS = {
+    "for": "FOR",
+    "agi": "AGI",
+    "vit": "VIT",
+    "int": "INT",
+    "des": "DES",
+    "sor": "SOR",
+    "todos-atributos": "Todos os Atributos",
+    "cast-fixo": "Cast Fixo",
+    "cast-variavel": "Cast Variável",
+    "pos-conjuracao": "Pós-conjuração",
+    "recarga": "Recarga",
+    "atq": "ATQ",
+    "matq": "MATQ",
+    "dano-critico": "Dano Crítico",
+    "dano-skill": "Dano de Skill",
+    "dano": "Dano",
+    "hp-sp": "HP/SP",
+    "def-mdef": "DEF/MDEF",
+    "resistencias": "Resistências",
+    "acerto": "Acerto",
+    "esquiva": "Esquiva",
+    "aspd": "ASPD",
+    "vel-movimento": "Vel. Movimento",
+    "drop": "Drop",
+    "exp": "EXP",
+    "cura": "Cura",
+    "utilidade": "Utilidades",
+    "outros": "Outros",
+}
+
+
+def categorize_bonus(text):
+    """Classifica o texto de bonus de uma colecao de mapa."""
+    flat = deaccent(text).lower()
+    for pattern, slug in BONUS_CATEGORIES:
+        if re.search(pattern, flat):
+            return slug
+    return "outros"
 
 
 def main():
@@ -132,10 +211,16 @@ def main():
 
     resolved_ids = set()
     total_items = 0
+    bonus_counts = {}
+    uncategorized = []
     for sort, col in enumerate(collections):
+        bonus_type = categorize_bonus(col["bonus"])
+        bonus_counts[bonus_type] = bonus_counts.get(bonus_type, 0) + 1
+        if bonus_type == "outros":
+            uncategorized.append(f'"{col["name"]}" — {col["bonus"]}')
         conn.execute(
-            "INSERT INTO map_collections (id,name,city,bonus,sort) VALUES (?,?,?,?,?)",
-            (col["id"], col["name"], col["city"], col["bonus"], sort))
+            "INSERT INTO map_collections (id,name,city,bonus,bonus_type,sort) VALUES (?,?,?,?,?,?)",
+            (col["id"], col["name"], col["city"], col["bonus"], bonus_type, sort))
         for ord_, ing in enumerate(col["items"]):
             iid = resolve_item(ing, f'"{col["name"]}"')
             rec = items.get(iid)
@@ -151,6 +236,15 @@ def main():
 
     # --- meta + VACUUM (sem FTS: descricoes de itens nao mudam) -----------------------
     ver = conn.execute("SELECT value FROM meta WHERE key='dbVersion'").fetchone()
+    bonus_types_meta = [
+        {"id": slug, "label": BONUS_LABELS[slug]}
+        for _, slug in BONUS_CATEGORIES
+        if slug in bonus_counts
+    ]
+    if "outros" in bonus_counts and "outros" not in {b["id"] for b in bonus_types_meta}:
+        bonus_types_meta.append({"id": "outros", "label": BONUS_LABELS["outros"]})
+    conn.execute("INSERT OR REPLACE INTO meta (key,value) VALUES ('bonusTypes',?)",
+                 (json.dumps(bonus_types_meta, ensure_ascii=False),))
     conn.execute("INSERT OR REPLACE INTO meta (key,value) VALUES ('dbVersion',?)",
                  (json.dumps((json.loads(ver[0]) if ver else 0) + 1),))
     finish(conn)
@@ -165,7 +259,13 @@ def main():
         "não resolvidos": len(report["unresolved"]),
     }
     lines = ["# Relatório — build_maps.py", ""]
-    lines += ["## Referências a outras coleções (sem link, esperado)", ""]
+    lines += ["## Categorias de bônus", ""]
+    lines += [f"- {BONUS_LABELS[slug]}: {bonus_counts.get(slug, 0)}" for slug, _ in BONUS_CATEGORIES if slug in bonus_counts]
+    if "outros" in bonus_counts:
+        lines += [f"- {BONUS_LABELS['outros']}: {bonus_counts['outros']}"]
+    lines += ["", "## Bônus não categorizados", ""]
+    lines += [f"- {n}" for n in uncategorized] or ["- (nenhum)"]
+    lines += ["", "## Referências a outras coleções (sem link, esperado)", ""]
     lines += [f"- {n}" for n in report["map_refs"]] or ["- (nenhuma)"]
     lines += ["", "## Correspondências para confirmar", ""]
     lines += [f"- {n}" for n in report["confirm"]] or ["- (nenhuma)"]
@@ -184,6 +284,7 @@ def main():
     print(f"não resolvidos          : {len(report['unresolved'])}")
     for n in report["unresolved"]:
         print(f"  ! {n}")
+    print(f"categorias de bônus     : {len(bonus_counts)} (outros={bonus_counts.get('outros', 0)})")
 
 
 if __name__ == "__main__":

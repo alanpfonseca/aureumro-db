@@ -27,6 +27,53 @@ DB_INFO_PATH = ROOT / "web" / "public" / "data" / "db-info.json"
 
 PAGE_SIZE = 4096
 
+# Jobs oficiais pre-re, na ordem em que o bitmask sera montado.
+# A posicao no array define o bit: Novice=0, Swordman=1, ... SuperNovice=24.
+# NUNCA reordenar -- o front usa meta.jobBits em runtime para derivar o bit.
+JOB_BITS = [
+    "Novice",
+    "Swordman",
+    "Mage",
+    "Archer",
+    "Acolyte",
+    "Merchant",
+    "Thief",
+    "Knight",
+    "Priest",
+    "Wizard",
+    "Blacksmith",
+    "Hunter",
+    "Assassin",
+    "Crusader",
+    "Monk",
+    "Sage",
+    "Rogue",
+    "Alchemist",
+    "BardDancer",
+    "Taekwon",
+    "StarGladiator",
+    "SoulLinker",
+    "Gunslinger",
+    "Ninja",
+    "SuperNovice",
+]
+
+# Bitmask das classes do campo Classes do item_db (ex.: Upper: true).
+CLASS_BITS = {"Normal": 1, "Upper": 2, "Baby": 4}
+CLASS_ALL = 7
+
+
+def job_mask(jobs):
+    """Lista de nomes de job (EN) -> bitmask segundo JOB_BITS."""
+    mask = 0
+    for j in jobs:
+        try:
+            mask |= 1 << JOB_BITS.index(j)
+        except ValueError:
+            pass  # job desconhecido nao entra no bitmask
+    return mask
+
+
 SCHEMA = """
 CREATE TABLE meta (
   key   TEXT PRIMARY KEY,
@@ -48,7 +95,10 @@ CREATE TABLE items (
   pre  INTEGER NOT NULL,
   hq   INTEGER NOT NULL DEFAULT 0,
   rl   INTEGER, wl INTEGER, atk INTEGER, def INTEGER, matk INTEGER,
-  el   TEXT, jb TEXT, col TEXT
+  el   TEXT, jb TEXT, col TEXT,
+  wt   TEXT,        -- subtipo de arma (Weapon SubType), quando t='Arma'
+  jbm  INTEGER,     -- bitmask de jobs (oficial pre-re)
+  cls  INTEGER      -- bitmask de classes (Normal/Upper/Baby)
 );
 -- Sem indices secundarios de proposito: os filtros combinam livremente e a tabela
 -- e pequena; um indice forcaria seeks que buscam MAIS paginas via HTTP.
@@ -81,11 +131,12 @@ CREATE INDEX idx_hqi_item ON hat_quest_ingredients(item_id);
 CREATE INDEX idx_hq_hat   ON hat_quests(hat_id);
 
 CREATE TABLE map_collections (
-  id    TEXT PRIMARY KEY,
-  name  TEXT NOT NULL,
-  city  TEXT NOT NULL,
-  bonus TEXT NOT NULL,
-  sort  INTEGER NOT NULL
+  id          TEXT PRIMARY KEY,
+  name        TEXT NOT NULL,
+  city        TEXT NOT NULL,
+  bonus       TEXT NOT NULL,
+  bonus_type  TEXT NOT NULL DEFAULT 'outros',
+  sort        INTEGER NOT NULL
 );
 CREATE TABLE map_collection_items (
   collection_id TEXT    NOT NULL REFERENCES map_collections(id),
@@ -97,6 +148,61 @@ CREATE TABLE map_collection_items (
   PRIMARY KEY (collection_id, ord)
 );
 CREATE INDEX idx_mci_item ON map_collection_items(item_id);
+
+CREATE TABLE mobs (
+  id INTEGER PRIMARY KEY,
+  n TEXT NOT NULL,
+  sn TEXT NOT NULL,
+  lv INTEGER,
+  hp INTEGER,
+  sp INTEGER,
+  atk1 INTEGER,
+  atk2 INTEGER,
+  def INTEGER,
+  mdef INTEGER,
+  s_str INTEGER,
+  s_agi INTEGER,
+  s_vit INTEGER,
+  s_int INTEGER,
+  s_dex INTEGER,
+  s_luk INTEGER,
+  rng INTEGER,
+  spd INTEGER,
+  race TEXT,
+  el TEXT,
+  elv INTEGER,
+  sz TEXT,
+  bexp INTEGER,
+  jexp INTEGER,
+  mexp INTEGER,
+  mvp INTEGER NOT NULL,
+  spn INTEGER NOT NULL
+);
+
+CREATE TABLE mob_drops (
+  mob_id INTEGER NOT NULL,
+  ord INTEGER NOT NULL,
+  item_id INTEGER,
+  name TEXT NOT NULL,
+  icon INTEGER NOT NULL,
+  rate REAL NOT NULL,
+  mvp INTEGER NOT NULL,
+  PRIMARY KEY (mob_id, ord)
+);
+
+CREATE TABLE mob_spawns (
+  mob_id INTEGER NOT NULL,
+  map TEXT NOT NULL,
+  amount INTEGER NOT NULL,
+  PRIMARY KEY (mob_id, map)
+);
+
+CREATE INDEX idx_spawn_map ON mob_spawns(map);
+
+CREATE TABLE maps (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL
+);
 """
 
 # FTS5 STANDALONE (guarda sn/st): visivel/editavel no DB Browser e legivel pelo
