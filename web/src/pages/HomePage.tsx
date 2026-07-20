@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { ListRow, Meta } from "../types";
 import { countItems, getMeta, queryItemsWindow } from "../lib/queries";
 import { emptyFilters, type Filters } from "../lib/filters";
 import { saveHomeSession, takeHomeSession } from "../lib/homeSession";
+import { useModalNav } from "../lib/modalNav";
 import { readableColor } from "../lib/rotext";
 import { ItemIcon } from "../components/ItemIcon";
 import { FiltersPanel } from "../components/FiltersPanel";
@@ -28,7 +28,7 @@ export function HomePage() {
   const [count, setCount] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [, setRowsVersion] = useState(0); // re-render quando uma janela chega
-  const navigate = useNavigate();
+  const { openModal } = useModalNav();
 
   const rowCache = useRef(new Map<number, ListRow>()); // indice -> linha
   const inflight = useRef(new Set<number>()); // offsets de chunk em voo
@@ -196,7 +196,7 @@ export function HomePage() {
                       key={rec.id}
                       className="row"
                       style={style}
-                      onClick={() => navigate(`/item/${rec.id}`)}
+                      onClick={() => openModal(`/item/${rec.id}`)}
                     >
                       <ItemIcon id={rec.id} hasIcon={rec.ic === 1} name={rec.n} size={32} />
                       <div className="row-main">

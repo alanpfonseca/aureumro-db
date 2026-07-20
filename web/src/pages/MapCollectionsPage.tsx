@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import type { MapCollection, MapCollectionsFile } from "../types";
 import { getMapCollections } from "../lib/queries";
 import { deaccent } from "../lib/deaccent";
@@ -11,6 +11,7 @@ export function MapCollectionsPage() {
   const [error, setError] = useState<string | null>(null);
   const [text, setText] = useState("");
   const [city, setCity] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
     getMapCollections().then(setData).catch((e) => setError(String(e)));
@@ -104,7 +105,11 @@ export function MapCollectionsPage() {
                 {c.items.map((ing, i) => (
                   <li key={i}>
                     {ing.itemId != null ? (
-                      <Link to={`/item/${ing.itemId}`} className="quest-ing">
+                      <Link
+                        to={`/item/${ing.itemId}`}
+                        className="quest-ing"
+                        state={{ backgroundLocation: location }}
+                      >
                         <ItemIcon id={ing.itemId} hasIcon={ing.icon === 1} name={ing.name} size={24} />
                         <span className="quest-ing-amount">{ing.amount}x</span>
                         <span>{ing.name}</span>
