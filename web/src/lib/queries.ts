@@ -254,13 +254,14 @@ let mapCollectionsPromise: Promise<MapCollectionsFile> | null = null;
 export function getMapCollections(): Promise<MapCollectionsFile> {
   if (!mapCollectionsPromise) {
     mapCollectionsPromise = (async () => {
-      const [cols, items] = await Promise.all([
+      const [cols, items, meta] = await Promise.all([
         query<{ id: string; name: string; city: string; bonus: string; bonus_type: string }>(
           "SELECT id, name, city, bonus, bonus_type FROM map_collections ORDER BY sort",
         ),
         query<{
           collection_id: string; amount: number; item_id: number | null; name: string; icon: 0 | 1;
         }>("SELECT collection_id, amount, item_id, name, icon FROM map_collection_items ORDER BY collection_id, ord"),
+        getMeta(),
       ]);
       const byId = new Map<string, MapCollection>();
       const result: MapCollection[] = [];
@@ -276,7 +277,7 @@ export function getMapCollections(): Promise<MapCollectionsFile> {
           amount: i.amount, itemId: i.item_id, name: i.name, icon: i.icon,
         });
       }
-      return { collections: result };
+      return { collections: result, bonusTypes: meta.bonusTypes };
     })();
   }
   return mapCollectionsPromise;
